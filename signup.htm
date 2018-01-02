@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="templets/style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+
+
+<body>
+    <header class="clearfix">
+        <div class="header-bar">
+            <div class="left">
+                <img src="templets/images/logo.png" alt="">
+                <div class="bar"></div>
+                <span>会员中心</span>
+            </div>
+            <div class="right ">
+                <span class="base-color">返回首页
+                    <i class="iconfont">&#xe6a7;</i>
+
+                </span>
+            </div>
+        </div>
+
+
+    </header>
+    <main>
+    <div id="loginbox">
+        <div class="box-header2">
+            <h2>会员注册</h2>
+        </div>
+        <form>
+            <div class="box-body" style="padding: 0 40px;">
+                <input style="margin-top:0;" type="text" placeholder="姓名">
+                <input type="text" placeholder="手机">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="密码确认">
+                <div>
+                    <input class=".check-box" type="text" placeholder="请输入手机验证码">
+                    <div class="button2">
+                        <span>获取验证码</span>
+    
+                    </div>
+    
+                </div>
+                <div class="detail">
+                    <input type="checkbox">
+                    <span>我已认真阅读并同意
+                        <span class="base-color">《楚盈资产投资基金管理有限公司用户注册使用协议》</span>
+                    </span>
+                </div>
+                <div class="button3" style="margin-bottom:25px;">
+                    <span>
+                        登录
+                    </span>
+                </div>
+            </div>
+        </form>
+    
+    </div>
+    </main>
+    <footer class="clearfix">
+        <div class="w1212">
+            <div class="left">
+                <img src="templets/images/flogo.png" alt="">
+            </div>
+            <div class="fcenter">
+                <p>Copyright 2017 YINGCHU ASSET. All rights reserved</p>
+                <p>盈楚资产 版权所有</p>
+                <p>地址：上海市普陀区云岭东路651号合星大厦12层 电话：021-61171559</p>
+                <p>盈楚（上海）资产管理有限公司 沪ICP备17049583号</p>
+            </div>
+            <div class="right">
+                <img src="templets/images/QRcode.png" alt="">&nbsp;&nbsp;&nbsp;
+                <img src="templets/images/wx.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script type="text/javascript">
+
+    $('#loginbox .box-header >div ').click(function (e) {
+        var $cur = $(this);
+        var idx = $cur.index();
+        $cur.siblings().removeClass('active');
+        $cur.addClass('active');
+        $cur.parents('#loginbox').find('form').removeClass('show');
+        $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
+    })
+
+
+
+
+</script>
+
+
+
+</html>
