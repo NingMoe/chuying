@@ -58,7 +58,12 @@
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
     }
-    
+    .a1:visited{
+        color: #fff;
+    }
+    .a2:visited{
+        color: rgb(14, 13, 13);
+    }
     /* 头部相关 */
     header {
         width: 100%;
@@ -111,9 +116,8 @@
     #login1{
         position: absolute;
         left: 50%;
-        top: 15%;
-        transform: translateY(-50%);
-        transform: translateX(-50%);
+        top: 50%;
+        transform:translate(-50%, -50%);
         width: 650px;
         margin: 0 auto;
         background: #EFEFEF;
@@ -156,9 +160,8 @@
     #loginbox{
         position: absolute;
         left: 50%;
-        top: 20%;
-        transform: translateY(-50%);
-        transform: translateX(-50%);
+        top: 50%;
+        transform:translate(-50%, -50%);
         width: 400px;
         margin: 0 auto;
         background:rgb(239,239,239);
