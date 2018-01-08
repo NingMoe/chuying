@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<link href="./style/style.css" rel="stylesheet" type="text/css" />
+<!-- <script type="text/javascript" src="https://at.alicdn.com/t/font_525687_5w5w7131c9fcg14i.js"></script> -->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>    
+
+
+
+<body>
+<header class="clearfix">
+    <div class="header-bar">
+        <div class="left">
+            <img src="./yczcimg/logo.png" alt="">
+            <div class="bar"></div>
+            <span>会员中心</span>
+        </div>
+        <div class="right ">
+            <i id="i_person"></i>
+            <span class="base-color" style="margin-right: 3rem">weihuansix欢迎回来</span>
+            <i id="i_hone"></i>
+            <span class="base-color" style="margin-right: 3rem">首页</span>
+            <i id="i_exit"></i>
+            <span class="base-color">安全退出</span>
+        </div>
+    </div>
+
+</header>
+
+<div id="pre-order">
+    <div class="close">
+        <i class="iconfont">&#xe61a;</i>
+    </div>
+    <div class=" pre-order-body">
+        <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
+        <input type="text" placeholder="请输入手机验证码">
+        <div class="button4">
+            <span>
+                提交预约
+            </span>
+        </div>
+    </div>
+
+</div>
+<footer class="clearfix">
+    <div class="w1212">
+        <div class="left">
+            <img src="./images/flogo.png" alt="">
+        </div>
+        <div class="fcenter">
+            <p>Copyright 2017 YINGCHU ASSET. All rights reserved</p>
+            <p>盈楚资产 版权所有</p>
+            <p>地址：上海市普陀区云岭东路651号合星大厦12层 电话：021-61171559</p>
+            <p>盈楚（上海）资产管理有限公司 沪ICP备17049583号</p>
+        </div>
+        <div class="right">
+            <img src="./images/QRcode.png" alt="">&nbsp;&nbsp;&nbsp;
+            <img src="./images/wx.png" alt="">
+        </div>
+    </div>
+</footer>
+
+</body>
+<script type="text/javascript">
+        
+        $('#loginbox .box-header >div ').click(function(e){
+          var $cur = $(this);
+            var idx = $cur.index();
+            $cur.siblings().removeClass('active');
+            $cur.addClass('active');
+            $cur.parents('#loginbox').find('form').removeClass('show');
+            $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
+        })
+        
+    
+    
+
+</script>
+
+
+
+</html>
