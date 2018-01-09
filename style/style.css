@@ -349,6 +349,9 @@
          width: 800px;
          background: rgb(239,239,239);
      }
+     class_div_de class_div_title{
+         background:rgb(183,140,46);
+     }
     /* 底部 */
     .w1212 {
         position: relative;

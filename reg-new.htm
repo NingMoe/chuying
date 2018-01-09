@@ -41,6 +41,7 @@
         var passworddok = $(".signup #userpwdok").val();
         var code = $("#code").val();
         if (username != "" && password != "") {
+            
             if (password === passworddok) {
                 var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
                 $.ajax({
@@ -65,7 +66,7 @@
             alert("请检查您的输入！");
         }
     })
-    //判断用户名是否重复
+    /* //判断用户名是否重复
     $(".signup #username").blur(function () {
         var username = $('.signup #username').val();
         if (username != "") {
@@ -84,7 +85,7 @@
                 }
             })
         }    
-})
+}) */
 
 </script>
 

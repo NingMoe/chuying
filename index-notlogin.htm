@@ -30,12 +30,13 @@
             // 未认购用户
             $('#wrg .button3').click(function () {
                 console.log("点到我了")
-                var username = $('#wrg #user-name').val();
+                var telnumb = $('#wrg #telnumb').val();
                 var password = $("#wrg #user-password").val();
                 var code = $("#code").val();
-                if (username != "" && password != "") {
+                
+                if (telnumb != "" && password != "") {
                     console.log("发送ajax了")
-                     var pp = "'" + username + "'";
+                     var pp = "'" + telnumb + "'";
                     $.ajax({
                         type: "GET",
                         url: "yc_php/yc_login.php",
