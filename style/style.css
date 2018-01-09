@@ -343,6 +343,12 @@
         justify-content: center;
         align-items: center;
      }
+     /*未认购*/
+     .class_div_box{
+        font-size:26px; 
+         width: 800px;
+         background: rgb(239,239,239);
+     }
     /* 底部 */
     .w1212 {
         position: relative;

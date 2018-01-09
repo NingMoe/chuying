@@ -73,14 +73,13 @@
             var pp = "'" + username + "'";
             $.ajax({
                 type: "GET",
-                url: "yc_php/yc_register.php",
+                url: "yc_php/uname_exist.php",
                 data: 'data' + pp,
                 success: function (data) {
-                    if (data == username) {
-
-                    } else {
-                        alert("注册失败")
-                    }
+                    console.log(data)
+                    if (data == 2) {
+                        alert("用户名已存在")
+                    } 
 
                 }
             })

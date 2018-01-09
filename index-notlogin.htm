@@ -29,20 +29,19 @@
             })
             // 未认购用户
             $('#wrg .button3').click(function () {
+                console.log("点到我了")
                 var username = $('#wrg #user-name').val();
                 var password = $("#wrg #user-password").val();
                 var code = $("#code").val();
                 if (username != "" && password != "") {
+                    console.log("发送ajax了")
+                     var pp = "'" + username + "'";
                     $.ajax({
                         type: "GET",
-                        url: "php/userLogin.php",
-                        dataType: "JSON",
-                        data: {
-                            "user_name": username,
-                            "password": password,
-                            /* "code": code */
-                        },
+                        url: "yc_php/yc_login.php",
+                        data: 'data' + pp,
                         success: function (data) {
+                            console.log(data)
                             switch (data) {
                                 case 1://普通用户  
                                     $.cookie("user", username);
@@ -77,16 +76,14 @@
                 var password = $("#yrg #user-password").val();
                 var code = $("#code").val();
                 if (userid != "" && password != "") {
+                    var pp = "'" + username + "'" + "," + "'" + password + "'";
                     $.ajax({
                         type: "GET",
-                        url: "php/userLogin.php",
+                        url: "yc_php/yc_login.php",
                         dataType: "JSON",
-                        data: {
-                            "user_name": userid,
-                            "password": password,
-                            /* "code": code */
-                        },
+                        data: 'data' + pp,
                         success: function (data) {
+                            console.log(data)
                             switch (data) {
                                 case 1://普通用户  
                                     $.cookie("user", userid);
