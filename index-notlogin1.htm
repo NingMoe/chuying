@@ -11,14 +11,6 @@
     <?php include(DEDEMEMBER."/templets/footer.htm"); ?>
 </body>
 <script>
-     $('#loginbox .box-header >div ').click(function (e) {
-            console.log("你点到我le")
-            var $cur = $(this);
-            var idx = $cur.index();
-            $cur.siblings().removeClass('active');
-            $cur.addClass('active');
-            $cur.parents('#loginbox').find('form').removeClass('show');
-            $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
-        })
+    
 </script>
 </html>
