@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <link href="templets/style/style.css" rel="stylesheet" type="text/css" />
-    <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 
 
@@ -32,7 +32,48 @@
 
 
 </script>
+<script>
+    $('.signup #signup-button').click(function () {
+            var username = $('.signup #username').val();
+            var password = $(".signup #pwd").val();
+            let telnumb = $(".signup #telphone").val();
+            var passworddok = $(".signup #userpwdok").val();
+            var code = $("#code").val();
+            if (username != "" && password != "") {
+                if (password === passworddok) {
+                    var pp = "uname = "+"'"+username+"'"+","+"pwd = "+"'"+password+"'" + "," + "sjh = " + "'" + telnumb + "'";
+                    $.ajax({
+                        type: "POST",
+                        url: "yc_php/yc_register.php",
+                        data: 'data'+ pp,
+                        success: function (data) {
+                                   
+                             switch (data) {
+                                case 1://用户已存在  
+                                    alert("该用户已存在！请换一个用户名注册。")
+                                    break;
+                                case ok://注册成功  
+                                    alert("注册成功！");
+                                    $.cookie("user", username);
+                                    $.cookie("limit", 0);
+                                    window.location.href = "index.php";
+                                    break;
+                                case 0://验证码错误  
+                                    alert("验证码不正确！");
+                                    break;
+                            }
+ 
+                        }
+                    })
+                } else {
+                    alert("两次密码不一致");
+                }
 
+            } else {
+                alert("请检查您的输入！");
+            }
+        })  
+</script>
 
 
 </html>

@@ -24,7 +24,6 @@
         color: #4e4e4e;
         font-family: "microsoft yahei", "微软雅黑";
         -webkit-text-size-adjust: 100%;
-       
     }
     
    
@@ -57,6 +56,9 @@
         -webkit-font-smoothing: antialiased;
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
+    }
+    .a1{
+         color: #fff;
     }
     .a1:visited{
         color: #fff;
@@ -108,18 +110,15 @@
 
     /* 中间部分 */
     main{
-        position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
        height: calc(100% - 328px);        
     }
 
     /* 投资者认定 */
     #login1{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform:translate(-50%, -50%);
         width: 650px;
-        margin: 0 auto;
         background: #EFEFEF;
         font-size: 14px;
         padding: 32px 40px;
@@ -146,22 +145,16 @@
         margin-left: 10px;
         display: inline-block;
         text-align: center;
-        border: 1px solid ;
         width: 50px;
         height: 30px;
         border-radius: 5px;
         cursor: pointer;
         background: #b78c2e;
-        color: #fff;
         font-weight: 400;
         margin-top:10px;
     }
     /*登录框 */
     #loginbox{
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform:translate(-50%, -50%);
         width: 400px;
         margin: 0 auto;
         background:rgb(239,239,239);
@@ -286,11 +279,6 @@
      }
      /*产品报告*/
      #report{
-         position: absolute;
-        left: 50%;
-        top: 20%;
-        transform: translateY(-50%);
-        transform: translateX(-50%);
          width: 800px;
          background: rgb(239,239,239);
          margin: 0 auto;
@@ -324,11 +312,6 @@
                
     }
     #pre-order{
-         position: absolute;
-         left: 50%;
-         top: 20%;
-         transform: translateY(-50%);
-         transform: translateX(-50%);
          width: 600px;
          background: rgb(239,239,239);
          margin: 0 auto;
