@@ -15,9 +15,7 @@
     }
     
     body {
-        background-image: url('../images/bk.png');
-        background-repeat: no-repeat;
-        background-position: center;
+       
         font-size: 12px;
         line-height: 1.4;
         font-weight: normal;
@@ -113,7 +111,10 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       height: calc(100% - 328px);        
+       height: calc(100% - 328px); 
+       background-image: url('../images/bk.png');
+       background-repeat: no-repeat;
+       background-position: center;       
     }
 
     /* 投资者认定 */
@@ -344,14 +345,66 @@
         align-items: center;
      }
      /*未认购*/
-     .class_div_box{
-        font-size:26px; 
-         width: 800px;
-         background: rgb(239,239,239);
-     }
-     class_div_de class_div_title{
-         background:rgb(183,140,46);
-     }
+    #wrg-table{
+        border-collapse:collapse;
+        max-height: 500px;
+        overflow: scroll;
+    }
+     #wrg-table td {
+        text-align:center;
+        font-size:16px;
+        background: #b78c2e;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #000000;
+
+    }
+
+    #wrg-table th{
+        width: 200px;
+        font-size:16px;
+        text-align:center;
+        padding-top:15px;
+        padding-bottom:15px;
+        background: #b78c2e;
+        color:#ffffff;
+    }
+
+    #wrg-table tr.alt td  {
+        color:#000000;
+        background-color:#EFEFEF;
+    }
+    /* 已认购 */
+    #yrg-table{
+        border-collapse:collapse;
+        max-height: 500px;
+        overflow: scroll;
+    }
+     #yrg-table td {
+        text-align:center;
+        font-size:16px;
+        background: #b78c2e;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #000000;
+
+    }
+
+    #yrg-table th{
+        width: 200px;
+        font-size:16px;
+        text-align:center;
+        padding-top:15px;
+        padding-bottom:15px;
+        background: #b78c2e;
+        color:#ffffff;
+    }
+
+    #yrg-table tr.alt td  {
+        color:#000000;
+        background-color:#EFEFEF;
+    }
+    
     /* 底部 */
     .w1212 {
         position: relative;
