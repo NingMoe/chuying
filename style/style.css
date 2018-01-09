@@ -144,19 +144,20 @@
     #login1 .button{
         margin-left: 10px;
         display: inline-block;
-        text-align: center;
         width: 50px;
         height: 30px;
         border-radius: 5px;
-        cursor: pointer;
         background: #b78c2e;
         font-weight: 400;
         margin-top:10px;
     }
+    #login1 .button a{
+        display: flex;
+        justify-content: center;
+    }
     /*登录框 */
     #loginbox{
         width: 400px;
-        margin: 0 auto;
         background:rgb(239,239,239);
         font-size: 14px;
         line-height: 28px;

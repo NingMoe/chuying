@@ -12,7 +12,7 @@
 <body>
     <?php include(DEDEMEMBER."/templets/header.htm"); ?>
     <main>
-    <?php include(DEDEMEMBER."/templets/signup.htm"); ?>
+        <?php include(DEDEMEMBER."/templets/signup.htm"); ?>
     </main>
     <?php include(DEDEMEMBER."/templets/footer.htm"); ?>
 
@@ -33,46 +33,60 @@
 
 </script>
 <script>
+    //注册
     $('.signup #signup-button').click(function () {
-            var username = $('.signup #username').val();
-            var password = $(".signup #pwd").val();
-            let telnumb = $(".signup #telphone").val();
-            var passworddok = $(".signup #userpwdok").val();
-            var code = $("#code").val();
-            if (username != "" && password != "") {
-                if (password === passworddok) {
-                    var pp = "uname = "+"'"+username+"'"+","+"pwd = "+"'"+password+"'" + "," + "sjh = " + "'" + telnumb + "'";
-                    $.ajax({
-                        type: "POST",
-                        url: "yc_php/yc_register.php",
-                        data: 'data'+ pp,
-                        success: function (data) {
-                                   
-                             switch (data) {
-                                case 1://用户已存在  
-                                    alert("该用户已存在！请换一个用户名注册。")
-                                    break;
-                                case ok://注册成功  
-                                    alert("注册成功！");
-                                    $.cookie("user", username);
-                                    $.cookie("limit", 0);
-                                    window.location.href = "index.php";
-                                    break;
-                                case 0://验证码错误  
-                                    alert("验证码不正确！");
-                                    break;
-                            }
- 
+        var username = $('.signup #username').val();
+        var password = $(".signup #pwd").val();
+        let telnumb = $(".signup #telphone").val();
+        var passworddok = $(".signup #userpwdok").val();
+        var code = $("#code").val();
+        if (username != "" && password != "") {
+            if (password === passworddok) {
+                var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
+                $.ajax({
+                    type: "POST",
+                    url: "yc_php/yc_register.php",
+                    data: 'data' + pp,
+                    success: function (data) {
+                        if (data == 1) {
+                            console.log("开始跳转")
+                            window.location.href = "index1.php";
+                        } else {
+                            alert("注册失败")
                         }
-                    })
-                } else {
-                    alert("两次密码不一致");
-                }
 
+                    }
+                })
             } else {
-                alert("请检查您的输入！");
+                alert("两次密码不一致");
             }
-        })  
+
+        } else {
+            alert("请检查您的输入！");
+        }
+    })
+    //判断用户名是否重复
+    $(".signup #username").blur(function () {
+        var username = $('.signup #username').val();
+        if (username != "") {
+            console.log("正在检查用户名是否可用")
+            var pp = "'" + username + "'";
+            $.ajax({
+                type: "GET",
+                url: "yc_php/yc_register.php",
+                data: 'data' + pp,
+                success: function (data) {
+                    if (data == username) {
+
+                    } else {
+                        alert("注册失败")
+                    }
+
+                }
+            })
+        }    
+})
+
 </script>
 
 
