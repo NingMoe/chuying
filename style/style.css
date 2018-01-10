@@ -41,13 +41,13 @@
         clear: both;
     }
    @font-face {
-        font-family: 'iconfont';  /* project id 525687 */
-        src: url('https://at.alicdn.com/t/font_525687_5e2jz5atmj4kuik9.eot');
-        src: url('https://at.alicdn.com/t/font_525687_5e2jz5atmj4kuik9.eot?#iefix') format('embedded-opentype'),
-        url('https://at.alicdn.com/t/font_525687_5e2jz5atmj4kuik9.woff') format('woff'),
-        url('https://at.alicdn.com/t/font_525687_5e2jz5atmj4kuik9.ttf') format('truetype'),
-        url('https://at.alicdn.com/t/font_525687_5e2jz5atmj4kuik9.svg#iconfont') format('svg');
-    }
+  font-family: 'iconfont';  /* project id 525687 */
+  src: url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot');
+  src: url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.svg#iconfont') format('svg');
+}
     .iconfont{
         font-family:"iconfont" !important;
         font-size:16px;font-style:normal;
@@ -346,22 +346,26 @@
      }
      /*未认购*/
     #wrg-table{
-        border-collapse:collapse;
-        max-height: 500px;
-        overflow: scroll;
+        position: relative;
+     }
+    #wrg-table table{
+        border-collapse:collapse;               
     }
      #wrg-table td {
+        width: 200px;
         text-align:center;
         font-size:16px;
-        background: #b78c2e;
         padding-top:10px;
         padding-bottom:10px;
         border-bottom: 1px solid #000000;
-
+        color:#000000;
+        background-color:#EFEFEF;
     }
-
-    #wrg-table th{
-        width: 200px;
+    #wrg-table .head :last-child{
+        width:217px;
+    } 
+    #wrg-table  th{
+        width:200px;
         font-size:16px;
         text-align:center;
         padding-top:15px;
@@ -369,29 +373,37 @@
         background: #b78c2e;
         color:#ffffff;
     }
-
-    #wrg-table tr.alt td  {
-        color:#000000;
-        background-color:#EFEFEF;
+    #wrg-table .wrg-body {
+        display: block;
+        max-height: 300px;
+        overflow-y:scroll;
     }
+    #wrg-table .ad{
+        position: absolute;
+        right: 0;
+        top: -52px;
+    }
+
     /* 已认购 */
-    #yrg-table{
-        border-collapse:collapse;
-        max-height: 500px;
-        overflow: scroll;
+    
+    #yrg-table table{
+        border-collapse:collapse;               
     }
      #yrg-table td {
+        width: 200px;
         text-align:center;
         font-size:16px;
-        background: #b78c2e;
         padding-top:10px;
         padding-bottom:10px;
         border-bottom: 1px solid #000000;
-
+        color:#000000;
+        background-color:#EFEFEF;
     }
-
-    #yrg-table th{
-        width: 200px;
+    #yrg-table .head :last-child{
+        width:217px;
+    } 
+    #yrg-table  th{
+        width:200px;
         font-size:16px;
         text-align:center;
         padding-top:15px;
@@ -399,12 +411,12 @@
         background: #b78c2e;
         color:#ffffff;
     }
-
-    #yrg-table tr.alt td  {
-        color:#000000;
-        background-color:#EFEFEF;
+    #yrg-table .wrg-body {
+        display: block;
+        max-height: 300px;
+        overflow-y:scroll;
     }
-    
+        
     /* 底部 */
     .w1212 {
         position: relative;

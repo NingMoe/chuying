@@ -29,15 +29,14 @@
             })
             // 未认购用户
             $('#wrg .button3').click(function () {
-                var username = $('#wrg #user-name').val();
+                var sjh = $('#wrg #user-name').val();
                 var password = $("#wrg #user-password").val();
                 var code = $("#code").val();
-                console.log(username);
-                if (username != "" && password != "") {
+                if (sjh != "" && password != "") {
                     $.ajax({
                         type: "post",
-                        url: "yc_php/yc_login.php",
-                        data: 'data'+ "'"+username+"'",
+                        url: "yc_php/yc_wrg_login.php",
+                        data: 'data'+ "'"+sjh+"'",
                         success: function (data) {
                             console.log(data);                       
                         }
@@ -55,7 +54,7 @@
                     var pp = "'" + username + "'" + "," + "'" + password + "'";
                     $.ajax({
                         type: "GET",
-                        url: "yc_php/yc_login.php",
+                        url: "yc_php/yc_yrg_login.php",
                         dataType: "JSON",
                         data: 'data' + pp,
                         success: function (data) {
