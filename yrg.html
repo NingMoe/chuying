@@ -38,58 +38,91 @@
                 </tr>
             </table>
             <table class="wrg-body">
+                <tr  class="alt" >
+                    <td class="detail">某某项目公告</td>
+                    <td >
+                        <td class="project-name" >景秀芳华1号</td>
+                        <td class="active">预约</td>
+                    </td>
+                </tr>
                 <tr class="alt">
                     <td>某某项目公告</td>
+                    <td >
+                        <td class="project-name">景秀芳华2号</td>
+                        <td>预约</td>
+                    </td>
+                </tr>
+                <tr class="alt">
+                    <td >某某项目公告</td>
+                    <td >
+                        <td class="project-name">景秀芳华3号</td>
+                        <td>预约</td>
+                    </td>
+                </tr>
+                <tr class="alt">
+                    <td >某某项目公告</td>
+                    <td >
+                        <td class="project-name">景秀芳华4号</td>
+                        <td class="active">预约</td>
+                    </td>
+                </tr>
+                <tr class="alt">
+                    <td>某某项目公告</td>
+                    <td >
+                        <td class="project-name">景秀芳华5号</td>
+                        <td>预约</td>
+                    </td>
+                </tr>
+                <tr class="alt" >
+                    <td>某某项目公告</td>
                     <td>
-                        <td>景秀芳华1号</td>
+                        <td class="project-name">景秀芳华6号</td>
                         <td>预约</td>
                     </td>
                 </tr>
                 <tr class="alt">
                     <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td>景秀芳华1号</td>
+                    <td >
+                        <td class="project-name">景秀芳华7号</td>
                         <td>预约</td>
                     </td>
                 </tr>
               
             </table>
             
+        </div>
+        <div id="pre-order" class="hide">
+            <div class="close">
+                <i class="iconfont">&#xe61a;</i>
+            </div>
+            <div class=" pre-order-body">
+                <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
+                <input type="text" id="telphone" placeholder="输入手机号码预约">
+                <button class="button4" type="button">提交预约</button>
+            </div>
+        </div>
+        <div id="report" class="hide">
+            <div class="title-bar">
+                <H2>楚盈景秀芳华一号简要报告</H2>
+            </div>
+            <br/>
+        
+        
+            <div class="report-body">
+                <p>尊敬的投资人：</p>
+                <br/>
+                <p>感谢您加入本合伙计划，上海楚盈资产管理有限公司，以下简称“楚盈资产”，作为合伙企业执行事务合伙人，承诺将恪尽职守地经营合伙企业财产，做到诚实、信用、谨慎、高效。现向您报告楚盈航运产业1号自成立以来相关运作情况。</p>
+                <br/>
+                <br/>
+        
+                <p>一、楚盈资产简介</p>
+                <br/>
+                <p>楚盈资产聚集了投资界的人才精英，具备丰富的实际操作经验，凭借强大的专业团队与众多领域优秀的合作伙伴，精准把握市场和项目，从产业链的角度深挖行业，对行业和企业的成长性进行预判，对企业的技术水平和实力进行解析，使用专业的风控管理体系规避风险，以严格的尽职调查进行投资评估。</p>
+                </br>
+        
+                <p>楚盈资产兼顾稳健与创新，抓住各类投资机会，优化投资组合，为客户提供全方位的金融投资服务，力求带来长期</p>
+        
+            </div>
         </div>
     </div>
 </main>
@@ -119,6 +152,31 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
+    $('.active').click(function (e) {
+            var $cur = $(this);
+            let projectName = $cur.parents(".alt").find(".project-name").text()
+            $("#yrg-table").addClass("hide")
+            $("#pre-order").removeClass("hide")
+        $('.close').click(function () {
+
+            $("#yrg-table").removeClass("hide")
+            $("#pre-order").addClass("hide")
+
+            })
+        $("#pre-order .button4").click(function () {
+
+                $("#yrg-table").removeClass("hide")
+                $("#pre-order").addClass("hide")
+                let sjh = $('#telphone').val();
+                console.log(sjh + "+" + projectName)
+
+            })
+    })
+     $('.detail').click(function () {
+            $("#yrg-table").addClass("hide")
+            $("#report").removeClass("hide")
+     })
+    
 </script>
 </body>
 </html>

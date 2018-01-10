@@ -351,7 +351,6 @@
     #wrg-table .active{
         color: #b78c2e;
         cursor: pointer;
-
     } 
     #wrg-table{
         position: relative;
@@ -393,7 +392,14 @@
     }
 
     /* 已认购 */
-    
+    #yrg-table .active{
+        color: #b78c2e;
+        cursor: pointer;
+    }
+    #yrg-table .detail{
+        color: #b78c2e;
+        cursor: pointer;  
+    } 
     #yrg-table table{
         border-collapse:collapse;               
     }

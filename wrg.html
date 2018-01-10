@@ -37,14 +37,14 @@
         </table>
         <table class="wrg-body">
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华1号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td class="active">预约</td>
                 </tr>
                 
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华2号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
@@ -52,41 +52,41 @@
                 
                 
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华3号</td>
+                    <td>其他类投资私募基金</td>
+                    <td>固定+浮动</td>
+                    <td class="active">预约</td>
+                </tr>
+                
+                <tr class="alt">
+                    <td class="project-name">盈楚景秀芳华4号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
                 </tr>
                 
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华5号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
                 </tr>
                 
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华6号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
                 </tr>
                 
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name"> 盈楚景秀芳华7号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
                 </tr>
                 <tr class="alt">
-                    <td>盈楚景秀芳华1号</td>
+                    <td class="project-name">盈楚景秀芳华8号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
                     <td>预约</td>
@@ -104,7 +104,7 @@
         </div>
         <div class=" pre-order-body">
             <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
-            <input type="text" placeholder="请输入手机验证码">
+            <input type="text" id="telphone" placeholder="输入手机号预约">
             <button class="button4" type="button">提交预约</button>
         </div>    
     </div>
@@ -135,24 +135,31 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-    $('.active').click(function () {
-        console.log("点到我了")
+   
+
+    $('.active').click(function (e) {
+       var $cur = $(this);             
+       let projectName = $cur.parents(".alt").find(".project-name").text()
+           
         $("#wrg-table").addClass("hide")
         $("#pre-order").removeClass("hide")
-    })
-    $('.close').click(function () {
-            console.log("点到我了")
+        $('.close').click(function () {
             $("#wrg-table").removeClass("hide")
             $("#pre-order").addClass("hide")
-    
-    })
-    $("#wrg-table .button4").click(function () {
-         console.log("点到我了")
-        $("#wrg-table").removeClass("hide")
-        $("#pre-order").addClass("hide")
+        })
+        $("#pre-order .button4").click(function () {
+
+            $("#wrg-table").removeClass("hide")
+            $("#pre-order").addClass("hide")
+            let sjh = $('#telphone').val();
+            console.log(sjh + "+" + projectName )
+
+        })
+
+
         
     })
-
+    
 
 </script>
 </body>
