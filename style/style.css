@@ -42,11 +42,11 @@
     }
    @font-face {
   font-family: 'iconfont';  /* project id 525687 */
-  src: url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot');
-  src: url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_525687_n30g8q330a9hehfr.svg#iconfont') format('svg');
+  src: url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot');
+  src: url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.svg#iconfont') format('svg');
 }
     .iconfont{
         font-family:"iconfont" !important;
@@ -303,6 +303,9 @@
          align-items: center;
      }
     /* 预约窗口 */
+    .hide{
+        display: none;
+    }
     #pre-order .close{
         cursor: pointer;
         line-height: 10px;
@@ -345,6 +348,11 @@
         align-items: center;
      }
      /*未认购*/
+    #wrg-table .active{
+        color: #b78c2e;
+        cursor: pointer;
+
+    } 
     #wrg-table{
         position: relative;
      }

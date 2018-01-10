@@ -40,7 +40,7 @@
                     <td>盈楚景秀芳华1号</td>
                     <td>其他类投资私募基金</td>
                     <td>固定+浮动</td>
-                    <td>预约</td>
+                    <td class="active">预约</td>
                 </tr>
                 
                 <tr class="alt">
@@ -98,6 +98,16 @@
             <img src="images/ad.png" alt="">
          </div>
     </div>
+    <div id="pre-order" class="hide">
+        <div class="close">
+            <i class="iconfont">&#xe61a;</i>
+        </div>
+        <div class=" pre-order-body">
+            <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
+            <input type="text" placeholder="请输入手机验证码">
+            <button class="button4" type="button">提交预约</button>
+        </div>    
+    </div>
 </main>
 
 <footer>
@@ -125,6 +135,25 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
+    $('.active').click(function () {
+        console.log("点到我了")
+        $("#wrg-table").addClass("hide")
+        $("#pre-order").removeClass("hide")
+    })
+    $('.close').click(function () {
+            console.log("点到我了")
+            $("#wrg-table").removeClass("hide")
+            $("#pre-order").addClass("hide")
+    
+    })
+    $("#wrg-table .button4").click(function () {
+         console.log("点到我了")
+        $("#wrg-table").removeClass("hide")
+        $("#pre-order").addClass("hide")
+        
+    })
+
+
 </script>
 </body>
 </html>

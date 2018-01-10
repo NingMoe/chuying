@@ -36,9 +36,14 @@
                     $.ajax({
                         type: "post",
                         url: "yc_php/yc_wrg_login.php",
-                        data: 'data'+ "'"+sjh+"'",
+                        data: 'data'+ "'"+sjh+"'"+","+"'"+password+"'",
                         success: function (data) {
-                            console.log(data);                       
+                            console.log(data);
+                            if(data == 1){
+                            window.location.href = "./templets/wrg.html";    
+                            }else{
+                            alert("用户名或密码不正确")    
+                            }                       
                         }
                     })
                 } else {
