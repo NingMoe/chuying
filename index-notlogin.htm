@@ -4,13 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <link href="templets/style/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
 </head>
 <body>
-    <?php include(DEDEMEMBER."/templets/header.htm"); ?>
+        <?php include(DEDEMEMBER."/templets/header.htm"); ?>
     <main>
-    <?php include(DEDEMEMBER."/templets/login2.htm"); ?>
+        <?php include(DEDEMEMBER."/templets/login2.htm"); ?>
     </main>
-    <?php include(DEDEMEMBER."/templets/footer.htm"); ?>
+        <?php include(DEDEMEMBER."/templets/footer.htm"); ?>
 
 </body>
 <script type="text/javascript">
@@ -24,23 +25,27 @@
         $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
     })
     //未认购登录
-        $('#loginbox .button2').click(function () {
+            $('#loginbox .button2').click(function () {
                 /* 发送验证码 */
             })
             // 未认购用户
             $('#wrg .button3').click(function () {
-                var sjh = $('#wrg #user-name').val();
+                var sjh = $('#wrg #telnumb').val();
                 var password = $("#wrg #user-password").val();
                 var code = $("#code").val();
+                /* console.log(sjh)
+                console.log(password) */
                 if (sjh != "" && password != "") {
                     $.ajax({
                         type: "post",
                         url: "yc_php/yc_wrg_login.php",
                         data: 'data'+ "'"+sjh+"'"+","+"'"+password+"'",
                         success: function (data) {
-                            console.log(data);
-                            if(data == 1){
-                            window.location.href = "./templets/wrg.html";    
+                            console.log(data); 
+                            if(data !== 0){   
+                                $.cookie("name", data);
+                                                                          
+                            window.location.href = "./templets/wrg.html";  
                             }else{
                             alert("用户名或密码不正确")    
                             }                       

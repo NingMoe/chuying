@@ -108,6 +108,9 @@
      header .right  span{
         margin-left:5px;
     }    
+    header .right  i{
+        margin-right:10px;
+    }
 
     /* 中间部分 */
     main{

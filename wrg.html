@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html" charset=utf-8>
     <link href="style/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>未认购进入页</title>
 </head>
 
@@ -17,7 +18,7 @@
         </div>
         <div class="right ">
             <i class="iconfont base-color">&#xe60d;</i>
-            <span class="base-color" style="margin-right: 3rem">weihuansix欢迎回来</span>
+            <span class="base-color" style="margin-right: 3rem"><i id="name">你好</i>欢迎回来</span>
             <i class="iconfont base-color">&#xe6d9;</i>
             <span class="base-color" style="margin-right: 3rem">首页</span>
             <i class="iconfont base-color">&#xe60f;</i>
@@ -135,7 +136,11 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-   
+  
+    $(window).load(function () {
+            $(".right #name").text($.cookie(name).name)
+            console.log($.cookie(name).name)
+        });
 
     $('.active').click(function (e) {
        var $cur = $(this);             
