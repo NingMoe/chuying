@@ -158,7 +158,7 @@
         font-weight: 400;
         margin-top:10px;
     }
-    #login1 .button a{
+    #login1 .span a{
         display: flex;
         justify-content: center;
     }
@@ -331,9 +331,8 @@
                
     }
     #pre-order{
-         width: 600px;
-         background: rgb(239,239,239);
-         margin: 0 auto;
+        width: 600px;
+        background: rgb(239,239,239);
     }
     #pre-order .pre-order-body{
         padding: 50px 100px;
