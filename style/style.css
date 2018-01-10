@@ -105,6 +105,9 @@
         font-size: 18px;
         cursor: pointer;
     }
+     header .right  span{
+        margin-left:5px;
+    }    
 
     /* 中间部分 */
     main{
@@ -425,10 +428,16 @@
         background: #b78c2e;
         color:#ffffff;
     }
-    #yrg-table .wrg-body {
+    #yrg-table .yrg-body {
         display: block;
         max-height: 300px;
         overflow-y:scroll;
+    }
+    #yrg-table .project-name{
+        border-left:1px solid ;
+    }
+    #yrg-table .left-border{
+        border-left:1px solid #EFEFEF ;
     }
         
     /* 底部 */

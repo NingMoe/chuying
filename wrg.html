@@ -16,11 +16,11 @@
             <span>会员中心</span>
         </div>
         <div class="right ">
-            <i class="iconfont">&#xe6a7;</i>
+            <i class="iconfont base-color">&#xe60d;</i>
             <span class="base-color" style="margin-right: 3rem">weihuansix欢迎回来</span>
-            <i class="iconfont">&#xe6a7;</i>
+            <i class="iconfont base-color">&#xe6d9;</i>
             <span class="base-color" style="margin-right: 3rem">首页</span>
-            <i class="iconfont">&#xe6a7;</i>
+            <i class="iconfont base-color">&#xe60f;</i>
             <span class="base-color">安全退出</span>
         </div>
     </div>
@@ -153,6 +153,27 @@
             $("#pre-order").addClass("hide")
             let sjh = $('#telphone').val();
             console.log(sjh + "+" + projectName )
+            if (sjh != "") {
+                var pp = "'" + sjh + "'" + "," + "'" + projectName + "'" ;
+                $.ajax({
+                        type: "POST",
+                        url: "../yc_php/yc_rgyx.php",
+                        data: 'data' + pp,
+                        success: function (data) {
+                            if (data == 1) {
+                                alert("预约成功")
+                                $("#wrg-table").removeClass("hide")
+                                $("#pre-order").addClass("hide")
+                            } else {
+                                alert("过于火爆")
+                            }
+
+                        }
+                })
+            }else{
+                alert("请输入正确的手机号")
+            }     
+
 
         })
 

@@ -53,12 +53,14 @@
             //已认购用户
             $('#yrg .button3').click(function () {
                 var userid = $('#yrg #user-id').val();
-                var password = $("#yrg #user-password").val();
+                var password = $("#yrg #password").val();
                 var code = $("#code").val();
+                console.log(userid)
+                console.log(password)
                 if (userid != "" && password != "") {
                     var pp = "'" + userid + "'" + "," + "'" + password + "'";
                     $.ajax({
-                        type: "GET",
+                        type: "POST",
                         url: "yc_php/yc_yrg_login.php",
                         data: 'data' + pp,
                         success: function (data) {
