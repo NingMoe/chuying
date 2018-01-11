@@ -66,6 +66,26 @@
             alert("请检查您的输入！");
         }
     })
+    //判断姓名
+    $('.signup #username').blur(function () {
+            var username = /^[\u4E00-\u9FA5A-Za-z]+$/;
+            console.log($('.signup #username').val())
+            if (!username.test($('.signup #username').val())) {
+                $("#chnNameMsg").text("只能输入中文和英文");
+            } else {
+                $("#chnNameMsg").text("");
+            }
+    });
+    //判断是否是手机号
+
+    function isPoneAvailable(str) {
+        var myreg = /^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!myreg.test(str)) {
+            return false;
+        } else {
+            return true;
+        }
+    }  
     /* //判断用户名是否重复
     $(".signup #username").blur(function () {
         var username = $('.signup #username').val();
