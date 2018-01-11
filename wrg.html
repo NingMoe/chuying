@@ -138,11 +138,45 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-  
+    
+    function render(content){
+          var template = `<tr class="alt">
+                        <td class="project-name">盈楚景秀芳华1号</td>
+                        <td>其他类投资私募基金</td>
+                        <td>固定+浮动</td>
+                        <td class="active">预约</td>
+                        </tr>`
+          let (key in content){
+              
+          }              
+
+
+    }
+
     $(window).load(function () {
-            $(".right #name").text($.cookie(name).name)
+        $(".right #name").text($.cookie(name).name)
             console.log($.cookie(name).name)
+           /*  console.log($.cookie(sjh).sjh) */
         });
+         $.ajax({
+                type: "GET",
+                url: "../yc_php/yc_wrg_xm.php",
+                success: function (data) {
+                    var data2 = data;
+                    let str = $.parseJSON(data)
+                    console.log(str)
+                    
+                    $.ajax({
+                        type: "GET",
+                        url: "../yc_php/yc_wrg_xmid.php",
+                        success: function (data2) {
+                        let str =  $.parseJSON(data2)
+                        console.log(str)
+                        }
+                    })
+
+                }
+            })
 
     $('.active').click(function (e) {
        var $cur = $(this);             

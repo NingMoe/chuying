@@ -200,7 +200,7 @@
     }
     #loginbox .box-body >input{
         padding: 5px 5px;
-        margin: 10px 20px 10px  20px;
+        margin: 0 20px;
         height: 40px;
         width: 275px;
         border: 1px solid rgb(229,229,229);
@@ -208,7 +208,7 @@
     #loginbox .box-body >div input{
         text-align: center;
         padding: 5px 5px;
-        margin: 10px 10px 10px  20px;
+        margin: 0px 10px 0px  20px;
         height: 40px;
         width: 170px;
         border: 1px solid rgb(229,229,229);
@@ -222,7 +222,6 @@
         text-align: center;
         height: 39px;
         width: 94px;
-        margin-top: 10px;
         cursor: pointer;
         font-weight:normal;
         font-size: 10px;
@@ -236,7 +235,7 @@
         text-align: center;
         background: #b78c2e;
         color: #EFEFEF;
-        margin: 10px 20px 10px  20px;
+        margin: 0px 20px 10px  20px;
         height: 40px;
         width: 275px;
         display: flex;
@@ -267,11 +266,11 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         height: 100px;
+         height: 80px;
      }
      #loginbox .box-body .detail{
           width: 275px;
-          margin: 7px auto;
+          margin: 0 auto;
           font-size: 10px;
           line-height: 14px;
           font-weight: 400;
@@ -285,6 +284,10 @@
          border:1px solid #2F2725;
 
      }
+      #loginbox .box-body .reminder{
+          margin-left:21px;
+          font-size: 10px;
+      }
      /*产品报告*/
      #report{
          position: relative;
