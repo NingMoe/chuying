@@ -152,10 +152,13 @@
                         type: "GET",
                         url: "../yc_php/yc_yy_xmid.php",
                         success: function (data) {
+                            
+                            console.log(data)
+
                             //获取到购买意向id
-                            var yxid = []
-                            var yx = []
-                            var qtxm = []
+                            var yxid = [] //已预约项目的id
+                            var yx = [] //已预约
+                            var qtxm = [] //其他项目
                             var str2  = $.parseJSON(data);
                             for (let i = 0; i < str2.length; i++) {
                                 
@@ -176,9 +179,7 @@
 
                             }    
                            render2(yx)
-                           render1(qtxm)
-
-                            
+                           render1(qtxm)                            
                         }
                     })
 

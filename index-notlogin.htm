@@ -83,6 +83,9 @@
                                 let name = b[0]
                                 let url = b[1]
                                 $.cookie("name", b[0]);
+                                $.cookie("sfz", userid );
+                                 console.log($.cookie("sfz"))
+
                                 window.location.href = url;
                             } else {
                                 alert("用户名或密码不正确")

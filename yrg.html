@@ -39,65 +39,8 @@
                 </tr>
             </table>
             <table class="yrg-body">
-                <tr  class="alt" >
-                    <td class="detail">某某项目公告</td>
-                    <td >
-                        <td class="project-name" >景秀芳华1号</td>
-                        <td class="active">预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td >
-                        <td class="project-name">景秀芳华2号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td >某某项目公告</td>
-                    <td >
-                        <td class="project-name">景秀芳华3号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td >某某项目公告</td>
-                    <td >
-                        <td class="project-name">景秀芳华4号</td>
-                        <td class="active">预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td class="project-name">景秀芳华5号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt" >
-                    <td>某某项目公告</td>
-                    <td>
-                        <td class="project-name">景秀芳华6号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td >
-                        <td class="project-name">景秀芳华7号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-                <tr class="alt">
-                    <td>某某项目公告</td>
-                    <td>
-                        <td class="project-name">景秀芳华8号</td>
-                        <td>预约</td>
-                    </td>
-                </tr>
-              
+                
             </table>
-            
         </div>
         <div id="pre-order" class="hide">
             <div class="close">
@@ -161,140 +104,238 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-    //未预约项目渲染
+    //添加已认购的项目
     function render1(content) {
             let html = ''
             var template = `<tr class="alt">
-                    <td class="title project-name">盈楚景秀芳华1号</td>
-                    <td class="typename">其他类投资私募基金</td>
-                    <td class="lb">固定+浮动</td>
-                    <td class="active">预约</td>
+                    <td class = "detail notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td>已购买</td>
+                    </td>
                 </tr>`
            /*  console.log(content) */
             for (let i = 0; i < content.length; i++) {
 
                 var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告' )
                 $node.find('.title').text(content[i].title)
-                $node.find('.typename').text(content[i].typename)
-                $node.find('.lb').text(content[i].yc_sylb)
-
-                $('.wrg-body').append($node);
+                $('.yrg-body').append($node);
 
             }
 
 
         }
-        //已预约项目渲染
-        function render2(content) {
+    //已预约项目渲染
+    function render2(content) {
             let html = ''
             var template = `<tr class="alt">
-                    <td class="title project-name">盈楚景秀芳华1号</td>
-                    <td class="typename">其他类投资私募基金</td>
-                    <td class="lb">固定+浮动</td>
-                    <td class="yyy" >已预约</td>
+                    <td class = " notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td>已预约</td>
+                    </td>
                 </tr>`
-           /*  console.log(content) */
+            /*  console.log(content) */
             for (let i = 0; i < content.length; i++) {
 
                 var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告')
                 $node.find('.title').text(content[i].title)
-                $node.find('.typename').text(content[i].typename)
-                $node.find('.lb').text(content[i].yc_sylb)
-
-                $('.wrg-body').append($node);
+                $('.yrg-body').append($node);
 
             }
 
 
-        }
+    }
+    //其他项目
+    function render3(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class = " notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td class = "active">预约</td>
+                    </td>
+                </tr>`
+            /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告')
+                $node.find('.title').text(content[i].title)
+                $('.yrg-body').append($node);
+
+            }
+
+
+    }
+
         //载入事件
         $(window).load(function () {
             $(".right #name").text($.cookie(name).name)
             console.log($.cookie("name"))
-            console.log($.cookie("sjh"))
+            console.log($.cookie("sfz"))
         });
         $.ajax({
             //获取所有项目
             type: "GET",
             url: "../yc_php/yc_xm.php",
-            success: function (data) {
-                
-                var data2 = data;
-                var str1 = $.parseJSON(data)
-                console.log(str1)
+            success: function (data) {              
+                    
+                    var str1 = $.parseJSON(data)//所有项目
+                    
                 $.ajax({
-                    //获取已预约项目
+                    //获取已预约
                     type: "GET",
-                    url: "../yc_php/yc_yrg_xmid.php",
+                    url: "../yc_php/yc_yy_xmid.php",
                     success: function (data) {
-                        console.log(data)
-                        //获取到购买意向id
-                        var yxid = []
-                        var yx = []
-                        var qtxm = []
-                        var str2 = $.parseJSON(data);
-                        for (let i = 0; i < str2.length; i++) {
+                    var str2 =   $.parseJSON(data) 
+                         $.ajax({
+                            //获取已认购项目
+                            type: "GET",
+                            url: "../yc_php/yc_yrg_xmid.php",
+                            success: function (data) {                              
 
-                            yxid[i] = str2[i].rgxm_yx
-                        }
+                                var str3 = $.parseJSON(data);
 
-                        //将两种项目分开来
-                        for (let i = 0; i < str1.length; i++) {
-                            for (let j = 0; j < yxid.length; j++) {
-                                if (str1[i].aid == parseInt(yxid[j])) {
-                                    yx.push(str1[i])
+                                console.log(str1)
+                                console.log(str2)
+                                console.log(str3)
+                                //获取到后两种的id
+                                var ygid = []// 已购项目的id
+                                var yyid = []// 已预约项目的id
+                                for (let i = 0; i < str2.length; i++) {
+                                    yyid[i] = str2[i].rgxm_yx
+                                }
+                                for (let i = 0; i < str3.length; i++) {
+                                    ygid[i] = str3[i].rgxm
+                                }
+                                console.log(ygid)
+                                console.log(yyid)
 
-                                } else {
-                                    qtxm.push(str1[i])
+                                var kyy = []//可以预约的项目
+                                var qtxm = []//未购买项目
+                                var wyy = [] //未购买&&未预约项目
+                                var yy = [] //已预约
+                                var yg = [] //已购买
+                                
+                                //获得已购项目
+                                for (let i = 0; i < str1.length; i++) {
+                                    for (let j = 0; j < ygid.length; j++) {
+                                        if (str1[i].aid == parseInt(ygid[j])) {
+                                            yg.push(str1[i])
+
+                                        } else {
+                                            qtxm.push(str1[i])
+
+                                        }
+
+
+                                    }
+
+                                }
+                                //分离剩下的，已预约和未预约项目
+                                for (let i = 0; i < qtxm.length; i++) {
+                                    for (let j = 0; j < yyid.length; j++) {
+                                        if (qtxm[i].aid == parseInt(yyid[j])) {
+                                            yy.push(str1[i])
+
+                                        } else {
+                                            wyy.push(str1[i])
+
+                                        }
+
+
+                                    }
+
                                 }
 
-                            }
+                                console.log(yg)
+                                console.log(yy)
+                                console.log(wyy)
+                                render1(yg)
+                                render2(yy)
+                                render3(wyy)
 
-                        }
-                        render2(yx)
-                        render1(qtxm)
 
+                             }
+                        })
+                        
 
                     }
-                })
+
+                })   
+               
 
             }
         })
 
 
     //监听点击事件
-    $('.active').click(function (e) {
-            var $cur = $(this);
-            let projectName = $cur.parents(".alt").find(".project-name").text()
-            $("#yrg-table").addClass("hide")
-            $("#pre-order").removeClass("hide")
-        $('.close').click(function () {
+     $(".yrg-body").delegate('.active', "click", function (e) {
+        var $cur = $(this);
+         let projectName = $cur.parents(".alt").find(".project-name").text()
+         $("#yrg-table").addClass("hide")
+         $("#pre-order").removeClass("hide")
+         $('.close').click(function () {
 
-            $("#yrg-table").removeClass("hide")
-            $("#pre-order").addClass("hide")
+             $("#yrg-table").removeClass("hide")
+             $("#pre-order").addClass("hide")
 
-            })
-        $("#pre-order .button4").click(function () {
+         })
+         $("#pre-order .button4").click(function () {
 
-                $("#yrg-table").removeClass("hide")
-                $("#pre-order").addClass("hide")
-                let sjh = $('#telphone').val();
-                console.log(sjh + "+" + projectName)
+             $("#yrg-table").removeClass("hide")
+             $("#pre-order").addClass("hide")
+             let sjh = $('#telphone').val();
+             console.log(sjh + "+" + projectName)
+             if (sjh != "") {
+                 var pp = "'" + sjh + "'" + "," + "'" + projectName + "'";
+                 $.ajax({
+                     type: "POST",
+                     url: "../yc_php/yc_rgyx.php",
+                     data: 'data' + pp,
+                     success: function (data) {
+                         if (data == 1) {
+                             alert("预约成功")
+                             $("#wrg-table").removeClass("hide")
+                             $("#pre-order").addClass("hide")
+                         } else {
+                             alert("过于火爆")
+                         }
 
-            })
-    })
+                     }
+                 })
+             } else {
+                 alert("请输入正确的手机号")
+             }
+
+
+         })
+             console.log(sjh + "+" + projectName)
+
+        
+
+     });   
+
+    
     //点击打开项目公告
-     $('.detail').click(function () {
-            $("#yrg-table").addClass("hide")
-            $("#report").removeClass("hide")
-         $('.close2').click(function () {
+     $(".yrg-body").delegate('.detail', "click", function (e) {
 
+             
+
+             $("#yrg-table").addClass("hide")
+             $("#report").removeClass("hide")
+             $('.close2').click(function () {
              $("#report").addClass("hide")
              $("#yrg-table").removeClass("hide")
 
-         })    
-
-     })
+            })    
+     
+     
+     })    
+     
     
 </script>
 </body>
