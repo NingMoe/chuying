@@ -367,6 +367,9 @@
     #wrg-table .active{
         color: #b78c2e;
         cursor: pointer;
+    }
+    #wrg-table .yyy{
+        color: rgb(81, 51, 254);
     } 
     #wrg-table{
         position: relative;

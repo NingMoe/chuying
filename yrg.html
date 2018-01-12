@@ -4,6 +4,7 @@
     <meta http-equiv="content-type" content="text/html" charset=utf-8>
     <link href="style/style.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
     <title>已认购进入页</title>
 </head>
 
@@ -160,8 +161,108 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-    
-    //点击项目预约
+    //未预约项目渲染
+    function render1(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class="title project-name">盈楚景秀芳华1号</td>
+                    <td class="typename">其他类投资私募基金</td>
+                    <td class="lb">固定+浮动</td>
+                    <td class="active">预约</td>
+                </tr>`
+           /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.title').text(content[i].title)
+                $node.find('.typename').text(content[i].typename)
+                $node.find('.lb').text(content[i].yc_sylb)
+
+                $('.wrg-body').append($node);
+
+            }
+
+
+        }
+        //已预约项目渲染
+        function render2(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class="title project-name">盈楚景秀芳华1号</td>
+                    <td class="typename">其他类投资私募基金</td>
+                    <td class="lb">固定+浮动</td>
+                    <td class="yyy" >已预约</td>
+                </tr>`
+           /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.title').text(content[i].title)
+                $node.find('.typename').text(content[i].typename)
+                $node.find('.lb').text(content[i].yc_sylb)
+
+                $('.wrg-body').append($node);
+
+            }
+
+
+        }
+        //载入事件
+        $(window).load(function () {
+            $(".right #name").text($.cookie(name).name)
+            console.log($.cookie("name"))
+            console.log($.cookie("sjh"))
+        });
+        $.ajax({
+            //获取所有项目
+            type: "GET",
+            url: "../yc_php/yc_xm.php",
+            success: function (data) {
+                
+                var data2 = data;
+                var str1 = $.parseJSON(data)
+                console.log(str1)
+                $.ajax({
+                    //获取已预约项目
+                    type: "GET",
+                    url: "../yc_php/yc_yrg_xmid.php",
+                    success: function (data) {
+                        console.log(data)
+                        //获取到购买意向id
+                        var yxid = []
+                        var yx = []
+                        var qtxm = []
+                        var str2 = $.parseJSON(data);
+                        for (let i = 0; i < str2.length; i++) {
+
+                            yxid[i] = str2[i].rgxm_yx
+                        }
+
+                        //将两种项目分开来
+                        for (let i = 0; i < str1.length; i++) {
+                            for (let j = 0; j < yxid.length; j++) {
+                                if (str1[i].aid == parseInt(yxid[j])) {
+                                    yx.push(str1[i])
+
+                                } else {
+                                    qtxm.push(str1[i])
+                                }
+
+                            }
+
+                        }
+                        render2(yx)
+                        render1(qtxm)
+
+
+                    }
+                })
+
+            }
+        })
+
+
+    //监听点击事件
     $('.active').click(function (e) {
             var $cur = $(this);
             let projectName = $cur.parents(".alt").find(".project-name").text()

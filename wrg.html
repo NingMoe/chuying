@@ -39,62 +39,13 @@
                 </tr>
         </table>
         <table class="wrg-body">
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华1号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
+                <!-- <tr class="alt">
+                    <td class="title project-name">盈楚景秀芳华n号</td>
+                    <td class="typename">其他类投资私募基金</td>
+                    <td class="lb">固定+浮动</td>
                     <td class="active">预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华2号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                
-                
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华3号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td class="active">预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华4号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华5号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华6号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                
-                <tr class="alt">
-                    <td class="project-name"> 盈楚景秀芳华7号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>
-                <tr class="alt">
-                    <td class="project-name">盈楚景秀芳华8号</td>
-                    <td>其他类投资私募基金</td>
-                    <td>固定+浮动</td>
-                    <td>预约</td>
-                </tr>       
-                    
+                </tr>    -->   
+                              
                 
          </table>
          <div class="ad" >
@@ -138,89 +89,146 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-    
-    function render(content){
+    //可预约项目渲染
+    function render1(content){
+          let html = ''   
           var template = `<tr class="alt">
-                        <td class="project-name">盈楚景秀芳华1号</td>
-                        <td>其他类投资私募基金</td>
-                        <td>固定+浮动</td>
-                        <td class="active">预约</td>
-                        </tr>`
-          let (key in content){
-              
-          }              
+                    <td class="title project-name">盈楚景秀芳华1号</td>
+                    <td class="typename">其他类投资私募基金</td>
+                    <td class="lb">固定+浮动</td>
+                    <td class="active">预约</td>
+                </tr>`
+          console.log(content)      
+          for (let i = 0; i < content.length; i++) {
+             
+              var $node = $(template)
+              $node.find('.title').text(content[i].title)
+              $node.find('.typename').text(content[i].typename)
+              $node.find('.lb').text(content[i].yc_sylb)
+             
+              $('.wrg-body').append($node);  
+           
+          }        
 
 
     }
+    //已预约项目渲染
+    function render2(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class="title project-name">盈楚景秀芳华1号</td>
+                    <td class="typename">其他类投资私募基金</td>
+                    <td class="lb">固定+浮动</td>
+                    <td class="yyy" >已预约</td>
+                </tr>`
+            console.log(content)
+            for (let i = 0; i < content.length; i++) {
+               
+                var $node = $(template)
+                $node.find('.title').text(content[i].title)
+                $node.find('.typename').text(content[i].typename)
+                $node.find('.lb').text(content[i].yc_sylb)
+                
+                $('.wrg-body').append($node);
+
+            }
+
+
+        }
 
     $(window).load(function () {
         $(".right #name").text($.cookie(name).name)
-            console.log($.cookie(name).name)
-           /*  console.log($.cookie(sjh).sjh) */
+            console.log($.cookie("name"))
+            console.log($.cookie("sjh"))
         });
          $.ajax({
                 type: "GET",
-                url: "../yc_php/yc_wrg_xm.php",
+                url: "../yc_php/yc_xm.php",
                 success: function (data) {
                     var data2 = data;
-                    let str = $.parseJSON(data)
-                    console.log(str)
+                    var str1 = $.parseJSON(data)                 
                     
                     $.ajax({
                         type: "GET",
-                        url: "../yc_php/yc_wrg_xmid.php",
-                        success: function (data2) {
-                        let str =  $.parseJSON(data2)
-                        console.log(str)
+                        url: "../yc_php/yc_yy_xmid.php",
+                        success: function (data) {
+                            //获取到购买意向id
+                            var yxid = []
+                            var yx = []
+                            var qtxm = []
+                            var str2  = $.parseJSON(data);
+                            for (let i = 0; i < str2.length; i++) {
+                                
+                                yxid[i] = str2[i].rgxm_yx
+                             }    
+                            
+                            //将两种项目分开来
+                             for (let i = 0; i < str1.length; i++) {
+                                    for (let j = 0; j < yxid.length; j++){
+                                        if(str1[i].aid == parseInt(yxid[j])){
+                                            yx.push(str1[i]) 
+                                            
+                                        }else{
+                                            qtxm.push(str1[i])
+                                        }
+
+                                    }
+
+                            }    
+                           render2(yx)
+                           render1(qtxm)
+
+                            
                         }
                     })
 
                 }
             })
+            //监听
 
-    $('.active').click(function (e) {
-       var $cur = $(this);             
-       let projectName = $cur.parents(".alt").find(".project-name").text()
-           
-        $("#wrg-table").addClass("hide")
-        $("#pre-order").removeClass("hide")
-        $('.close').click(function () {
-            $("#wrg-table").removeClass("hide")
-            $("#pre-order").addClass("hide")
-        })
-        $("#pre-order .button4").click(function () {
+            $(".wrg-body").delegate('.active', "click", function (e) {
+                var $cur = $(this);
+                let projectName = $cur.parents(".alt").find(".project-name").text()
 
-            $("#wrg-table").removeClass("hide")
-            $("#pre-order").addClass("hide")
-            let sjh = $('#telphone').val();
-            console.log(sjh + "+" + projectName )
-            if (sjh != "") {
-                var pp = "'" + sjh + "'" + "," + "'" + projectName + "'" ;
-                $.ajax({
-                        type: "POST",
-                        url: "../yc_php/yc_rgyx.php",
-                        data: 'data' + pp,
-                        success: function (data) {
-                            if (data == 1) {
-                                alert("预约成功")
-                                $("#wrg-table").removeClass("hide")
-                                $("#pre-order").addClass("hide")
-                            } else {
-                                alert("过于火爆")
-                            }
-
-                        }
+                $("#wrg-table").addClass("hide")
+                $("#pre-order").removeClass("hide")
+                $('.close').click(function () {
+                    $("#wrg-table").removeClass("hide")
+                    $("#pre-order").addClass("hide")
                 })
-            }else{
-                alert("请输入正确的手机号")
-            }     
+                $("#pre-order .button4").click(function () {
+
+                    $("#wrg-table").removeClass("hide")
+                    $("#pre-order").addClass("hide")
+                    let sjh = $('#telphone').val();
+                    console.log(sjh + "+" + projectName)
+                    if (sjh != "") {
+                        var pp = "'" + sjh + "'" + "," + "'" + projectName + "'";
+                        $.ajax({
+                            type: "POST",
+                            url: "../yc_php/yc_rgyx.php",
+                            data: 'data' + pp,
+                            success: function (data) {
+                                if (data == 1) {
+                                    alert("预约成功")
+                                    $("#wrg-table").removeClass("hide")
+                                    $("#pre-order").addClass("hide")
+                                } else {
+                                    alert("过于火爆")
+                                }
+
+                            }
+                        })
+                    } else {
+                        alert("请输入正确的手机号")
+                    }
 
 
-        })
+                })
+                
 
+            });        
 
-        
-    })
     
 
 </script>

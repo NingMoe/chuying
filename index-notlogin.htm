@@ -41,16 +41,22 @@
                         url: "yc_php/yc_wrg_login.php",
                         data: 'data'+sjh+","+password,
                         success: function (data) {
-                            console.log(data); 
-                           /*  if(data !== 0){   
-                                $.cookie("name", data);
-                                $.cookie("sjh", sjh);
-                                 console.log($.cookie(sjh).sjh)
-                                                                          
-                            window.location.href = "./templets/wrg.html";  
+                            
+                                                     
+                            
+                             if(data !== 0){
+                                 let a = eval(data)
+                                 let name = a[0]
+                                 let url = a[1]   
+                               /*   console.log(sjh) */                               
+                                 $.cookie("name", a[0]); 
+                                 $.cookie("sjh", sjh);    
+                                 console.log($.cookie("name"))
+                                 console.log($.cookie("sjh"))                                                                                                                                   
+                                window.location.href = url;  
                             }else{
                             alert("用户名或密码不正确")    
-                            }        */                
+                            }                     
                         }
                     })
                 } else {
@@ -71,9 +77,13 @@
                         url: "yc_php/yc_yrg_login.php",
                         data: 'data' + pp,
                         success: function (data) {
-                            console.log(data);
-                            if (data == 1) {
-                                window.location.href = "./templets/yrg.html";
+                                         
+                            if (data !== 0) {
+                                let b = eval(data)
+                                let name = b[0]
+                                let url = b[1]
+                                $.cookie("name", b[0]);
+                                window.location.href = url;
                             } else {
                                 alert("用户名或密码不正确")
                             }
