@@ -47,7 +47,7 @@
 
             //判断用户名
             $username.blur(function(){
-                var username = /^[\u4E00-\u9FA5A-Za-z]+$/;
+                var username = /^[\u4E00-\u9FA5A]{1,6}$/;
                 console.log($username.val())
                 if (!username.test($username.val())) {
                     $(".namec").text("只能输入中文名");
@@ -63,10 +63,10 @@
             })
              //判断手机号
             $telnumb.blur(function () {
-                var telnumb = /^[\u4E00-\u9FA5A-Za-z]+$/;
+                var telnumb = /^1[34578]\d{9}$/;
                 console.log($telnumb.val())
-                if (!telnumb.test($username.val())) {
-                    $(".telnumbc").text("手机号不符合位数");
+                if (!telnumb.test($telnumb.val())) {
+                    $(".telnumbc").text("手机号不符合要求");
                     b = 0;
                 } else {
                     $(".telnumbc").text("");
@@ -80,7 +80,7 @@
                     
             //判断密码是否符合格式
             $password.blur(function () {
-                var password = /^[\u4E00-\u9FA5A-Za-z]+$/;
+                var password = /^[a-zA Z]\w{5,17}$/;
                 console.log($password.val())
                 if (!password.test($password.val())) {
                     $(".passwordc").text("密码不符合规范");
@@ -94,7 +94,7 @@
                 }
 
             })
-
+            
             //判断密码是否一致
             $passworddok.blur(function () {
                  console.log($passworddok.val())
@@ -106,76 +106,49 @@
                     d = 1;
                     console.log(d)
                     e = e + d;
-                    console.log(e)
+                    console.log(e)                       
                         if (e == 4) {
                             $('.signup #signup-button').click(function () {
                                 var username = $('.signup #username').val();
                                 var password = $(".signup #pwd").val();
                                 let telnumb = $(".signup #telphone").val();
                                 var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
-                                $.ajax({
-                                    type: "POST",
-                                    url: "yc_php/yc_register.php",
-                                    data: 'data' + pp,
-                                    success: function (data) {
-                                        if (data == 1) {
-                                            console.log("开始跳转")
-                                            window.location.href = "index1.php";
-                                        } else {
-                                            alert("注册失败")
+                                 //判断checkbox                                 
+                                if ($("input[type='checkbox']").is(':checked') == false) {
+                                    $(".cc").text("请认真阅读后，勾选同意");
+                                }else if($("input[type='checkbox']").is(':checked') == true){
+                                    $(".cc").text("");
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "yc_php/yc_register.php",
+                                        data: 'data' + pp,
+                                        success: function (data) {
+                                            if (data == 1) {
+                                                console.log("开始跳转")
+                                                window.location.href = "index1.php";
+                                            } else {
+                                                alert("注册失败")
+                                            }
+
                                         }
 
-                                    }
-
-                                })
+                                    })    
+                                }
+                                
                             })
                         } 
                     }
 
             })
-            //判断checkbox
+           
 
-
-            //如果都ok，才发ajax
-            //点击提交监听
+            
+            //判断验证码
+            
             console.log(e)
             
-
-        }
-        /* $('.signup #signup-button').click(function () {
-            var username = $('.signup #username').val();
-            var password = $(".signup #pwd").val();
-            let telnumb = $(".signup #telphone").val();
-            var passworddok = $(".signup #userpwdok").val();
-            var code = $("#code").val();   
-
-            if (username != "" && password != "") {
-                
-                if (password === passworddok) {
-                    var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
-                    $.ajax({
-                        type: "POST",
-                        url: "yc_php/yc_register.php",
-                        data: 'data' + pp,
-                        success: function (data) {
-                            if (data == 1) {
-                                console.log("开始跳转")
-                                window.location.href = "index1.php";
-                            } else {
-                                alert("注册失败")
-                            }
-
-                        }
-                    })
-                } else {
-                $(".pswc").text("两次密码输入不一致");
-                }
-
-            } else {
-                alert("请检查您的输入！");
             }
-        })
-    */
+        
 
     
 </script>

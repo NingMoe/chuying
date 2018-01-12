@@ -363,14 +363,22 @@
         justify-content: center;
         align-items: center;
      }
-     /*未认购*/
-    #wrg-table .active{
-        color: #b78c2e;
-        cursor: pointer;
-    }
-    #wrg-table .yyy{
+     /* 认购状态 */
+     #wrg-table .yyy{
         color: rgb(81, 51, 254);
     } 
+    #yrg-table .yyy{
+        color: rgb(81, 51, 254);
+    } 
+    #yrg-table .ygm{
+        color:#b78c2e;
+    } 
+     /*未认购*/
+    #wrg-table .active{
+        color:  rgb(224, 1, 19);
+        cursor: pointer;
+    }
+    
     #wrg-table{
         position: relative;
      }

@@ -40,6 +40,7 @@
             </table>
             <table class="yrg-body">
                 
+                
             </table>
         </div>
         <div id="pre-order" class="hide">
@@ -104,14 +105,14 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
-    //添加已认购的项目
+    //已认购的项目渲染
     function render1(content) {
             let html = ''
             var template = `<tr class="alt">
                     <td class = "detail notice " >某某项目公告</td>
                     <td >
                         <td class =" title project-name">景秀芳华2号</td>
-                        <td>已购买</td>
+                        <td class = "ygm">已购买</td>
                     </td>
                 </tr>`
            /*  console.log(content) */
@@ -133,7 +134,7 @@
                     <td class = " notice " >某某项目公告</td>
                     <td >
                         <td class =" title project-name">景秀芳华2号</td>
-                        <td>已预约</td>
+                        <td class= "yyy">已预约</td>
                     </td>
                 </tr>`
             /*  console.log(content) */
@@ -148,7 +149,7 @@
 
 
     }
-    //其他项目
+    //其他项目渲染
     function render3(content) {
             let html = ''
             var template = `<tr class="alt">
@@ -177,6 +178,7 @@
             console.log($.cookie("name"))
             console.log($.cookie("sfz"))
         });
+        var ygm = []
         $.ajax({
             //获取所有项目
             type: "GET",
@@ -195,7 +197,7 @@
                             //获取已认购项目
                             type: "GET",
                             url: "../yc_php/yc_yrg_xmid.php",
-                            success: function (data) {                              
+                            success: function (data){                              
 
                                 var str3 = $.parseJSON(data);
 
@@ -214,12 +216,13 @@
                                 console.log(ygid)
                                 console.log(yyid)
 
+
                                 var kyy = []//可以预约的项目
                                 var qtxm = []//未购买项目
                                 var wyy = [] //未购买&&未预约项目
                                 var yy = [] //已预约
                                 var yg = [] //已购买
-                                
+                                ygm =  yg
                                 //获得已购项目
                                 for (let i = 0; i < str1.length; i++) {
                                     for (let j = 0; j < ygid.length; j++) {
@@ -275,7 +278,7 @@
     //监听点击事件
      $(".yrg-body").delegate('.active', "click", function (e) {
         var $cur = $(this);
-         let projectName = $cur.parents(".alt").find(".project-name").text()
+        let projectName = $cur.parents(".alt").find(".project-name").text()
          $("#yrg-table").addClass("hide")
          $("#pre-order").removeClass("hide")
          $('.close').click(function () {
@@ -322,7 +325,29 @@
     
     //点击打开项目公告
      $(".yrg-body").delegate('.detail', "click", function (e) {
+            var $cur = $(this);
+            let projectName = $cur.parents(".alt").find(".project-name").text()
+             console.log(projectName)
+             console.log(ygm)
+              for (let i = 0; i < ygm.length; i++){
+                  if(projectName == ygm[i].title){
+                      var aid = ygm[i].aid;
+                       $.cookie("aid", aid); 
+                      var pp = "'" + aid + "'" ;
+                      $.ajax({
+                          type: "POST",
+                          url: "../yc_php/yc_yrg_content.php",
+                          data: 'data' + pp,
+                          success: function (data) {
+                            let content =  $.parseJSON(data)
+                            console.log(content)
+                            console.log(content[0].content)
+                          }
+                      })
+                      
 
+                  }
+              }
              
 
              $("#yrg-table").addClass("hide")
