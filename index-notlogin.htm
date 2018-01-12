@@ -24,9 +24,94 @@
         $cur.parents('#loginbox').find('form').removeClass('show');
         $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
     })
+        /* check1();
+        check2(); */
+        function check1() {
+            let a, b, c, e = 0;           
+            let $telnumb = $(".signup #telphone")
+            let $password = $(".signup #pwd")
+           
+            //判断手机号
+            $telnumb.blur(function () {
+                var telnumb = /^1[34578]\d{9}$/;
+                console.log($telnumb.val())
+                if (!telnumb.test($telnumb.val())) {
+                    $(".telnumbc").text("手机号不符合要求");
+                    b = 0;
+                } else {
+                    $(".telnumbc").text("");
+                    b = 1;
+                    console.log(b)
+                    e = e + b;
+                    console.log(e)
+                }
+
+            })
+
+            //判断密码是否符合格式
+            $password.blur(function () {
+                var password = /^[a-zA Z]\w{5,17}$/;
+                console.log($password.val())
+                if (!password.test($password.val())) {
+                    $(".passwordc").text("密码不符合规范");
+                    c = 0;
+                } else {
+                    $(".passwordc").text("");
+                    c = 1;
+                    console.log(c)
+                    e = e + c;
+                    console.log(e)
+                }
+
+            })
+      
+       
+                           
+
+        }
+ 
+    function check2() {
+
+         //判断身份证号码
+        $username.blur(function () {
+            var username = /^[\u4E00-\u9FA5A]{1,6}$/;
+            console.log($username.val())
+            if (!username.test($username.val())) {
+                $(".namec").text("只能输入中文名");
+
+            } else {
+                $(".namec").text("");
+                a = 1;
+                console.log(a)
+                e = e + a;
+                console.log(e)
+            }
+
+        })
+        $password.blur(function () {
+            var password = /^[a-zA Z]\w{5,17}$/;
+            console.log($password.val())
+            if (!password.test($password.val())) {
+                $(".passwordc").text("密码不符合规范");
+                c = 0;
+            } else {
+                $(".passwordc").text("");
+                c = 1;
+                console.log(c)
+                e = e + c;
+                console.log(e)
+            }
+
+        })
+        
+    }
+
+
+
+
     //未认购登录
             $('#loginbox .button2').click(function () {
-                /* 发送验证码 */
+             /* 发送验证码 */
             })
             // 未认购用户
             $('#wrg .button3').click(function () {
@@ -41,10 +126,11 @@
                         url: "yc_php/yc_wrg_login.php",
                         data: 'data'+sjh+","+password,
                         success: function (data) {
-                            
-                                                     
-                            
-                             if(data !== 0){
+                                                                             
+                            console.log(data)
+                             if(data != 0 ){
+                                 console.log(data !== 0)
+                                 console.log(data == 0)
                                  let a = eval(data)
                                  let name = a[0]
                                  let url = a[1]   
@@ -54,8 +140,8 @@
                                  console.log($.cookie("name"))
                                  console.log($.cookie("sjh"))                                                                                                                                   
                                 window.location.href = url;  
-                            }else{
-                            alert("用户名或密码不正确")    
+                            }else {
+                              alert("用户名或密码不正确")    
                             }                     
                         }
                     })
@@ -63,39 +149,48 @@
                     alert("请检查您的输入！");
                 }
             })
-            //已认购用户
-            $('#yrg .button3').click(function () {
-                var userid = $('#yrg #user-id').val();
-                var password = $("#yrg #password").val();
-                var code = $("#code").val();
-                console.log(userid)
-                console.log(password)
-                if (userid != "" && password != "") {
-                    var pp = "'" + userid + "'" + "," + "'" + password + "'";
-                    $.ajax({
-                        type: "POST",
-                        url: "yc_php/yc_yrg_login.php",
-                        data: 'data' + pp,
-                        success: function (data) {
-                                         
-                            if (data !== 0) {
-                                let b = eval(data)
-                                let name = b[0]
-                                let url = b[1]
-                                $.cookie("name", b[0]);
-                                $.cookie("sfz", userid );
-                                 console.log($.cookie("sfz"))
+//已认购用户
+        $('#yrg .button3').click(function () {
+            var userid = $('#yrg #user-id').val();
+            var password = $("#yrg #password").val();
+            var code = $("#code").val();
+            console.log(userid)
+            console.log(password)
+            if (userid != "" && password != "") {
+                var pp = "'" + userid + "'" + "," + "'" + password + "'";
+                $.ajax({
+                    type: "POST",
+                    url: "yc_php/yc_yrg_login.php",
+                    data: 'data' + pp,
+                    success: function (data) {
+                                        
+                        if (data !== 0) {
+                            let b = eval(data)
+                            let name = b[0]
+                            let url = b[1]
+                            $.cookie("name", b[0]);
+                            $.cookie("sfz", userid );
+                                console.log($.cookie("sfz"))
 
-                                window.location.href = url;
-                            } else {
-                                alert("用户名或密码不正确")
-                            }
+                            window.location.href = url;
+                        } else {
+                            alert("用户名或密码不正确")
                         }
-                    })
-                } else {
-                    alert("请检查您的输入！");
-                }
-            })
+                    }
+                })
+            } else {
+                alert("请检查您的输入！");
+            }
+        })
+
+
+
+
+
+
+
+
+
 
 </script>
 </html>
