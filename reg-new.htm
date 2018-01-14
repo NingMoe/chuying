@@ -35,14 +35,17 @@
 <script>
     //注册
 
-    //监听输入失焦
+        //监听输入失焦
         check ();
         function check (){
-             var a,b,c,d,e = 0;
+             var a,b,c,d,f = 0;
+             var e = 0;
              let $username = $('.signup #username')
              let $telnumb = $(".signup #telphone")
              let $password =  $(".signup #pwd")
              let $passworddok = $(".signup #userpwdok")
+             var ordertime=60   //设置再次发送验证码等待时间
+            var timeleft=ordertime  
              
 
             //判断用户名
@@ -61,7 +64,7 @@
                 }              
 
             })
-             //判断手机号
+            //判断手机号
             $telnumb.blur(function () {
                 var telnumb = /^1[34578]\d{9}$/;
                 console.log($telnumb.val())
@@ -69,11 +72,18 @@
                     $(".telnumbc").text("手机号不符合要求");
                     b = 0;
                 } else {
+                    //ajax 验证手机号是否已被使用
+                    // if(true){
+                    //     $(".telnumbc").text("该号码已被注册");
+                    // }else{
+                       
+                    // }
                     $(".telnumbc").text("");
-                    b = 1;
-                    console.log(b)
-                    e = e + b;
-                    console.log(e)
+                        b = 1;
+                        console.log(b)
+                        e = e + b;
+                        console.log(e)
+                    
                 }
 
             })
@@ -97,58 +107,122 @@
             
             //判断密码是否一致
             $passworddok.blur(function () {
-                 console.log($passworddok.val())
+                console.log($passworddok.val())
                 if ($password.val() !== $passworddok.val()) {
                     $(".pwdck").text("密码不一致");
-                    d = 0;                    
+                    d = 0;
                 } else {
                     $(".pwdck").text("");
                     d = 1;
                     console.log(d)
                     e = e + d;
-                    console.log(e)                       
-                        if (e == 4) {
-                            $('.signup #signup-button').click(function () {
-                                var username = $('.signup #username').val();
-                                var password = $(".signup #pwd").val();
-                                let telnumb = $(".signup #telphone").val();
-                                var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
-                                 //判断checkbox                                 
-                                if ($("input[type='checkbox']").is(':checked') == false) {
-                                    $(".cc").text("请认真阅读后，勾选同意");
-                                }else if($("input[type='checkbox']").is(':checked') == true){
-                                    $(".cc").text("");
-                                    $.ajax({
-                                        type: "POST",
-                                        url: "yc_php/yc_register.php",
-                                        data: 'data' + pp,
-                                        success: function (data) {
-                                            if (data == 1) {
-                                                console.log("开始跳转")
-                                                window.location.href = "index1.php";
-                                            } else {
-                                                alert("注册失败")
-                                            }
+                    console.log(e)
+                    //button2变成可点击状态
+                    $(".button2").removeClass("disabled")
+                    $(".button2").addClass("abled")
 
+
+                    if (e == 4) {
+                        //验证码事件
+                        var vcode;
+
+                        function timeCount(){
+                            timeleft-=1
+                            console.log(timeleft)
+                            if (timeleft>0){
+                                $(".button2").text(timeleft+" 秒后重发");
+                            setTimeout(timeCount,1000)
+                            }
+                            else {
+
+                                $(".button2").text("重新发送");
+                                timeleft=ordertime   //重置等待时间
+                                //60s之后自动变回可点击状态
+                                $(".button2").removeClass("disabled")
+                                $(".button2").addClass("abled")
+
+                            }
+                        }
+                                                
+                       
+                        //点击发送ajax button2 变成不可点击状态  
+                        $(".button2").click(function () {
+                            $(".button2").removeClass("abled")
+                            $(".button2").addClass("disabled")                            
+                            
+                            timeCount(this);                           
+
+                            //ajax
+                            vcode = "1234"
+                        })
+
+                        //bulr事件 验证返回或者输入 
+
+                        $("#vdcode").blur(function () {
+                            console.log($("#vdcode").val())
+                            if ($("#vdcode").val() !== vcode) {
+                                $(".vcodec").text("请输入正确的验证码");
+                                f = 0;
+                            } else {
+                                $(".vcodec").text("");
+                                f = 1;
+                                console.log(f)
+                                e = e + f;
+                                console.log(e)
+                                //前面5项ok后才能判断是否勾选
+                                if (e == 5) {
+                                    $('.signup #signup-button').click(function () {
+                                        var username = $('.signup #username').val();
+                                        var password = $(".signup #pwd").val();
+                                        let telnumb = $(".signup #telphone").val();
+                                        var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
+                                        //判断checkbox                                 
+                                        if ($("input[type='checkbox']").is(':checked') == false) {
+                                            $(".cc").text("请认真阅读后，勾选同意");
+                                        } else if ($("input[type='checkbox']").is(':checked') == true) {
+                                            $(".cc").text("");
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "yc_php/yc_register.php",
+                                                data: 'data' + pp,
+                                                success: function (data) {
+                                                    if (data == 1) {
+                                                        console.log("开始跳转")
+                                                        window.location.href = "index1.php";
+                                                    } else {
+                                                        alert("注册失败")
+                                                    }
+
+                                                }
+
+                                            })
                                         }
 
-                                    })    
+                                    })
                                 }
-                                
-                            })
-                        } 
+
+                            }
+
+
+                        })
                     }
 
+                }    
             })
-           
+        //计时函数    
+            function timeCount(){
+                
+             }    
 
-            
-            //判断验证码
-            
-            console.log(e)
-            
-            }
+
+        }   
+           
+       
+
         
+       
+
+       
 
     
 </script>

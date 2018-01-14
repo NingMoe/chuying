@@ -216,7 +216,7 @@
     #loginbox .box-body >div{
         display: flex;
     }
-    #loginbox .button2{
+   .button2{
         background: #b78c2e;
         color: #EFEFEF;
         text-align: center;
@@ -229,6 +229,9 @@
         justify-content: center;
         align-items: center;
            
+    }
+    #loginbox  .disabled{
+        background: #aca79c;
     }
      #loginbox .button3{
         cursor: pointer;
@@ -266,7 +269,7 @@
          display: flex;
          justify-content: center;
          align-items: center;
-         height: 80px;
+         height: 60px;
      }
      #loginbox .box-body .detail{
           width: 275px;
