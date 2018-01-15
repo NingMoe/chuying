@@ -15,7 +15,6 @@
 
 </body>
 <script type="text/javascript">
-<<<<<<< HEAD
           check1()
  function check1() {
         var a, b, c, d, e = 0;
@@ -161,19 +160,19 @@
              
             })
     }                
-
+ }
      function wrg() {
          $('#wrg .button3').click(function () {
              var sjh = $('#wrg #telnumb').val();
              var password = $("#wrg #user-password").val();
              
-             /* console.log(sjh)
-             console.log(password) */
+             console.log(sjh)
+             console.log(password)
              
                  $.ajax({
                      type: "post",
                      url: "yc_php/yc_wrg_login.php",
-                     data: 'data' + sjh + "," + password,
+                     data: 'data' + "'"+sjh+"'" + "," +"'"+ password+"'",
                      success: function (data) {
                          console.log(data)
 
@@ -181,11 +180,11 @@
                              let a = eval(data)
                              let name = a[0]
                              let url = a[1]
-                             /*   console.log(sjh) */
+                               console.log(sjh)
                              $.cookie("name", a[0]);
                              $.cookie("sjh", sjh);
-                             // console.log($.cookie("name"))
-                             // console.log($.cookie("sjh"))                                                                                                                                   
+                              console.log($.cookie("name"))
+                              console.log($.cookie("sjh"))                                                                                                                                   
                              window.location.href = url;
                          } else {
                              alert("用户名或密码不正确")
@@ -235,90 +234,6 @@
 
 
 
-=======
-
-    $('#loginbox .box-header >div ').click(function (e) {
-        var $cur = $(this);
-        var idx = $cur.index();
-        $cur.siblings().removeClass('active');
-        $cur.addClass('active');
-        $cur.parents('#loginbox').find('form').removeClass('show');
-        $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
-    })
-    //未认购登录
-            $('#loginbox .button2').click(function () {
-                /* 发送验证码 */
-            })
-            // 未认购用户
-            $('#wrg .button3').click(function () {
-                var sjh = $('#wrg #telnumb').val();
-                var password = $("#wrg #user-password").val();
-                var code = $("#code").val();
-                /* console.log(sjh)
-                console.log(password) */
-                if (sjh != "" && password != "") {
-                    $.ajax({
-                        type: "post",
-                        url: "yc_php/yc_wrg_login.php",
-                        data: 'data'+sjh+","+password,
-                        success: function (data) {
-                            
-                                                     
-                            
-                             if(data !== 0){
-                                 let a = eval(data)
-                                 let name = a[0]
-                                 let url = a[1]   
-                               /*   console.log(sjh) */                               
-                                 $.cookie("name", a[0]); 
-                                 $.cookie("sjh", sjh);    
-                                 console.log($.cookie("name"))
-                                 console.log($.cookie("sjh"))                                                                                                                                   
-                                window.location.href = url;  
-                            }else{
-                            alert("用户名或密码不正确")    
-                            }                     
-                        }
-                    })
-                } else {
-                    alert("请检查您的输入！");
-                }
-            })
-            //已认购用户
-            $('#yrg .button3').click(function () {
-                var userid = $('#yrg #user-id').val();
-                var password = $("#yrg #password").val();
-                var code = $("#code").val();
-                console.log(userid)
-                console.log(password)
-                if (userid != "" && password != "") {
-                    var pp = "'" + userid + "'" + "," + "'" + password + "'";
-                    $.ajax({
-                        type: "POST",
-                        url: "yc_php/yc_yrg_login.php",
-                        data: 'data' + pp,
-                        success: function (data) {
-                                         
-                            if (data !== 0) {
-                                let b = eval(data)
-                                let name = b[0]
-                                let url = b[1]
-                                $.cookie("name", b[0]);
-                                $.cookie("sfz", userid );
-                                 console.log($.cookie("sfz"))
-
-                                window.location.href = url;
-                            } else {
-                                alert("用户名或密码不正确")
-                            }
-                        }
-                    })
-                } else {
-                    alert("请检查您的输入！");
-                }
-            })
-
->>>>>>> parent of 237a98b... 搞定验证码和提示
 </script>
 </html>
 
