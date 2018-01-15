@@ -38,12 +38,14 @@
         //监听输入失焦
         check ();
         function check (){
-             var a,b,c,d = 0;
+             var a,b,c,d,f = 0;
+             var e = 0;
              let $username = $('.signup #username')
              let $telnumb = $(".signup #telphone")
              let $password =  $(".signup #pwd")
              let $passworddok = $(".signup #userpwdok")
-            
+             var ordertime=60   //设置再次发送验证码等待时间
+            var timeleft=ordertime  
              
 
             //判断用户名
@@ -56,7 +58,9 @@
                 } else {
                     $(".namec").text("");
                     a = 1;
-                   
+                    console.log(a)
+                    e = e + a;
+                    console.log(e)
                 }              
 
             })
@@ -76,7 +80,9 @@
                     // }
                     $(".telnumbc").text("");
                         b = 1;
-                        
+                        console.log(b)
+                        e = e + b;
+                        console.log(e)
                     
                 }
 
@@ -92,7 +98,9 @@
                 } else {
                     $(".passwordc").text("");
                     c = 1;
-                     
+                     console.log(c)
+                     e = e + c;
+                     console.log(e)
                 }
 
             })
@@ -106,103 +114,111 @@
                 } else {
                     $(".pwdck").text("");
                     d = 1;
-                   if(a==1 && b==1 && c==1 && d==1){
-                       sendM()
-                   }
-                   
+                    console.log(d)
+                    e = e + d;
+                    console.log(e)
+                    //button2变成可点击状态
+                    $(".button2").removeClass("disabled")
+                    $(".button2").addClass("abled")
 
 
-                   
+                    if (e == 4) {
+                        //验证码事件
+                        var vcode;
+
+                        function timeCount(){
+                            timeleft-=1
+                            console.log(timeleft)
+                            if (timeleft>0){
+                                $(".button2").text(timeleft+" 秒后重发");
+                            setTimeout(timeCount,1000)
+                            }
+                            else {
+
+                                $(".button2").text("重新发送");
+                                timeleft=ordertime   //重置等待时间
+                                //60s之后自动变回可点击状态
+                                $(".button2").removeClass("disabled")
+                                $(".button2").addClass("abled")
+
+                            }
+                        }
+                                                
+                       
+                        //点击发送ajax button2 变成不可点击状态  
+                        $(".button2").click(function () {
+                            $(".button2").removeClass("abled")
+                            $(".button2").addClass("disabled")                            
+                            
+                            timeCount(this);                           
+
+                            //ajax
+                            vcode = "1234"
+                        })
+
+                        //bulr事件 验证返回或者输入 
+
+                        $("#vdcode").blur(function () {
+                            console.log($("#vdcode").val())
+                            if ($("#vdcode").val() !== vcode) {
+                                $(".vcodec").text("请输入正确的验证码");
+                                f = 0;
+                            } else {
+                                $(".vcodec").text("");
+                                f = 1;
+                                console.log(f)
+                                e = e + f;
+                                console.log(e)
+                                //前面5项ok后才能判断是否勾选
+                                if (e == 5) {
+                                    $('.signup #signup-button').click(function () {
+                                        var username = $('.signup #username').val();
+                                        var password = $(".signup #pwd").val();
+                                        let telnumb = $(".signup #telphone").val();
+                                        var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
+                                        //判断checkbox                                 
+                                        if ($("input[type='checkbox']").is(':checked') == false) {
+                                            $(".cc").text("请认真阅读后，勾选同意");
+                                        } else if ($("input[type='checkbox']").is(':checked') == true) {
+                                            $(".cc").text("");
+                                            $.ajax({
+                                                type: "POST",
+                                                url: "yc_php/yc_register.php",
+                                                data: 'data' + pp,
+                                                success: function (data) {
+                                                    if (data == 1) {
+                                                        console.log("开始跳转")
+                                                        window.location.href = "index1.php";
+                                                    } else {
+                                                        alert("注册失败")
+                                                    }
+
+                                                }
+
+                                            })
+                                        }
+
+                                    })
+                                }
+
+                            }
+
+
+                        })
+                    }
 
                 }    
             })
-           
+        //计时函数    
+            function timeCount(){
+                
+             }    
 
 
         }   
-function sendM(){
-    var ordertime=60   //设置再次发送验证码等待时间
-    var timeleft=ordertime    
-    var vcode;
-    $(".button2").removeClass("disabled")
-     $(".button2").addClass("abled")
-    function timeCount(){
-        timeleft-=1
-        console.log(timeleft)
-        if (timeleft>0){
-            $(".button2").text(timeleft+" 秒后重发");
-        setTimeout(timeCount,1000)
-        }
-        else {
-
-            $(".button2").text("重新发送");
-            timeleft=ordertime   //重置等待时间
-            //60s之后自动变回可点击状态
-            $(".button2").removeClass("disabled")
-            $(".button2").addClass("abled")
-
-        }
-    }
-                            
-    
-    //点击发送ajax button2 变成不可点击状态  
-    $(".abled").click(function () {
-        $(".button2").removeClass("abled")
-        $(".button2").addClass("disabled")                            
-        
-        timeCount(this);                           
-
-        //ajax
-        vcode = "1234"
-    })
-
-    //bulr事件 验证返回或者输入 
-
-    $("#vdcode").blur(function () {
-        console.log($("#vdcode").val())
-        if ($("#vdcode").val() !== vcode) {
-            $(".vcodec").text("请输入正确的验证码");
-        } else {
-            $(".vcodec").text("");
-            signup()
-
-        }
-
-
-    })
-                    
-}           
+           
        
-function signup(){
-    $('.signup #signup-button').click(function () {
-            var username = $('.signup #username').val();
-            var password = $(".signup #pwd").val();
-            let telnumb = $(".signup #telphone").val();
-            var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
-            //判断checkbox                                 
-            if ($("input[type='checkbox']").is(':checked') == false) {
-                $(".cc").text("请认真阅读后，勾选同意");
-            } else if ($("input[type='checkbox']").is(':checked') == true) {
-                $(".cc").text("");
-                $.ajax({
-                    type: "POST",
-                    url: "yc_php/yc_register.php",
-                    data: 'data' + pp,
-                    success: function (data) {
-                        if (data == 1) {
-                            console.log("开始跳转")
-                            window.location.href = "index1.php";
-                        } else {
-                            alert("注册失败")
-                        }
 
-                    }
-
-                })
-            }
-
-        })
-}
         
        
 
