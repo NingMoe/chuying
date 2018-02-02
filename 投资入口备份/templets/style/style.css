@@ -216,7 +216,22 @@
     #loginbox .box-body >div{
         display: flex;
     }
+
    .button2{
+        background: #a50319;
+        color: #EFEFEF;
+        text-align: center;
+        height: 39px;
+        width: 94px;
+        cursor: pointer;
+        font-weight:normal;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+           
+    }
+    .button4{
         background: #a50319;
         color: #EFEFEF;
         text-align: center;
