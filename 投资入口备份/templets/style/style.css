@@ -1,0 +1,550 @@
+    * {
+        margin: 0;
+        padding: 0;
+        /*list-style: none;*/
+        border: 0;
+        word-break: break-word;
+        vertical-align: top;
+        outline: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    a {
+        text-decoration: none;
+    }
+    
+    body {
+       
+        font-size: 12px;
+        line-height: 1.4;
+        font-weight: normal;
+        color: #4e4e4e;
+        font-family: "microsoft yahei", "微软雅黑";
+        -webkit-text-size-adjust: 100%;
+    }
+    
+   
+    body,
+    html {
+        min-width: 1212px;
+        height: 100%;
+               
+    }
+    .base-color{
+         color: #a50319;
+    }
+    
+    .clearfix::after{
+        content: " ";
+        display: block;
+        clear: both;
+    }
+   @font-face {
+  font-family: 'iconfont';  /* project id 525687 */
+  src: url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot');
+  src: url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.eot?#iefix') format('embedded-opentype'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.woff') format('woff'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.ttf') format('truetype'),
+  url('https://at.alicdn.com/t/font_525687_n30g8q330a9hehfr.svg#iconfont') format('svg');
+}
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:16px;font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .a1{
+         color: #fff;
+    }
+    .a1:visited{
+        color: #fff;
+    }
+    .a2:visited{
+        color: rgb(14, 13, 13);
+    }
+    /* 头部相关 */
+    header {
+        width: 100%;
+        background: #fff;
+        height: 72px;
+        color: #EFEFEF;
+        display: flex;
+        align-items: center;
+        box-shadow: 5px 5px 5px #888888;
+    }
+
+    header .header-bar {
+        width: 1212px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header .left,
+    .right {
+        display: flex;
+        align-items: center;
+
+    }
+
+    header .left .bar {
+        margin: 0 30px 0 20px;
+        border: 2px solid #a50319;
+        height: 50px;
+        width: 4px;
+    }
+
+    header .left span {
+        font-size: 25px;
+        color: #a50319;
+    }
+    
+    header .right {
+        font-size: 18px;
+        cursor: pointer;
+    }
+     header .right span{
+        margin-left:5px;
+    }    
+    header .right #name{
+        margin-right:10px;
+    }
+
+    /* 中间部分 */
+    main{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       height: calc(100% - 328px); 
+       background-image: url('../images/bk.png');
+       background-repeat: no-repeat;
+       background-position: center;       
+    }
+
+    /* 投资者认定 */
+    #login1{
+        width: 650px;
+        background: #EFEFEF;
+        font-size: 14px;
+        padding: 32px 40px;
+        line-height: 28px;
+        font-weight:550;
+    }
+    #login1 >div{
+        display: flex;
+        height: 56px;
+             
+    }
+    #login1 >div >div {
+    flex-grow: 1;
+    text-align: center;
+    vertical-align: center;
+          
+    }
+
+    #login1 >div >p{
+        width:294px;
+        display: inline-block;
+    }
+    #login1 .button{
+        margin-left: 10px;
+        display: inline-block;
+        width: 50px;
+        height: 30px;
+        border-radius: 5px;
+        background: #a50319;
+        font-weight: 400;
+        margin-top:10px;
+    }
+    #login1 .span a{
+        display: flex;
+        justify-content: center;
+    }
+    /*登录框 */
+    #loginbox{
+        width: 400px;
+        background:rgb(239,239,239);
+        font-size: 14px;
+        line-height: 28px;
+        font-weight:550;
+    }
+    #loginbox .box-header{
+        padding: 0 0;
+        display: flex;
+        height: 35px;
+                
+    }
+    #loginbox .box-header .box-title{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        cursor: pointer;
+        color: #EFEFEF;
+        background:rgb(137,137,137);
+    }
+    #loginbox .box-header .active{
+        color: #a50319;
+        background:rgb(239,239,239);
+    }
+    #loginbox form{
+        display: none;
+    }
+    #loginbox  .show{
+        display: block;
+    }
+    #loginbox .box-body{
+        padding: 32px 40px 0 40px;
+    }
+    #loginbox .box-body >input{
+        padding: 5px 5px;
+        margin: 0 20px;
+        height: 40px;
+        width: 275px;
+        border: 1px solid rgb(229,229,229);
+    }
+    #loginbox .box-body >div input{
+        text-align: center;
+        padding: 5px 5px;
+        margin: 0px 10px 0px  20px;
+        height: 40px;
+        width: 170px;
+        border: 1px solid rgb(229,229,229);
+    }
+    #loginbox .box-body >div{
+        display: flex;
+    }
+   .button2{
+        background: #a50319;
+        color: #EFEFEF;
+        text-align: center;
+        height: 39px;
+        width: 94px;
+        cursor: pointer;
+        font-weight:normal;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+           
+    }
+    #loginbox  .disabled{
+        background: #aca79c;
+    }
+     #loginbox .button3{
+        cursor: pointer;
+        text-align: center;
+        background: #a50319;
+        color: #EFEFEF;
+        margin: 0px 20px 10px  20px;
+        height: 40px;
+        width: 275px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     #loginbox .box-footer{
+        font-size: 10px; 
+        display: flex;
+        justify-content: flex-end;        
+        padding: 0 60px 40px 60px;;
+     }
+     #loginbox .box-footer2{
+        font-size: 10px; 
+        display: flex;
+        justify-content: space-between;        
+        padding: 0 60px 40px 60px;;
+     }
+     #loginbox span{
+         cursor: pointer;
+     }
+     #loginbox .box-footer :first-child{
+         margin-right:10px;
+     }
+     
+     /* 注册页面 */
+     #loginbox .box-header2{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: 60px;
+     }
+     #loginbox .box-body .detail{
+          width: 275px;
+          margin: 0 auto;
+          font-size: 10px;
+          line-height: 14px;
+          font-weight: 400;
+     }
+     #loginbox .box-body .detail >input{
+         padding: 0;
+         margin:0 10px 0 0;
+         height: 24px;
+         width: 18px;
+         text-align: center;
+         border:1px solid #2F2725;
+
+     }
+      #loginbox .box-body .reminder{
+          margin-left:21px;
+          font-size: 10px;
+      }
+     /*产品报告*/
+     #report{
+         position: relative;
+         width: 800px;
+         background: rgb(239,239,239);
+         margin: 0 auto;
+              
+     }
+     #report .close2{
+         position: absolute;
+         right: 15px;
+         top: 14px;
+         color: white;
+         cursor: pointer;
+     }
+     #report .report-body{
+        height: 400px;
+        overflow: scroll;
+        padding: 5px 40px;
+        font-size: 16px;
+        font-weight: 800;
+        line-height: 30px;
+     }
+     #report .title-bar{
+         height: 50px;
+         background: #a50319;
+         color: #EFEFEF;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+     }
+    /* 预约窗口 */
+    .hide{
+        display: none;
+    }
+    #pre-order .close{
+        cursor: pointer;
+        line-height: 10px;
+        margin-top: 20px;
+        margin-right:20px;
+        float: right;
+        height: 20px;
+        width: 20px;
+               
+    }
+    #pre-order{
+        width: 600px;
+        background: rgb(239,239,239);
+    }
+    #pre-order .pre-order-body{
+        padding: 50px 100px;
+    }
+     #pre-order .pre-order-body h2{
+         margin-top: 10px;
+                  font-size: 20px;
+     }
+    #pre-order .order-book{
+        margin:36px 0;      
+         
+    }
+    #pre-order .order-book .reminder{
+        display: block;
+        margin-top: 10px;      
+         
+    }
+   
+    #pre-order .order-book input{
+        border: 1px solid rgb(221,221,221);
+        padding: 10px 10px 10px 10px;
+        height: 40px;
+        width: 400px;
+
+    }
+    #pre-order .button4{
+        cursor: pointer;
+        text-align: center;
+        background: #a50319;
+        color: #EFEFEF;
+        height: 40px;
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+     /* 认购状态 */
+     #wrg-table .yyy{
+        color: rgb(81, 51, 254);
+    } 
+    #yrg-table .yyy{
+        color: rgb(81, 51, 254);
+    } 
+    #yrg-table .ygm{
+        color:#a50319;
+    } 
+     /*未认购*/
+    #wrg-table .active{
+        color:  rgb(224, 1, 19);
+        cursor: pointer;
+    }
+    
+    #wrg-table{
+        position: relative;
+     }
+    #wrg-table table{
+        border-collapse:collapse;               
+    }
+     #wrg-table td {
+        width: 200px;
+        text-align:center;
+        font-size:16px;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #000000;
+        color:#000000;
+        background-color:#EFEFEF;
+    }
+    #wrg-table .head :last-child{
+        width:217px;
+    } 
+    #wrg-table  th{
+        width:200px;
+        font-size:16px;
+        text-align:center;
+        padding-top:15px;
+        padding-bottom:15px;
+        background: #a50319;
+        color:#ffffff;
+    }
+    #wrg-table .wrg-body {
+        display: block;
+        max-height: 300px;
+        overflow-y:scroll;
+    }
+    #wrg-table .ad{
+        position: absolute;
+        right: 0;
+        top: -52px;
+    }
+
+    /* 已认购 */
+    #yrg-table .active{
+        color: #a50319;
+        cursor: pointer;
+    }
+    #yrg-table .detail{
+        color: #a50319;
+        cursor: pointer;  
+    } 
+    #yrg-table table{
+        border-collapse:collapse;               
+    }
+     #yrg-table td {
+        width: 200px;
+        text-align:center;
+        font-size:16px;
+        padding-top:10px;
+        padding-bottom:10px;
+        border-bottom: 1px solid #000000;
+        color:#000000;
+        background-color:#EFEFEF;
+    }
+    #yrg-table .head :last-child{
+        width:217px;
+    } 
+    #yrg-table  th{
+        width:200px;
+        font-size:16px;
+        text-align:center;
+        padding-top:15px;
+        padding-bottom:15px;
+        background: #a50319;
+        color:#ffffff;
+    }
+    #yrg-table .yrg-body {
+        display: block;
+        max-height: 300px;
+        overflow-y:scroll;
+    }
+    #yrg-table .project-name{
+        border-left:1px solid ;
+    }
+    #yrg-table .left-border{
+        border-left:1px solid #EFEFEF ;
+    }
+        
+    /* 底部 */
+    .w1212 {
+        position: relative;
+        width: 1212px;
+        padding: 0 97px;
+        margin: 0 auto;
+        min-width: 1212px;
+        overflow: hidden;
+    }
+    .clearfix::before{
+        content: " ";
+        display: block;
+        clear: both;
+    }
+    footer {
+        position: fixed;
+        bottom: 0px;
+        display: block;
+        width: 100%;
+        padding-top: 60px;
+        padding-bottom: 58px;
+        color: #fff;
+        font-size: 12px;
+        background-color: #2F2725;
+        background: url(../images/fbg.png) no-repeat;
+        -moz-background-size: 100% 100%;
+        -webkit-background-size: 100% 100%;
+        -o-background-size: 100% 100%;
+        background-size: 100% 100%;
+        filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/fbg.png", sizingMethod="scale");
+        /* IE9以下 */
+        border-top: 1px solid #625C5B;
+    }
+
+    footer .left {
+        float: left;
+        width: 300px;
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    footer .left img {
+        width: 240px;
+        height: 90px;
+    }
+
+    footer .fcenter {
+        margin-right: 32px;
+        float: left;
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    footer .fcenter p {
+        margin-top: 5px;
+    }
+
+    footer .fcenter p:nth-child(1) {
+        margin-top: 0;
+    }
+
+    footer .right {
+        float: left;
+        width: 300px;
+        margin-top: 0px;
+        text-align: center;
+    }
+
+    footer .right img {
+        width: 120px;
+        height: 137px;
+    }

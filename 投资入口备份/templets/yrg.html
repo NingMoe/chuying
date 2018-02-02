@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset=utf-8>
+    <link href="style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <title>已认购进入页</title>
+</head>
+
+<body>
+<header class="clearfix">
+    <div class="header-bar">
+        <div class="left">
+            <img style="height:65px;" src="images/LOGO-02.png" alt="">
+            <div class="bar"></div>
+            <span>会员中心</span>
+        </div>
+        <div class="right ">
+            <i class="iconfont base-color">&#xe60d;</i>
+            <span class="base-color" style="margin-right: 3rem"><span id="name">你好</span></i>欢迎回来</span>
+            <i class="iconfont base-color">&#xe6d9;</i>
+            <span  class="base-color" style="margin-right: 3rem"><a style="color:#a50319" href="https://www.yingchu-asset.com">首页</a></span>
+            <i class="iconfont base-color">&#xe60f;</i>
+            <span ><a class="base-color" href="../yc_php/logout.php">安全退出</a></span>
+        </div>
+    </div>
+</header>
+<main>
+    <div>
+        <div id="yrg-table">
+            <table class="head">
+                <tr>
+                    <th>项目类别</th>
+                    <th>
+                        <th class="left-border">产品类型</th>
+                        <th> 详情</th>
+                    </th>
+                </tr>
+            </table>
+            <table class="yrg-body">
+                
+                
+            </table>
+        </div>
+        <div id="pre-order" class="hide">
+            <div class="close">
+                <i class="iconfont">&#xe61a;</i>
+            </div>
+            <div class=" pre-order-body">
+                <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
+                <input type="text" id="telphone" placeholder="输入手机号码预约">
+                <button class="button4" type="button">提交预约</button>
+            </div>
+        </div>
+        <div id="report" class="hide">
+            <div class="title-bar">
+                <H2>楚盈景秀芳华一号简要报告</H2>
+            </div>
+            <br/>
+            <div class="report-body">
+                <p>尊敬的投资人：</p>
+                <br/>
+                <p>感谢您加入本合伙计划，上海楚盈资产管理有限公司，以下简称“楚盈资产”，作为合伙企业执行事务合伙人，承诺将恪尽职守地经营合伙企业财产，做到诚实、信用、谨慎、高效。现向您报告楚盈航运产业1号自成立以来相关运作情况。</p>
+                <br/>
+                <br/>
+        
+                <p>一、楚盈资产简介</p>
+                <br/>
+                <p>楚盈资产聚集了投资界的人才精英，具备丰富的实际操作经验，凭借强大的专业团队与众多领域优秀的合作伙伴，精准把握市场和项目，从产业链的角度深挖行业，对行业和企业的成长性进行预判，对企业的技术水平和实力进行解析，使用专业的风控管理体系规避风险，以严格的尽职调查进行投资评估。</p>
+                </br>
+        
+                <p>楚盈资产兼顾稳健与创新，抓住各类投资机会，优化投资组合，为客户提供全方位的金融投资服务，力求带来长期</p>
+        
+            </div>
+            <div class="close2">
+                <i class="iconfont">&#xe61a;</i>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="w1212">
+        <div class="left">
+            <img src="images/flogo.png" alt="">
+        </div>
+        <div class="fcenter">
+            <p>Copyright 2017 YINGCHU ASSET. All rights reserved</p>
+            <p>盈楚资产 版权所有</p>
+            <p>地址：上海市普陀区云岭东路651号合星大厦12层 电话：021-61171559</p>
+            <p>盈楚（上海）资产管理有限公司 沪ICP备17049583号</p>
+        </div>
+        <div class="right">
+            <img src="images/QRcode.png" alt="">&nbsp;&nbsp;&nbsp;
+            <img src="images/wx.png" alt="">
+        </div>
+    </div>
+</footer>
+
+<script src="/style/libs/swiper.min.js"></script>
+<script src="/style/libs/global.js"></script>
+<script>
+    $(function () {
+        var windowW = $(window).width();
+        var windowH = $(window).height();
+    });
+    //已认购的项目渲染
+    function render1(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class = "detail notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td class = "ygm">已购买</td>
+                    </td>
+                </tr>`
+           /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告' )
+                $node.find('.title').text(content[i].title)
+                $('.yrg-body').append($node);
+
+            }
+
+
+        }
+    //已预约项目渲染
+    function render2(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class = " notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td class= "yyy">已预约</td>
+                    </td>
+                </tr>`
+            /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告')
+                $node.find('.title').text(content[i].title)
+                $('.yrg-body').append($node);
+
+            }
+
+
+    }
+    //其他项目渲染
+    function render3(content) {
+            let html = ''
+            var template = `<tr class="alt">
+                    <td class = " notice " >某某项目公告</td>
+                    <td >
+                        <td class =" title project-name">景秀芳华2号</td>
+                        <td class = "active">预约</td>
+                    </td>
+                </tr>`
+            /*  console.log(content) */
+            for (let i = 0; i < content.length; i++) {
+
+                var $node = $(template)
+                $node.find('.notice').text(content[i].title + '公告')
+                $node.find('.title').text(content[i].title)
+                $('.yrg-body').append($node);
+
+            }
+
+
+    }
+
+        //载入事件
+        $(window).load(function () {
+            $(".right #name").text($.cookie(name).name)
+            console.log($.cookie("name"))
+            console.log($.cookie("sfz"))
+        });
+        var ygm = []
+        $.ajax({
+            //获取所有项目
+            type: "GET",
+            url: "../yc_php/yc_xm.php",
+            success: function (data) {              
+                    
+                    var str1 = $.parseJSON(data)//所有项目
+                    
+                $.ajax({
+                    //获取已预约
+                    type: "GET",
+                    url: "../yc_php/yc_yy_xmid.php",
+                    success: function (data) {
+                    var str2 =   $.parseJSON(data) 
+                         $.ajax({
+                            //获取已认购项目
+                            type: "GET",
+                            url: "../yc_php/yc_yrg_xmid.php",
+                            success: function (data){                              
+
+                                var str3 = $.parseJSON(data);
+
+                                console.log(str1)
+                                console.log(str2)
+                                console.log(str3)
+                                //获取到后两种的id
+                                var ygid = []// 已购项目的id
+                                var yyid = []// 已预约项目的id
+                                for (let i = 0; i < str2.length; i++) {
+                                    yyid[i] = str2[i].rgxm_yx
+                                }
+                                for (let i = 0; i < str3.length; i++) {
+                                    ygid[i] = str3[i].rgxm
+                                }
+                                console.log(ygid)
+                                console.log(yyid)
+
+
+                                var kyy = []//可以预约的项目
+                                var qtxm = []//未购买项目
+                                var wyy = [] //未购买&&未预约项目
+                                var yy = [] //已预约
+                                var yg = [] //已购买
+                                ygm =  yg
+                                //获得已购项目
+                                for (let i = 0; i < str1.length; i++) {
+                                    for (let j = 0; j < ygid.length; j++) {
+                                        if (str1[i].aid == parseInt(ygid[j])) {
+                                            yg.push(str1[i])
+
+                                        } else {
+                                            qtxm.push(str1[i])
+
+                                        }
+
+
+                                    }
+
+                                }
+                                //分离剩下的，已预约和未预约项目
+                                for (let i = 0; i < qtxm.length; i++) {
+                                    for (let j = 0; j < yyid.length; j++) {
+                                        if (qtxm[i].aid == parseInt(yyid[j])) {
+                                            yy.push(str1[i])
+
+                                        } else {
+                                            wyy.push(str1[i])
+
+                                        }
+
+
+                                    }
+
+                                }
+
+                                console.log(yg)
+                                console.log(yy)
+                                console.log(wyy)
+                                render1(yg)
+                                render2(yy)
+                                render3(wyy)
+
+
+                             }
+                        })
+                        
+
+                    }
+
+                })   
+               
+
+            }
+        })
+
+
+    //监听点击事件
+     $(".yrg-body").delegate('.active', "click", function (e) {
+        var $cur = $(this);
+        let projectName = $cur.parents(".alt").find(".project-name").text()
+         $("#yrg-table").addClass("hide")
+         $("#pre-order").removeClass("hide")
+         $('.close').click(function () {
+
+             $("#yrg-table").removeClass("hide")
+             $("#pre-order").addClass("hide")
+
+         })
+         $("#pre-order .button4").click(function () {
+
+             $("#yrg-table").removeClass("hide")
+             $("#pre-order").addClass("hide")
+             let sjh = $('#telphone').val();
+             console.log(sjh + "+" + projectName)
+             if (sjh != "") {
+                 var pp = "'" + sjh + "'" + "," + "'" + projectName + "'";
+                 $.ajax({
+                     type: "POST",
+                     url: "../yc_php/yc_rgyx.php",
+                     data: 'data' + pp,
+                     success: function (data) {
+                         if (data == 1) {
+                             alert("预约成功")
+                             $("#wrg-table").removeClass("hide")
+                             $("#pre-order").addClass("hide")
+                         } else {
+                             alert("过于火爆")
+                         }
+
+                     }
+                 })
+             } else {
+                 alert("请输入正确的手机号")
+             }
+
+
+         })
+             console.log(sjh + "+" + projectName)
+
+        
+
+     });   
+
+    
+    //点击打开项目公告
+     $(".yrg-body").delegate('.detail', "click", function (e) {
+            var $cur = $(this);
+            let projectName = $cur.parents(".alt").find(".project-name").text()
+             console.log(projectName)
+             console.log(ygm)
+              for (let i = 0; i < ygm.length; i++){
+                  if(projectName == ygm[i].title){
+                      var aid = ygm[i].aid;
+                       $.cookie("aid", aid); 
+                      var pp = "'" + aid + "'" ;
+                      $.ajax({
+                          type: "POST",
+                          url: "../yc_php/yc_yrg_content.php",
+                          data: 'data' + pp,
+                          success: function (data) {
+                            let content =  $.parseJSON(data)
+                            console.log(content)
+                            console.log(content[0].content)
+                          }
+                      })
+                      
+
+                  }
+              }
+             
+
+             $("#yrg-table").addClass("hide")
+             $("#report").removeClass("hide")
+             $('.close2').click(function () {
+             $("#report").addClass("hide")
+             $("#yrg-table").removeClass("hide")
+
+            })    
+     
+     
+     })    
+     
+    
+</script>
+</body>
+</html>

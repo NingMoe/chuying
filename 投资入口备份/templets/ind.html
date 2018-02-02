@@ -1,0 +1,112 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="templets/style/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="header-bar ">
+        <div class="left">
+            <img src="./templets/images/logo.png" alt="">
+            <div class="bar"></div>
+            <span>会员中心</span>
+        </div>
+        <div class="right">
+            <a class="base-color">返回首页
+                <i class="iconfont">&#xe6a7;</i>
+            </a>
+        </div>
+    </div>
+
+</header>
+    <main>
+        <div id="loginbox">
+            <div class="box-header2">
+                <h2>重置密码</h2>
+            </div>
+            <form class="show" name='form1' method='POST' action='resetpassword.php' id="loginform">
+                <div class="box-body" style="padding: 0 40px;">
+                    <input style="margin-top:0;" type="text" placeholder="手机">
+                    <input type="password" placeholder="密码">
+                    <input type="password" placeholder="密码确认">
+                    <div>
+                        <input class=".check-box" type="text" placeholder="请输入手机验证码">
+                        <button class="button2">获取验证码</button>
+                    </div>
+                    <button class="button3" style="margin:25px 25px 60px 25px;">登录</button>
+                </div>
+            </form>
+
+        </div>
+       
+    </main>
+    <footer>
+        <div class="w1212">
+            <div class="left">
+                <img src="./templets/images/flogo.png" alt="">
+            </div>
+            <div class="fcenter">
+                <p>Copyright 2017 YINGCHU ASSET. All rights reserved</p>
+                <p>盈楚资产 版权所有</p>
+                <p>地址：上海市普陀区云岭东路651号合星大厦12层 电话：021-61171559</p>
+                <p>盈楚（上海）资产管理有限公司 沪ICP备17049583号</p>
+            </div>
+            <div class="right">
+                <img src="./templets/images/QRcode.png" alt="">&nbsp;&nbsp;&nbsp;
+                <img src="./templets/images/wx.png" alt="">
+            </div>
+        </div>
+    </footer>
+    
+    <script src="/style/libs/swiper.min.js"></script>
+    <script src="/style/libs/global.js"></script>
+    <script>
+        $(function () {
+            var windowW = $(window).width();
+            var windowH = $(window).height();
+        });
+    </script>
+
+</body>
+<script>
+    $('#loginbox .button3').click(function () {
+        console.log("你点到我了")
+        var username = $('.signup #username').val();
+        var password = $(".signup #pwd").val();
+        let telnumb = $(".signup #telphone").val();
+        var passworddok = $(".signup #userpwdok").val();
+        var code = $("#code").val();
+        if (username != "" && password != "") {
+
+            if (password === passworddok) {
+                var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
+                $.ajax({
+                    type: "POST",
+                    url: "yc_php/yc_register.php",
+                    data: 'data' + pp,
+                    success: function (data) {
+                        if (data == 1) {
+                            console.log("开始跳转")
+                            window.location.href = "index1.php";
+                        } else {
+                            alert("注册失败")
+                        }
+
+                    }
+                })
+            } else {
+                alert("两次密码不一致");
+            }
+
+        } else {
+            alert("请检查您的输入！");
+        }
+    })
+
+
+</script>
+
+</html>
