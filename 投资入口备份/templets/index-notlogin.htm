@@ -69,7 +69,6 @@ function check2() {
             } else {
                 $(".telnumbc").text("");
                 a = 1;
-
                 }
 
         })
@@ -192,25 +191,44 @@ function send2() {
             $(".button4").addClass("disabled")
             $(this).attr("disabled", true);
             timeCount(this);
-            let sjh = $("#telnumb").val();
-            var num = "";
-            for (let i = 0; i < 6; i++) {
-                num += Math.floor(Math.random() * 10)
-            }
-            //ajax
-            vcode = num
-            console.log(vcode)
-            var pp = sjh + "," + "'" + vcode + "'";
-            /*  $.ajax({
-                 type: "POST",
-                 url: "yc_php/sms_send.php",
-                 timeout: 8000,
-                 data: 'data' + pp,
-                 success: function (data) {
-                     console.log(data)
-                 }
+            let sfz = $("#user-id").val();
+            let ff = sfz;
+             $.ajax({//发一个ajax来获取对应身份证的手机号
+                type: "POST",
+                url: "yc_php/get_sjh.php",
+                timeout: 8000,
+                data: 'data' + ff,
+                success: function (data) {
+                    let sjh =  JSON.parse(data)[0].sjh;
+                    $.cookie("sjh", sjh);
 
-             }) */
+                    var num = "";
+                    for (let i = 0; i < 6; i++) {
+                        num += Math.floor(Math.random() * 10)
+                    }
+                    //ajax
+                    vcode = num
+                    console.log(vcode)
+
+                   let pp = sjh + "," + "'" + vcode + "'"; 
+                     /*  $.ajax({
+                        type: "POST",
+                        url: "yc_php/sms_send.php",
+                        timeout: 8000,
+                        data: 'data' + pp,
+                        success: function (data) {
+                            console.log(data)
+                        }
+
+                    })  */
+
+                }
+
+            })
+
+
+
+            
 
 
         })
@@ -223,7 +241,7 @@ function send2() {
             } else {
                 $(".vcodec2").text("");
                  console.log("快让朕登录")
-                  yrg()
+                 yrg()
                 
             }
 
@@ -267,7 +285,7 @@ function wrg() {
          $('#yrg .button3').click(function () {
              var userid = $('#yrg #user-id').val();
              var password = $("#yrg #password2").val();
-              var pp = "'" + userid + "'" + "," + "'" + password + "'";
+             var pp = "'" + userid + "'" + "," + "'" + password + "'";
              console.log(password + userid)
              console.log("已认购登录")
                $.ajax({
@@ -282,6 +300,7 @@ function wrg() {
                          let name = a[0]
                          let url = a[1]
                          $.cookie("name", a[0]);
+                         $.cookie("sfz", userid);
                                                                                                                                                                                  
                          window.location.href = url;
                      } else {

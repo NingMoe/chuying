@@ -183,33 +183,21 @@
                              }    
                             
                             //将两种项目分开来
-                           
-                           
-                             for (let i = 0; i < str1.length; i++) {
-                                    
-                                   
+                                                  
+                             for (let i = 0; i < all.length; i++) {
+                                                                       
                                    if(yxid.length != 0){
                                        for (let j = 0; j < yxid.length; j++) {
 
                                            if (str1[i].aid == parseInt(yxid[j])) {
                                                yx.push(all[i])
-                                               console.log(yx)
                                                all.splice(i,1)
                                               
-                                           } else {
-                                               console.log("为什么没有经过这里")
-                                               qtxm.push(all[i])
-                                               console.log(qtxm)
-                                               all.splice(i, 1)
-                                               
-                                           }
+                                           } 
 
                                        }
                                      
-                                   }else{
-                                     qtxm.push(str1[i])
-                                   }
-                                   
+                                   }                            
 
                             }    
                            console.log(all)
@@ -247,8 +235,7 @@
                         
                         $("#pre-order .button4").click(function () {                                                      
                             let sjh = $telnumb.val();
-                            //根据项目名获取到项目id
-                           
+                            //根据项目名获取到项目id                           
                             var yyyid;
                             for(let i =0 ;i < all.length;i++){
                                 if(all[i].title == projectName){
@@ -276,12 +263,9 @@
                                 }
                             })
 
-                        })
-                        
-
+                        })                  
 
                     }
-
             })
 
 
