@@ -5,6 +5,7 @@
 
 
  //begin -->
+ //根据身份证或手机号来查找是否已经提交过预约
 $sjh = $_COOKIE['sjh'];
 $sfz = $_COOKIE['sfz'];
 $db = func_db_getdb($dbhost,'hsslyc',$dbuser,$dbpwd);
@@ -17,5 +18,6 @@ if($sfz != ''){
 }
 $arr = func_db_query($db,$sql);
 echo json_encode($arr);
+
 // <-- end
 ?>

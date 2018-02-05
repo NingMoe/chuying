@@ -12,7 +12,7 @@
 <header class="clearfix">
     <div class="header-bar">
         <div class="left">
-            <img src="images/logo.png" alt="">
+            <img style="height:65px;" src="images/LOGO-02.png" alt="">
             <div class="bar"></div>
             <span>会员中心</span>
         </div>
@@ -21,10 +21,10 @@
             <span class="base-color" style="margin-right: 3rem"><span id="name">你好</span></i>欢迎回来</span>
             <i class="iconfont base-color">&#xe6d9;</i>
         <span class="base-color" style="margin-right: 3rem">
-            <a style="color:#b78c2e" href="https://www.yingchu-asset.com">首页</a>
+            <a style="color:#a50319" href="https://www.yingchu-asset.com">首页</a>
         </span>
             <i class="iconfont base-color">&#xe60f;</i>
-            <span class="base-color">安全退出</span>
+            <span ><a class="base-color" href="../yc_php/logout.php">安全退出</a></span>
         </div>
     </div>
 </header>
@@ -58,7 +58,10 @@
         </div>
         <div class=" pre-order-body">
             <h2>楚盈景秀芳华1号私募投资基金，在线预约！</h2>
-            <input type="text" id="telphone" placeholder="输入手机号预约">
+            <div class="order-book">
+                <input type="text" id="telphone" placeholder="输入手机号预约">
+                <span class="reminder telnumbc"></span>
+            </div>            
             <button class="button4" type="button">提交预约</button>
         </div>    
     </div>
@@ -89,6 +92,8 @@
         var windowW = $(window).width();
         var windowH = $(window).height();
     });
+
+    var all;    
     //可预约项目渲染
     function render1(content){
           let html = ''   
@@ -98,7 +103,7 @@
                     <td class="lb">固定+浮动</td>
                     <td class="active">预约</td>
                 </tr>`
-          console.log(content)      
+          
           for (let i = 0; i < content.length; i++) {
              
               var $node = $(template)
@@ -121,7 +126,7 @@
                     <td class="lb">固定+浮动</td>
                     <td class="yyy" >已预约</td>
                 </tr>`
-            console.log(content)
+            
             for (let i = 0; i < content.length; i++) {
                
                 var $node = $(template)
@@ -140,44 +145,64 @@
         $(".right #name").text($.cookie(name).name)
             console.log($.cookie("name"))
             console.log($.cookie("sjh"))
-        });
-         $.ajax({
+        });        
+             
+        
+         $.ajax({//获取到所有项目
                 type: "GET",
                 url: "../yc_php/yc_xm.php",
                 success: function (data) {
                     var data2 = data;
-                    var str1 = $.parseJSON(data)      
-                    
-                    
-                    $.ajax({
+                    var str1 = $.parseJSON(data)
+                    all = str1
+                    console.log("这是所有项目" + data)
+                    $.ajax({//获取到可被预约的项目
                         type: "GET",
                         url: "../yc_php/yc_yy_xmid.php",
                         success: function (data) {
-                            //获取到购买意向id
-                            var yxid = []
-                            var yx = []
-                            var qtxm = []
+                            console.log("这是已预约的项目的" + data)
+                           
+                            var yxid = []//获取到已预约项目的id
+                            let yx = []
+                            let qtxm = []
                             var str2  = $.parseJSON(data);
-                            for (let i = 0; i < str2.length; i++) {
-                                
-                                yxid[i] = str2[i].rgxm_yx
+                            var str3 = str2[0].rgxm_yx
+                            console.log(str3)
+                            var result = str3.split(",")
+                            for(let i=0;i<result.length;i++){
+                                if(result[i] == ''){
+                                     result.splice(i, 1);
+                                }
+                            }
+                            console.log("這是去掉空的已预约id的数组" + result)
+                            let set = new Set();
+                            set = result 
+                        
+                            for (let i = 0; i < set.length; i++) {                                
+                                yxid[i] = set[i]
                              }    
                             
                             //将两种项目分开来
-                             for (let i = 0; i < str1.length; i++) {
-                                    for (let j = 0; j < yxid.length; j++){
-                                        if(str1[i].aid == parseInt(yxid[j])){
-                                            yx.push(str1[i]) 
-                                            
-                                        }else{
-                                            qtxm.push(str1[i])
-                                        }
+                                                  
+                             for (let i = 0; i < all.length; i++) {
+                                                                       
+                                   if(yxid.length != 0){
+                                       for (let j = 0; j < yxid.length; j++) {
 
-                                    }
+                                           if (str1[i].aid == parseInt(yxid[j])) {
+                                               yx.push(all[i])
+                                               all.splice(i,1)
+                                              
+                                           } 
+
+                                       }
+                                     
+                                   }                            
 
                             }    
-                           render2(yx)
-                           render1(qtxm)
+                           console.log(all)
+                           render2(yx)//已预约的项目(先渲染)
+                           render1(all)//其他项目(可预约)
 
                             
                         }
@@ -185,9 +210,10 @@
 
                 }
             })
-            //监听
-
-            $(".wrg-body").delegate('.active', "click", function (e) {
+               
+                   
+             $(".wrg-body").delegate('.active', "click", function (e) {
+                var $telnumb = $("#telphone")
                 var $cur = $(this);
                 let projectName = $cur.parents(".alt").find(".project-name").text()
 
@@ -197,38 +223,57 @@
                     $("#wrg-table").removeClass("hide")
                     $("#pre-order").addClass("hide")
                 })
-                $("#pre-order .button4").click(function () {
 
-                    $("#wrg-table").removeClass("hide")
-                    $("#pre-order").addClass("hide")
-                    let sjh = $('#telphone').val();
-                    console.log(sjh + "+" + projectName)
-                    if (sjh != "") {
-                        var pp = "'" + sjh + "'" + "," + "'" + projectName + "'";
-                        $.ajax({
-                            type: "POST",
-                            url: "../yc_php/yc_rgyx.php",
-                            data: 'data' + pp,
-                            success: function (data) {
-                                if (data == 1) {
-                                    alert("预约成功")
-                                    $("#wrg-table").removeClass("hide")
-                                    $("#pre-order").addClass("hide")
-                                } else {
-                                    alert("过于火爆")
-                                }
-
-                            }
-                        })
+                $telnumb.blur(function () {
+                    var telnumb = /^1[34578]\d{9}$/;
+                    
+                    if (!telnumb.test($telnumb.val())) {
+                        $(".telnumbc").text("手机号不符合要求");                        
                     } else {
-                        alert("请输入正确的手机号")
+
+                        $(".telnumbc").text("");
+                        
+                        $("#pre-order .button4").click(function () {                                                      
+                            let sjh = $telnumb.val();
+                            //根据项目名获取到项目id                           
+                            var yyyid;
+                            for(let i =0 ;i < all.length;i++){
+                                if(all[i].title == projectName){
+                                    yyyid = all[i].aid;
+                                }
+                            }
+
+                            console.log(sjh + "+" + projectName + "+" +yyyid)
+                            var pp = "'" + sjh + "'" + "," + "'" + projectName + "'" + ","  + yyyid ;
+                            $.ajax({
+                                type: "POST",
+                                url: "../yc_php/yc_rgyx.php",
+                                data: 'data' + pp,
+                                success: function (data) {
+                                    console.log(data)
+                                    if (data == 1) {
+                                        alert("预约成功")
+                                        $("#wrg-table").removeClass("hide")
+                                        $("#pre-order").addClass("hide")
+                                        window.location.reload()
+                                    } else {
+                                        alert("过于火爆")
+                                    }
+
+                                }
+                            })
+
+                        })                  
+
                     }
+            })
 
 
-                })
-                
+
 
             });        
+        
+    
 
     
 

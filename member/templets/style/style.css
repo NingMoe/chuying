@@ -216,7 +216,22 @@
     #loginbox .box-body >div{
         display: flex;
     }
+
    .button2{
+        background: #a50319;
+        color: #EFEFEF;
+        text-align: center;
+        height: 39px;
+        width: 94px;
+        cursor: pointer;
+        font-weight:normal;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+           
+    }
+    .button4{
         background: #a50319;
         color: #EFEFEF;
         text-align: center;
@@ -347,13 +362,22 @@
          margin-top: 10px;
                   font-size: 20px;
      }
-    #pre-order input{
-        margin:36px 0;
+    #pre-order .order-book{
+        margin:36px 0;      
+         
+    }
+    #pre-order .order-book .reminder{
+        display: block;
+        margin-top: 10px;      
+         
+    }
+   
+    #pre-order .order-book input{
         border: 1px solid rgb(221,221,221);
         padding: 10px 10px 10px 10px;
         height: 40px;
         width: 400px;
-         
+
     }
     #pre-order .button4{
         cursor: pointer;
@@ -374,7 +398,7 @@
         color: rgb(81, 51, 254);
     } 
     #yrg-table .ygm{
-        color:#a50319;
+        color:rgb(217,169,97);
     } 
      /*未认购*/
     #wrg-table .active{

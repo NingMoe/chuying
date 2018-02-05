@@ -10,11 +10,15 @@ header("Content-type:text/html; charset=UTF-8");
  */
 require_once 'ChuanglanSmsHelper/ChuanglanSmsApi.php';
 $clapi  = new ChuanglanSmsApi();
-$code = mt_rand(100000,999999);
-$result = $clapi->sendSMS('15251833069', '尊敬的用户您好，您的验证码为'. $code .'，请及时验证，切勿泄露给他人。');
+$input = file_get_contents("php://input");
+$inputAll = urldecode(substr($input,4)); //data , so 4\
+$arr_co = explode(",",$inputAll);
+$code = $arr_co[1];
+$telnum = ($arr_co[0]);
+echo $telnum ;
+$result = $clapi->sendSMS($telnum, '尊敬的用户您好，您的验证码为'. $code .'，请及时验证，切勿泄露给他人。');
 
 if(!is_null(json_decode($result))){
-	
 	$output=json_decode($result,true);
 	if(isset($output['code'])  && $output['code']=='0'){
 		echo '短信发送成功！' ;
@@ -23,4 +27,5 @@ if(!is_null(json_decode($result))){
 	}
 }else{
 		echo $result;
+		
 }

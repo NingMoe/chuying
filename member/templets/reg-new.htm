@@ -108,12 +108,8 @@
                     d = 1;
                    if(a==1 && b==1 && c==1 && d==1){
                        sendM()
-                   }
-                   
-
-
-                   
-
+                   }            
+            
                 }    
             })
            
@@ -124,17 +120,15 @@ function sendM(){
     var ordertime=60   //设置再次发送验证码等待时间
     var timeleft=ordertime    
     var vcode;
-    $(".button2").removeClass("disabled")
+     $(".button2").removeClass("disabled")
      $(".button2").addClass("abled")
     function timeCount(){
         timeleft-=1
-        console.log(timeleft)
         if (timeleft>0){
             $(".button2").text(timeleft+" 秒后重发");
         setTimeout(timeCount,1000)
         }
         else {
-
             $(".button2").text("重新发送");
             timeleft=ordertime   //重置等待时间
             //60s之后自动变回可点击状态
@@ -146,14 +140,31 @@ function sendM(){
                             
     
     //点击发送ajax button2 变成不可点击状态  
-    $(".abled").click(function () {
+     $(".abled").click(function () {
         $(".button2").removeClass("abled")
-        $(".button2").addClass("disabled")                            
-        
-        timeCount(this);                           
-
+        $(".button2").addClass("disabled")
+        timeCount(this);
+        let sjh = $(".signup #telphone").val();        
+        var num = "";
+        for (let i = 0; i < 6; i++) {
+            num += Math.floor(Math.random() * 10)
+        }
         //ajax
-        vcode = "1234"
+        vcode = num
+        console.log(vcode)
+        var pp = sjh + "," +   vcode ;
+        /* $.ajax({
+            type: "POST",
+            url: "yc_php/sms_send.php",
+            timeout: 8000,
+            data: 'data' + pp,
+            success: function (data) {
+                console.log(data)
+            }
+
+        }) */
+
+
     })
 
     //bulr事件 验证返回或者输入 
@@ -189,11 +200,13 @@ function signup(){
                     url: "yc_php/yc_register.php",
                     data: 'data' + pp,
                     success: function (data) {
+                        console.log(data)
                         if (data == 1) {
                             console.log("开始跳转")
-                            window.location.href = "index1.php";
-                        } else {
-                            alert("注册失败")
+                            alert("注册成功")
+                           /*  window.location.href = "index1.php"; */
+                        } else if(data == 0) {
+                            alert('该手机号已被注册')
                         }
 
                     }

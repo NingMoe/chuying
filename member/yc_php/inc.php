@@ -1,6 +1,6 @@
 <?php
 
-$dbhost='192.168.2.126';
+$dbhost='122.114.59.207';
 $dbuser= 'hsslyc';
 $dbpwd= 'Q4T7S5s4';
 ?>
