@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title>查看用户</title>
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<script language='javascript'src='../data/enums/area.js'></script>
+<script>
+function checkSubmit()
+{
+  if(document.form2.email.value=="")
+  {
+    document.form2.email.focus();
+    alert("Email不能为空！");
+    return false;
+  }
+  if(document.form2.uname.value=="")
+  {
+    document.form2.uname.focus();
+    alert("用户昵称不能为空！");
+    return false;
+  }
+  var id = /^[1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)$/;
+  if (document.form2.sfz.value != "" ) {
+    if(!id.test(document.form2.sfz.value)){
+        alert("输入18位身份证号");
+        return false;
+    } 
+   
+  }
+}
+</script>
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<table width="98%" border="0" align="center" cellpadding="3" cellspacing="1" bgcolor="#D6D6D6">
+  <tr>
+    <td height="19" background="images/tbg.gif" style="padding-left:10px;"><a href='<?php echo $ENV_GOBACK_URL; ?>'><b>用户管理</b></a> &gt;&gt; 查看会员</td>
+</tr>
+<tr>
+<td height="200" bgcolor="#FFFFFF" align='center'>
+	<?php
+	if($row['matt']==10) echo "<font color='red'>当前用户是网站管理员关连的帐号，请小心操作！</font>";
+	?>
+	<table width="98%" border="0" cellspacing="0" cellpadding="6" >
+        <tr> 
+          <td colspan="2" height="10" ></td>
+        </tr>
+        <form name="form2" action="member_do.php" method="post" onSubmit="return checkSubmit();">
+          <input type="hidden" name="dopost" value="edituser" />
+          <input type="hidden" name="id" value="<?php echo $id?>" />
+          <tr> 
+            <td width="17%" align="right" class='bline'>用户名：</td>
+            <td width="83%" class='bline' style="text-align:left;"> 
+              <?php
+			  echo "<b>".$row['userid']."</b>";
+              if($row['face']!='') {
+			     echo "<br /><img src='{$row['face']}' width='80'/>";
+			  }
+			  ?>
+             </td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>密　码：</td>
+            <td class='bline'  style="text-align:left;">
+            <input type="text" name="pwd" id="pwd" />
+            (不修改留空)
+            </td>
+          </tr>
+          <!-- <tr> 
+            <td align="right" class='bline'>注册时间：</td>
+            <td class='bline' style="text-align:left;"> 
+              <?php echo GetDateTimeMk($row['jointime'])?>
+              　ＩＰ： 
+              <?php echo $row['joinip']?>
+             </td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>最近登录时间：</td>
+            <td class='bline' style="text-align:left;"> 
+              <?php echo GetDateTimeMk($row['logintime'])?>
+              　ＩＰ： 
+              <?php echo $row['loginip']?>
+             </td>
+          </tr> -->
+          <tr> 
+            <td align="right" class='bline'>用户类型：</td>
+            <td class='bline'  style="text-align:left;">
+            <?php echo $row['mtype']; ?>
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>电子邮箱：</td>
+            <td class='bline' style="text-align:left;">
+            <input name="email" type="text" id="email" value="<?php echo $row['email']?>" style="width:150px;" />
+            </td>
+          </tr>
+          <tr>
+            <td align="right" class='bline'>身份证：</td>
+            <td class='bline' style="text-align:left;">
+              <input name="sfz" type="text" id="sfz" value="<?php echo $row['sfz']?>" style="width:150px;" />             
+            
+            </td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>昵　称：</td>
+            <td class='bline' style="text-align:left;">
+            <input name="uname" type="text" value="<?php echo $row['uname']?>" id="uname" size="20" style="width:150px;" />
+           </td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>性　别：</td>
+            <td class='bline' style="text-align:left;">
+            <input type="radio" name="sex" class="np" value="男"<?php if($row['sex']=="男" ) echo" checked='1'" ;?> />
+              男 &nbsp; 
+             <input type="radio" name="sex" class="np" value="女"<?php if($row['sex']=="女" ) echo" checked='1'" ;?> />
+              女
+             <input type="radio" name="sex" class="np" value=""<?php if($row['sex']=="" ) echo" checked='1'" ;?> />
+              保密
+             </td>
+          </tr>
+           <tr> 
+            <td align="right" class='bline'>认购项目：</td>
+            <td class='bline' style="text-align:left;">
+            <input name="rgxm" type="text" value="<?php echo $row['rgxm']?>" id="rgxm" size="20" style="width:150px;" onblur="func_blur()" />
+            （项目ID中间用逗号隔开）
+           </td>
+          </tr>
+          <!-- <tr> 
+            <td align="right" class='bline'>金币 ：</td>
+            <td class='bline' style="text-align:left;">
+           <input name="money" type="text" id="money" value="<?php echo $row['money']; ?>" style="width:80px;" />
+            积分：<input name="scores" type="text" id="scores" value="<?php echo $row['scores']; ?>" style="width:80px;" /></td>
+          </tr> -->
+           <tr> 
+            <td align="right" class='bline'>等级：</td>
+            <td class='bline' style="text-align:left;"><?php
+             $MemberTypes = '';
+             $dsql->SetQuery("Select rank,membername From `#@__arcrank` where rank>0");
+             $dsql->Execute('n');
+             //$MemberTypes[] = "限制用户";
+             while($nrow = $dsql->GetObject('n')){
+	              $MemberTypes[$nrow->rank] = $nrow->membername;
+             }
+             $options = "<select name='rank' style='width:160px' id='select_rank'>\r\n";
+             foreach($MemberTypes as $k=>$v)
+             {
+  	            if($k!=$row['rank']) $options .= "<option value='$k'>$v</option>\r\n";
+  	            else $options .= "<option value='$k' selected>$v</option>\r\n";
+             }
+             $options .= "</select>\r\n";
+			       echo $options;
+      ?>
+    </td>
+     <!--      </tr>
+          <tr> 
+            <td align="right" class='bline'>升级时间：</td>
+            <td class='bline' style="text-align:left;">
+            <input type="text" style="width: 200px;" value="<?php echo $row['uptime']=($row['uptime']=="0")? GetDateTimeMk(time()) : GetDateTimeMk($row['uptime']);?>" id="uptime" name="uptime">
+            （如果你要升级会员，必须设置此时间为当前时间）</td>
+          </tr>
+          <tr> 
+            <td align="right" class='bline'>会员天数：</td>
+            <td class='bline' style="text-align:left;"><input type="text" style="width: 200px;" value="<?php echo $row['exptime']?>" id="exptime" name="exptime">
+            （如果你要升级会员，会员天数必须大于0） </td>
+          </tr>
+          <?php if($mhasDay!=0){ $mhasDay=($mhasDay>0)? $mhasDay : '<font  color="red">该会员已经到期</font>';?>
+          <tr> 
+            <td align="right" class='bline'>会员剩余天数：</td>
+            <td class='bline' style="text-align:left;"><?php echo $mhasDay; ?></td>
+          </tr>
+          <tr>  -->
+         <!--  <?php } ?>
+            <td align="right" class='bline'>推荐级别：</td>
+            <td class='bline' style="text-align:left;">
+            <input name="oldmatt" type="hidden" id="oldmatt" value="<?php echo $row['matt']?>" />
+            <input name="matt" type="text" id="matt" value="<?php echo $row['matt']?>" size="3" />
+          (0为普通，1为推荐，10为管理员[不能在前台登录]
+          <font color='red'>{非管理员ID是严格使用10属性的，要新建管理在 <a href='sys_admin_user_add.php' target='_blank'><u>系统帐号</u></a> 的地方增加}</font>)
+            </td>
+          </tr> -->
+          <tr>
+            <td align="right" class='bline'>资料状况：</td>
+            <td class='bline' style="text-align:left;">
+           	<select name='spacesta'>
+           		<?php
+           		foreach($staArr as $k=>$v)
+           		{
+           			if($row['spacesta']==$k) echo "<option value='$k' selected>$v</option>\r\n";
+           			else echo "<option value='$k'>$v</option>\r\n";
+           		}
+           		?>
+           	</select>
+            </td>
+          </tr>
+         <!--  <tr> 
+            <td height="60" align="right" class='bline'>空间信息：</td>
+            <td class='bline' style="text-align:left;">
+            <?php
+            $nrow = $dsql->GetOne("Select * From `#@__member_tj` where mid='{$row['mid']}' ");
+            echo "文章：{$nrow['article']} 图集：{$nrow['album']} 文档：{$nrow['archives']} 收藏：{$nrow['stow']}";
+            echo "<br />空间访问：{$nrow['homecount']} 页面访问：{$nrow['pagecount']} 留言：{$nrow['feedback']} 好友：{$nrow['friend']} ";
+            ?>
+            </td>
+          </tr> -->
+          <tr> 
+            <td width="17%" align="right" class='bline'>特殊操作：</td>
+            <td width="83%" class='bline'  style="text-align:left;">
+            <a href='member_do.php?dopost=memberlogin&id=<?php echo $row['mid']; ?>&jumpurl=../member/edit_fullinfo.php' target='_blank'><u>查看/修改详细资料</u></a>
+            &nbsp;|&nbsp;
+            <a href='member_do.php?dopost=memberlogin&id=<?php echo $row['mid']; ?>' target='_blank'><u>登陆到此用户控制面板</u></a>
+           <!--  &nbsp;|&nbsp;
+            <a href='../member/index.php?uid=<?php echo $row['userid']; ?>' target='_blank'><u>浏览此用户的空间</u></a> -->
+            </td> 
+          </tr>
+          <tr> 
+            <td height="67" align="right" >&nbsp;</td>
+            <td height="67" align="left">
+            <input type="submit" name="Submit" value="确定修改" class='coolbg' /> 
+              &nbsp;&nbsp;
+            <input type="reset" name="Submit22" value="重置表单" class='coolbg' />
+            </td>
+          </tr>
+        </form>
+    </table>
+    </td>
+</tr>
+</table>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+<script type="text/javascript" charset="utf-8">
+
+//身份证号码分隔
+       
+
+	var rgxm = $('#rgxm').val();
+	if(rgxm ==''){
+		$('#select_rank').attr('disabled',true);
+	}
+	var func_blur = function(){
+		Array.prototype.Contains = function(element) {
+	            for (var i = 0; i < this.length; i++) {
+	                if (this[i] == element) {
+	                    return true;
+	                }
+	            }
+	            return false;
+	        };
+		var if_rgxm = $('#rgxm').val();
+			if(if_rgxm ==''){
+				$('#select_rank').attr('disabled',true);
+			}else{
+				var arr_xm = new Array();
+				var str = new RegExp(',');
+				if(str.test(if_rgxm)){
+					arr_xm = if_rgxm.split(",");
+					func_ajax1(arr_xm);
+				}else {arr_xm = if_rgxm;
+					func_ajax2(arr_xm);
+				}
+			}
+		}
+		var func_ajax1 = function(arr_xm){
+				$.ajax({
+					type:'GET',
+					url:'yc_xmid.php',
+					timeout: 8000,
+					cache:false,
+					success:function(data){
+						var arr_co = [];
+						var arr = eval(data);
+						for(var i=0;i<arr.length;i++){
+							arr_co.push(arr[i].aid);
+						}
+							for(var h =0;h<arr_xm.length;h++){
+							  var str = arr_co.Contains(arr_xm[h]);
+							}
+							if(str == false){
+								alert('您的项目ID有误，请检查输入！');
+								$('#select_rank').attr('disabled',true);
+							}else $('#select_rank').attr('disabled',false);
+						  
+							
+					},
+					error:function(){}
+				})
+		}
+		var func_ajax2 = function(arr_xm){
+			$.ajax({
+				type:'GET',
+				url:'yc_xmid.php',
+				timeout: 8000,
+				cache:false,
+				success:function(data){
+					var arr_co = [];
+					var arr = eval(data);
+					for(var i=0;i<arr.length;i++){
+						arr_co.push(arr[i].aid);
+					}
+					var str = arr_co.Contains(arr_xm);
+						if(str == false){
+							alert('您的项目ID有误，请检查输入！');
+							$('#select_rank').attr('disabled',true);
+						}else $('#select_rank').attr('disabled',false);
+					  
+						
+				},
+				error:function(){}
+			})
+	};
+</script>
+</body>
+</html>

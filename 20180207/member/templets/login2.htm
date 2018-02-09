@@ -1,0 +1,49 @@
+<div id="loginbox">
+    <div class="box-header">
+        <div class="box-title active">未认购登录</div>
+        <div class="box-title">已认购登录</div>
+    </div>
+    <form class="show" id="wrg">
+        <div class="box-body">
+            <input class="iconfont" type="text" id="telnumb" placeholder="&#xe60d; 手机">
+            <span class="reminder telnumbc"></span>
+            <input class="iconfont" type="password" id="user-password" placeholder="&#xe620; 密码">
+            <span class="reminder passwordc"></span>
+            <div>
+                <input class=".check-box" id="vdcode" name="vdcode" type="text" placeholder="请输入手机验证码">
+                <button class="button2 disabled" type="button">获取验证码</button>
+            </div>
+            <span class="reminder vcodec"></span>
+            <button class="button3" type="button" id="wrg-login">登录</button>
+        </div>
+        <div class="box-footer">
+            <span>
+                <a class="a2" style="color:black;" href="index_do.php?fmdo=user&dopost=regnew">立即注册</a>
+            </span>
+            <span>
+                <a class="a2" style="color:black;" href="resetpassword.php">忘记密码？</a>
+            </span>
+        </div>
+    </form>
+    <form id="yrg">
+        <div class="box-body">
+            <input class="iconfont" type="text" id="user-id" placeholder="&#xe60d; 身份证">
+            <span class="reminder idc"></span>
+            <input class="iconfont" type="password" id="password2" placeholder="&#xe620; 密码">
+            <span class="reminder passwordc2"></span>
+            <div>
+                <input class=".check-box" id="vdcode2" type="text" placeholder="请输入手机验证码">
+                <button class="button4 disabled" type="button">获取验证码</button>
+            </div>
+            <span class="reminder vcodec2"></span>
+            <button type="button" class="button3">登录</button>
+        </div>
+        <div class="box-footer2">
+            <span>请输入身份证和密码</span>
+            <span>
+                <a class="a2" href="resetpassword.php" style="color:black;" title="找回密码">忘记密码？</a>
+            </span>
+        </div>
+    </form>
+
+</div>
