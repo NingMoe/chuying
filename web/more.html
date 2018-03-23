@@ -31,19 +31,25 @@
 <!--//pop-up-->
 </head>
 <style>
-	.clearfix2:after{
-		content: '';
-		display: block;
-		clear: both;
-	}
+ 	.clearfix:after{
+ 		content:".";display:block;height:0;clear:both;visibility:hidden
+ 	}
 	#pic-ct{
 		position: relative;
 	}
 	#pic-ct .item{
 		position: absolute;
-		width: 300px;
+		width: 200px;
 		transition: all 1s;
-		margin: 5px;
+		margin: 10px 10px 10px 0;
+
+	}
+	#pic-ct .item h4{
+		text-align: left;
+		
+	}
+	#pic-ct .item h4 a{
+		color: #000;
 	}
 	#pic-ct .item .thumbnail {
 		border: 1px solid #DFDFDF;
@@ -92,17 +98,15 @@
 	<img src="../images/banner1.jpg" style="max-height:500px">
 </div>	
 	<!--about-team-->
-	<div class="about-team  clearfix2">		
-		<div class="container clearfix2">
-			<h3 class="title">更多明星展墙</h3>
-		
-			<div class="row team-row content clearfix2" id="pic-ct">
-
-					
+	<div class="about-team " >		
+		<div class="container" >
+			<h3 class="title" >更多明星展墙</h3>
+				<div class="row team-row content clearfix" id="pic-ct" >
+	
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/liudehua.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -114,7 +118,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/wujing.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -127,7 +131,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/zhenzidan.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -139,7 +143,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/huangbo.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -151,7 +155,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/gongli.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -163,7 +167,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/liuye1.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -175,7 +179,7 @@
 					<div class="col-md-3 team-grids item  ">
 						<div class="thumbnail team-thmnl">
 							<img src="images/chenglong.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -187,7 +191,7 @@
 					<div class="col-md-3 team-grids item mo">
 							<div class="thumbnail team-thmnl">
 								<img src=""
-								 class="img-responsive zoom-img"
+								
 								 data-src="images/starpic/yangshuo.jpg"
 								 data-src2="杨烁"
 								 alt="...">
@@ -201,7 +205,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/yaochen.jpg"
 							 data-src2="姚晨"
 							 alt="...">
@@ -215,7 +219,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhangbozhi.jpg"
 							 data-src2="张柏芝"
 							 alt="...">
@@ -229,7 +233,7 @@
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/zhangziyi.jpg"
-							 class="img-responsive zoom-img"
+							
 							 alt="...">
 							<div class="caption">
 								<h4>
@@ -241,7 +245,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhangfengyi.jpg"
 							 data-src2="张丰毅"
 							 alt="...">
@@ -255,7 +259,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhangguoli.jpg"
 							 data-src2="张国立"
 							 alt="...">
@@ -269,7 +273,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhanghanyu.jpg"
 							 data-src2="张涵予"
 							 alt="...">
@@ -283,7 +287,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhaoyouting.jpg"
 							 data-src2="赵又廷"
 							 alt="...">
@@ -297,7 +301,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic/zhourunfa.jpg"
 							 data-src2="周润发"
 							 alt="...">
@@ -311,7 +315,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/chenbaoguo.jpg"
 							 data-src2="陈宝国"
 							 alt="...">
@@ -325,7 +329,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/chendaoming.jpg"
 							 data-src2="陈道明"
 							 alt="...">
@@ -339,7 +343,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/chenhao.jpg"
 							 data-src2="陈好"
 							 alt="...">
@@ -353,7 +357,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/chenkun.jpg"
 							 data-src2="陈坤"
 							 alt="...">
@@ -367,7 +371,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/chenshu.jpg"
 							 data-src2="陈数"
 							 alt="...">
@@ -381,7 +385,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/dengchao.jpg"
 							 data-src2="邓超"
 							 alt="...">
@@ -395,7 +399,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/fanwei.jpg"
 							 data-src2="范伟"
 							 alt="...">
@@ -409,7 +413,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic2/gaoyuanyuan.jpg"
 							 data-src2="高圆圆"
 							 alt="...">
@@ -423,7 +427,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/geyou.jpg"
 							 data-src2="葛优"
 							 alt="...">
@@ -437,7 +441,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/guotao.jpg"
 							 data-src2="郭涛"
 							 alt="...">
@@ -451,7 +455,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/houyong.jpg"
 							 data-src2="侯勇"
 							 alt="...">
@@ -465,7 +469,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/huangxiaoming.jpg"
 							 data-src2="黄晓明"
 							 alt="...">
@@ -479,7 +483,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/hujun.jpg"
 							 data-src2="胡军"
 							 alt="...">
@@ -493,7 +497,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/jiangwen.jpg"
 							 data-src2="姜文"
 							 alt="...">
@@ -507,7 +511,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/liangchaowei.jpg"
 							 data-src2="梁朝伟"
 							 alt="...">
@@ -521,7 +525,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic3/liangjiahui.jpg"
 							 data-src2="梁家辉"
 							 alt="...">
@@ -535,7 +539,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/liming.jpg"
 							 data-src2="黎明"
 							 alt="...">
@@ -549,7 +553,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/linxue.jpg"
 							 data-src2="林雪"
 							 alt="...">
@@ -563,7 +567,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/liujin.jpg"
 							 data-src2="刘劲"
 							 alt="...">
@@ -577,7 +581,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/liyoubin.jpg"
 							 data-src2="李幼斌"
 							 alt="...">
@@ -591,7 +595,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/sunhonglei.jpg"
 							 data-src2="孙红雷"
 							 alt="...">
@@ -605,7 +609,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wangluodan.jpg"
 							 data-src2="王珞丹"
 							 alt="...">
@@ -619,7 +623,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wangxuebing.jpg"
 							 data-src2="王学兵"
 							 alt="...">
@@ -633,7 +637,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wangxuexi.jpg"
 							 data-src2="王学圻"
 							 alt="...">
@@ -647,7 +651,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wugang.jpg"
 							 data-src2="吴刚"
 							 alt="...">
@@ -661,7 +665,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wujunmei.jpg"
 							 data-src2="邬君梅"
 							 alt="...">
@@ -675,7 +679,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/wuyanzu.jpg"
 							 data-src2="吴彦祖"
 							 alt="...">
@@ -689,7 +693,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/tangguoqiang.jpg"
 							 data-src2="唐国强"
 							 alt="...">
@@ -703,7 +707,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/taohong.jpg"
 							 data-src2="陶虹"
 							 alt="...">
@@ -717,7 +721,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic4/tongdawei.jpg"
 							 data-src2="佟大为"
 							 alt="...">
@@ -731,7 +735,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/xufan.jpg"
 							 data-src2="徐帆"
 							 alt="...">
@@ -745,7 +749,7 @@
 					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src=""
-							 class="img-responsive zoom-img"
+							
 							 data-src="images/starpic5/xuxiyuan.jpg"
 							 data-src2="徐熙媛"
 							 alt="...">
@@ -755,7 +759,7 @@
 								</h4>
 							</div>
 					</div>
-					
+					<div class="clearfix2"></div>
 			</div>	
 		</div>
 	</div>
@@ -764,7 +768,7 @@
 	<!--//about-team-->
 	
 	<!--footer-->
-	<div class="footer">
+	<div class="footer" >
 		<div class="container">
 			<div class="footer-left">
 				<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">博鳌亚洲品牌研究院</a></p>
