@@ -14,7 +14,7 @@ if($sjh !=''){
 	$sql = "SELECT rgxm_yx from dede_member where sjh = $sjh";
 }
 if($sfz != ''){
-	$sql = "SELECT rgxm_yx from dede_member where sfz = $sfz";
+	$sql = "SELECT rgxm_yx from dede_member where sfz = '$sfz'";
 }
 $arr = func_db_query($db,$sql);
 echo json_encode($arr);

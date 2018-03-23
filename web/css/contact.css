@@ -1,0 +1,208 @@
+
+/*地址文字部分样式	*/
+	.div_text_box1{
+	 		padding: 0px;
+	 		margin: 65px 0px 0px;
+	 		width: 100%; height: 298px; 
+	 		color: rgb(126, 126, 126); 
+	 		font-family: 微软雅黑; 
+	 		font-size: 14px; 
+	 		line-height: 24px;
+	 	}
+	 	.div_text_box2{
+	 		padding: 0px; 
+	 		margin: 0px; 
+	 		float: right; 
+	 		width: 570px;
+	 	}
+	 	.div_text_content{
+	 		padding: 0px; 
+	 		margin: 38px 110px 0px; 
+	 		float: left; 
+	 		width: 319px;	
+	 	}
+	 	.class_img{
+	 		border-width: 0px 1px 0px 0px;
+	 		border-right-style: solid; 
+	 		border-right-color: rgb(217, 217, 217); 
+	 		overflow: hidden;
+	 		display: block; 
+	 		float: left;
+	 		width: 580px;
+	 		height: 298px;
+	 	}
+	 @media only screen and (max-width: 1235px){
+	 	.div_text_box1{
+	 		vertical-align:middle;
+	 		text-align:center;
+	 	}
+	 		.div_text_box2{
+	 		float: right; 
+	 		width: 100%;
+	 		text-align:center;
+	 	}
+ 		.div_text_content{
+	 		padding: 7% 0; 
+	 		margin:0;
+	 		width:100%
+	 	}
+	 	.class_img{
+	 		border-width: 0px 1px 0px 0px;
+	 		border-right-style: solid; 
+	 		border-right-color: rgb(217, 217, 217); 
+	 		overflow: hidden;
+	 		float:none;
+	 		display:inline-block;
+	 		min-width:500px;
+	 		max-height:250px
+	 	}
+	 }
+/*下方联系方式部分样式	 */
+	 .kzf-mod-so-title-box {
+	margin: 25px 0 56px;
+	text-align: center;
+	}
+	.kzf-so-title {
+		margin-bottom: 10px;
+		font-size: 36px;
+		color: #5fe6ec;
+	}
+	.kzf-so-text {
+		color: #818181;
+	}
+	.kzf-mod-link-container {
+		padding: 0 6px 0;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box {
+		margin: 0 0 30px -26px;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box> div {
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box> div a {
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap {
+		padding: 20px 3px;
+		margin: 0 0 3px 26px;
+		width: 100%;
+		text-align: center;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap .kzf-mod-pic {
+		margin-bottom: 20px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap .kzf-mod-txt {
+		color: #000;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box {
+		margin-left: -15px;
+		/*QQ����*/
+		display: none;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap {
+		margin-left: 15px;
+		margin-bottom: 1px;
+		padding: 12px 3px;
+		text-align: center;
+		color: #000;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap img {
+		margin-right: 10px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap span {
+		vertical-align: middle;
+		font-size: 16px;
+	}
+	 @media screen and (max-width: 967px) {
+	.kzf-so-title {
+		font-size: 30px;
+	}
+	.kzf-mod-so-title-box {
+		margin: 25px 0 45px;
+	}
+	.kzf-mod-link-container {
+		padding: 50px 6px 82px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box {
+		margin: 0 0 30px -16px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap {
+		margin: 0 0 3px 16px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap span {
+		font-size: 14px;
+	}
+	}
+	 @media screen and (max-width: 767px) {
+
+	.kzf-mod-so-title-box {
+		margin: 25px 0 30px;
+	}
+	.kzf-so-title {
+		margin-bottom: 3px;
+		font-size: 26px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap {
+		margin: 5px 0 1px 5px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box {
+		margin: 0 0 10px -5px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box {
+		margin-left: -5px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap {
+		margin-left: 5px;
+	}
+	}
+	 @media screen and (max-width: 479px) {
+
+	.kzf-mod-so-title-box {
+		margin: 15px 0 30px;
+	}
+
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box {
+		margin: 0 0 5px -5px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap .kzf-mod-pic {
+		margin-bottom: 10px;
+	}
+	.kzf-mod-link-container {
+		padding: 15px 6px 35px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap {
+		padding: 10px 3px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-inf-box .kzf-mod-wrap .kzf-mod-txt {
+		font-size: 12px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box {
+		margin-left: -3px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap {
+		margin-left: 3px;
+		margin-bottom: 1px;
+		padding: 6px 2px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap img {
+		margin-right: 3px;
+	}
+	.kzf-mod-link-container .kzf-mod-link-out .kzf-mod-link-qq-box .kzf-mod-wrap span {
+		font-size: 12px;
+	}
+	}

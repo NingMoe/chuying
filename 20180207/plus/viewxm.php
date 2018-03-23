@@ -16,12 +16,23 @@
 require_once(dirname(__FILE__)."/../include/common.inc.php");
       //验证用户是否登录
     
-     /* $sfz1 = $_COOKIE['sfz']; */  
-     $sfz1 = 321121199301030718;
-     $aid = $_COOKIE['aid'];  
+       
+    /*  print $usid;
+     exit(); */
+        
     
+    $nh = substr($h,0,strlen($h)-1);
+    $nm = substr($m,0,strlen($m)-1); 
+    $ne = substr($e,0,strlen($e)-1);
+    $nr = substr($r,0,strlen($r)-1);
+    $no = substr($o,0,strlen($o)-1);
+   
+    $uid = $nm . $nh . $ne . $nr . $no;
      
-    	if($sfz = '')
+     
+    /*  $uid = $usid; */               
+     
+    	if($uid == '')
 	   {
 		showMsg("该用户不存在",-1);    exit(); 
 	   }
@@ -31,20 +42,23 @@ require_once(dirname(__FILE__)."/../include/common.inc.php");
     $link=mysql_connect($cfg_dbhost,$cfg_dbuser,$cfg_dbpwd);
     if(!$link) echo "没有连接成功!";
     mysql_select_db($cfg_dbname, $link); //选择数据库
-    $q = "select mid,sfz,rgxm,rank from dede_member where sfz= '".$sfz1."' "; //SQL查询语句
+    $q = "select mid,sfz,rgxm,rank from dede_member where sfz= '".$uid."' "; //SQL查询语句
     mysql_query("SET NAMES utf8");
     $rs = mysql_query($q); //获取数据集
     @$result=mysql_query($q,$link);
     $num=mysql_num_rows($result); 
     
-    echo   $num;  
-   
-    	if($num) {
-       }
-        else{
-     
-		showMsg("该文档不存在",-1);    
-		exit();   
+      
+    
+    if($num) {
+        print $num;       
+       
+        
+        exit(); 
+    }
+    else{    
+        showMsg("该文档不存在",-1);    
+        exit();   
 	  }
    /*  	
     while($row = mysql_fetch_array($rs)) 

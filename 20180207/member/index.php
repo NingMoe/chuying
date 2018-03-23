@@ -21,10 +21,10 @@ if($uid=='')
     $iscontrol = 'yes';
     if(!$cfg_ml->IsLogin())
     {
-    	if($Notice =='')
-        include_once(dirname(__FILE__)."/templets/index-notlogin1.htm");
-    	else
-        include_once(dirname(__FILE__)."/templets/index-notlogin.htm");
+    	//if($Notice =='')
+        //include_once(dirname(__FILE__)."/templets/index-notlogin1.htm");
+    	//else
+         include_once(dirname(__FILE__)."/templets/index-notlogin1.htm");
     }
     else
     {

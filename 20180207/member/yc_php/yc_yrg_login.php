@@ -14,9 +14,10 @@
  $arr = func_db_query($db,$sql);
  if($arr!=null){
  	 $str =  $arr[0]['uname'].',./templets/yrg.html';
- 	 $arr_col = explode(",",$str);
+	 $arr_col = explode(",",$str);
+	 array_push($arr_col,$arr[0]['mid']);
  	 echo json_encode($arr_col);
-	setcookie("xmsfz1",$arr[6]);
+	
  	 /* echo $arr_col;  */
  }else{
      echo '0';

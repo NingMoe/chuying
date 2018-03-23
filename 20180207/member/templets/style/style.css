@@ -27,7 +27,7 @@
    
     body,
     html {
-        min-width: 1212px;
+        
         height: 100%;
                
     }
@@ -54,6 +54,17 @@
         -webkit-font-smoothing: antialiased;
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
+    }
+    /* 合格投资者确认 */
+    .sure{
+        width: 180px;
+        border: 1px solid  #a50319;
+        margin-left: 50px;
+        cursor: pointer;
+        color: #ffffff;
+        background: #a50319;
+        font-family:Microsoft YaHei;
+        font-weight: 400;
     }
     .a1{
          color: #fff;
@@ -117,10 +128,11 @@
        display: flex;
        justify-content: center;
        align-items: center;
-       height: calc(100% - 328px); 
+       /* height: calc(100% - 270px); */
        background-image: url('../images/bk.png');
        background-repeat: no-repeat;
-       background-position: center;       
+       background-position: center; 
+            
     }
 
     /* 投资者认定 */
@@ -131,17 +143,22 @@
         padding: 32px 40px;
         line-height: 28px;
         font-weight:550;
+        margin: 30px auto;
     }
     #login1 >div{
         display: flex;
         height: 56px;
+        align-items: center;
              
     }
     #login1 >div >div {
-    flex-grow: 1;
+   /*  flex-grow: 1; */
     text-align: center;
     vertical-align: center;
           
+    }
+    .mybu{
+      flex-grow: 1;  
     }
 
     #login1 >div >p{
@@ -164,6 +181,7 @@
     }
     /*登录框 */
     #loginbox{
+        margin: 30px auto;
         width: 400px;
         background:rgb(239,239,239);
         font-size: 14px;
@@ -303,6 +321,7 @@
 
      }
       #loginbox .box-body .reminder{
+         
           margin-left:21px;
           font-size: 10px;
       }
@@ -407,6 +426,7 @@
     }
     
     #wrg-table{
+        margin: 30px auto;
         position: relative;
      }
     #wrg-table table{
@@ -506,16 +526,17 @@
         clear: both;
     }
     footer {
-        position: fixed;
+       /* position: fixed;*/
+        height: calc(100% - 500px);
         bottom: 0px;
         display: block;
         width: 100%;
-        padding-top: 60px;
-        padding-bottom: 58px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         color: #fff;
         font-size: 12px;
-        background-color: #2F2725;
-        background: url(../images/fbg.png) no-repeat;
+        background-color: #303030;
+       /*  background: url(../images/fbg.png) no-repeat; */
         -moz-background-size: 100% 100%;
         -webkit-background-size: 100% 100%;
         -o-background-size: 100% 100%;
@@ -538,8 +559,7 @@
     }
 
     footer .fcenter {
-        margin-right: 32px;
-        float: left;
+        
         text-align: center;
         line-height: 1.6;
     }

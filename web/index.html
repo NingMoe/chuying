@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>首页</title>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Stylish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script> 
+<!-- //js -->	
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>	
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smoth-scrolling-->
+<!--pop-up-->
+<script src="js/menu_jquery.js"></script>
+<!--//pop-up-->
+</head>
+<body>
+	<!--header-->
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"> <img src="images/logo.png" alt=""/></a>
+			</div>
+			<div class="top-nav">
+				<span class="menu"><img src="images/menu.png" alt=""/></span>
+				<ul style="margin-left: 30%;">
+					<li><a class="active" href="index.html">首页</a></li>
+					<li><a href="about.html">关于我们</a></li>					
+					<li><a href="codes.html">成功案例</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+				</ul>
+				<!-- script-for-menu -->
+				<script>					
+							$("span.menu").click(function(){
+								$(".top-nav ul").slideToggle("slow" , function(){
+								});
+							});
+				</script>
+				<!-- script-for-menu -->
+			</div>
+			<div class="clearfix"> </div>
+			<!-- search-scripts -->
+			<script src="js/classie.js"></script>
+			<script src="js/uisearch.js"></script>
+				<script>
+//					new UISearch( document.getElementById( 'sb-search' ) );
+//				</script>
+			<!-- //search-scripts -->
+		</div>
+	</div>	
+	<!--//header-->
+	<!--banner-->
+	<div class="banner">
+		<!-- banner-text Slider starts Here -->
+		<script src="js/responsiveslides.min.js"></script>
+		<script>
+			// You can also use "$(window).load(function() {"
+				$(function () {
+				// Slideshow 3
+					$("#slider3").responsiveSlides({
+					auto: true,
+					pager:true,
+					nav:true,
+					speed: 500,
+					namespace: "callbacks",
+					before: function () {
+					$('.events').append("<li>before event fired.</li>");
+					},
+					after: function () {
+						$('.events').append("<li>after event fired.</li>");
+					}
+				});	
+			});
+		</script>
+		<!--//End-slider-script -->
+		<div  id="top" class="callbacks_container" style="text-align:center;">
+			<ul class="rslides" id="slider3">
+				<li>
+					<div class="banner1">
+						<img src="../images/banner1.jpg">
+					</div>
+				</li>
+				<li>
+					<div class="banner1 banner2">
+						<img src="../images/banner2.jpg">
+					</div>
+				</li>
+				<li>
+					<div class="banner1 banner3">
+						<img src="../images/banner3.png">
+					</div>
+				</li>
+			</ul>
+			<div class="clearfix"> </div>
+		</div>
+	</div>			
+	<!--//banner-->
+	<!--welcome-->
+	<div class="welcome">
+		<div class="container">
+			<h1 class="hdng">应用场景</h1>
+		<!--	<p>适用于多种使用场合，总有一款适合您！！</p>-->
+		<div class="welcome-info">
+				<div class="col-md-6 welcome-grids">
+					<img src="images/img1.jpg" alt=""/>
+					<p style="min-height:2rem"></p>			
+				</div>
+				<div class="col-md-6 welcome-grids">
+					<img src="images/img2.jpg" alt=""/>
+					<p style="min-height:2rem"></p>			
+				</div>
+					<div class="col-md-6 welcome-grids">
+					<img src="images/img_left_b.jpg" alt=""/>
+					<p style="min-height:2rem"></p>			
+				</div>
+				<div class="col-md-6 welcome-grids">
+					<img src="images/img_right_b.jpg" alt=""/>
+					<p style="min-height:2rem"></p>			
+				</div>
+			
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+	<!--//welcome-->
+	<!--banner-bottom-->
+	<div class="banner-bottom">
+		<div class="container">
+			<div class="col-md-4 banner-bottom-grids">
+				<h2>定向援助</h2>
+			</div>
+			<div class="col-md-4 banner-bottom-grids">
+				<h4>服务于汉文化圈</h4>
+				<p>同属于中国民间企业的一份子，为了增强中华民族而奋斗的有志之士们，我们来了！</p>
+			</div>
+			<div class="col-md-4 banner-bottom-grids">
+				<h4>中小型企业</h4>
+				<p>对于国内中小型企业急需宣传却难以面对天价代言的困境，我们施以援手！</p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//banner-bottom-->
+	<!--work-->
+	<div class="work">
+		<div class="col-md-4 work-grids work1">
+			<h3>中国制造2025</h3>
+			<ul>
+				<li><a href="#">加快建设制造强国</a></li>
+				<li><a href="#">加快发展先进制造业</a></li>
+				<li><a href="#">要推进中国制造向中国创造转变</a></li>
+				<li><a href="#">中国速度向中国质量转变</a></li>
+				<li><a href="#">制造大国向制造强国转变</a></li>
+				<li><a href="#">消要以创新驱动发展为主题</a></li>
+				<li><a href="#">以树立企业品牌影响力为主线</a></li>
+				<li><a href="#">以推进中小型制造业为主攻方向</a></li>
+				<li><a href="#">实现制造业有大变强的历史跨越</a></li>
+			</ul>
+			
+		</div>
+		<div class="col-md-8 work-grids work-img work2">
+				<img src="../images/img4.jpg" style="width:100%;">
+			</div>
+		<div class="clearfix"> </div>
+	</div>
+	<!--//work-->
+	<!--services-->
+	<div class="services">
+		<div class="container">
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<div class="services-grids">
+								<div class="srvc-img">
+<!--									<span class="glyphicon glyphicon-user" aria-hidden="true"></span>-->
+								</div>
+								<h4>青丝带--星援行动</h4>
+								<p>秉承中国制造2025的原则，打造中国品牌，树立企业品牌影响力助推国内中小型企业的发展</p>
+							</div>	
+						</li>
+						<li>
+							<div class="services-grids">
+								<div class="srvc-img">
+<!--									<span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span>-->
+								</div>
+								<h4>青丝带--星援行动</h4>
+								<p>助燃明星社会责任感和使命感，开展最具影响力的大型活动</p>
+							</div>	
+						</li>	
+						<li>
+							<div class="services-grids">
+								<div class="srvc-img">
+<!--									<span class="glyphicon glyphicon-camera" aria-hidden="true"></span>-->
+								</div>
+								<h4>博鳌亚洲品牌研究院</h4>
+								<p>博鳌亚洲品牌研究院推出明星+产品相结合。以全新的商业模式独创代理商模式打造明星。</p>
+							</div>	
+						</li>
+						<li>
+							<div class="services-grids">
+								<div class="srvc-img">
+<!--									<span class="glyphicon glyphicon-certificate" aria-hidden="true"></span>-->
+								</div>
+								<h4>博鳌亚洲品牌研究院</h4>
+								<p>以“不断创新、优质服务”为宗旨，扩大产品品牌影响力，提升企业文化素养</p>
+							</div>	
+						</li>
+					</ul>
+				</div>
+			</section>
+			<!--FlexSlider-->					
+					<script defer src="js/jquery.flexslider.js"></script>
+					<script type="text/javascript">
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+			<!--End-slider-script-->		
+		</div>
+	</div>
+	<!--//services-->
+	<!--footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="footer-left">
+				<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">博鳌亚洲品牌研究院</a></p>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!-- 头部 开始 -->
+<div class="headbox">
+    <!-- <div class="head-tel">
+        <div class="w1212">
+             <div class="tel"><img src="/images/head_tel.png" alt="电话" class="pic"> 021-61177559</div> 
+        </div>
+    </div> -->
+    <header>
+        <div class="clearfix w1212">
+	        <div class="top_left fl logo"><a href='/'><img src='/images/LOGO-02.png' alt='{dede:global.cfg_webname/}'></a></div>
+	        <div class="top_right fr">    
+    			<div class="header_wp">
+		            <div class="clearfix menublock">
+		                <ul class="clearfix menulink">
+		                    <li class="homeactive">
+		                        <a href="/">首页</a>
+		                    </li>
+		                    {dede:channelartlist typeid='2,1,2,18,3,30,5'}
+		                    <li class="typeid{dede:field.id/}">
+		                        <a href="{dede:field.typeurl/}">{dede:field.typename/}</a>
+		                        <ul class="sub-nav">
+		                            {dede:channel type='son' noself='yes'}
+		                            <li><a href="[field:typelink/]">[field:typename/]</a></li>
+		                            {/dede:channel}
+		                        </ul>
+		                    </li>
+		                    {/dede:channelartlist}
+		                    </li>
+		                </ul>
+		            </div>
+			    <a href="http://en.yingchu-asset.com/" target="_blank" class="login_language">EN</a>
+			    <a href="javascript:;" class="menu-link">
+					<span></span>
+				</a>
+			    <a href="https://www.yingchu-asset.com/member/" class="login_top">投资人入口<span>▶</span></a>
+    			</div>
+	        </div>   
+        </div>
+    </header>
+</div>
+<!-- 头部 结束 -->

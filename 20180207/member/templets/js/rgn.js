@@ -1,0 +1,198 @@
+$('#loginbox .box-header >div ').click(function (e) {
+        var $cur = $(this);
+        var idx = $cur.index();
+        $cur.siblings().removeClass('active');
+        $cur.addClass('active');
+        $cur.parents('#loginbox').find('form').removeClass('show');
+        $cur.parents('#loginbox').find('form').eq(idx).addClass('show');
+    })
+
+
+
+
+
+    //注册
+
+        //监听输入失焦
+        check ();
+        function check (){
+             var a,b,c,d = 0;
+             let $username = $('.signup #username')
+             let $telnumb = $(".signup #telphone")
+             let $password =  $(".signup #pwd")
+             let $passworddok = $(".signup #userpwdok")
+            
+             
+
+            //判断用户名
+            $username.blur(function(){
+                var username = /^[\u4E00-\u9FA5A]{1,6}$/;
+                //console.log($username.val())
+                if (!username.test($username.val())) {
+                    $(".namec").text("只能输入中文名");
+                   
+                } else {
+                    $(".namec").text("");
+                    a = 1;
+                   
+                }              
+
+            })
+            //判断手机号
+            $telnumb.blur(function () {
+                var telnumb = /^1[34578]\d{9}$/;
+                //console.log($telnumb.val())
+                if (!telnumb.test($telnumb.val())) {
+                    $(".telnumbc").text("手机号不符合要求");
+                    b = 0;
+                } else {
+                    //ajax 验证手机号是否已被使用
+                    // if(true){
+                    //     $(".telnumbc").text("该号码已被注册");
+                    // }else{
+                       
+                    // }
+                    $(".telnumbc").text("");
+                        b = 1;
+                        
+                    
+                }
+
+            })
+                    
+            //判断密码是否符合格式
+            $password.blur(function () {
+                var password = /^[0-9A-Za-z]{6,12}$/;
+                //console.log($password.val())
+                if (!password.test($password.val())) {
+                    $(".passwordc").text("密码不符合规范");
+                    c = 0;
+                } else {
+                    $(".passwordc").text("");
+                    c = 1;
+                     
+                }
+
+            })
+            
+            //判断密码是否一致
+            $passworddok.blur(function () {
+                //console.log($passworddok.val())
+                if ($password.val() !== $passworddok.val()) {
+                    $(".pwdck").text("密码不一致");
+                    d = 0;
+                } else {
+                    $(".pwdck").text("");
+                    d = 1;
+                   if(a==1 && b==1 && c==1 && d==1){
+                       sendM()
+                   }            
+            
+                }    
+            })
+           
+
+
+        }   
+function sendM(){
+    var ordertime=60   //设置再次发送验证码等待时间
+    var timeleft=ordertime    
+    var vcode;
+     $(".button2").removeClass("disabled")
+     $(".button2").addClass("abled")
+    function timeCount(){
+        timeleft-=1
+        if (timeleft>0){
+            $(".button2").text(timeleft+" 秒后重发");
+        setTimeout(timeCount,1000)
+        }
+        else {
+            $(".button2").text("重新发送");
+            timeleft=ordertime   //重置等待时间
+            //60s之后自动变回可点击状态
+            $(".button2").removeClass("disabled")
+            $(".button2").addClass("abled")
+
+        }
+    }
+                            
+    
+    //点击发送ajax button2 变成不可点击状态  
+     $(".abled").click(function () {
+        $(".button2").removeClass("abled")
+        $(".button2").addClass("disabled")
+        timeCount(this);
+        let sjh = $(".signup #telphone").val();        
+        var num = "";
+        for (let i = 0; i < 6; i++) {
+            num += Math.floor(Math.random() * 10)
+        }
+        //ajax
+        vcode = num
+        //console.log(vcode)
+        var pp = sjh + "," +   vcode ;
+         $.ajax({
+            type: "POST",
+            url: "yc_php/sms_send.php",
+            timeout: 8000,
+            data: 'data' + pp,
+            success: function (data) {
+                //console.log(data)
+            }
+
+        })
+
+
+    })
+
+    //bulr事件 验证返回或者输入 
+
+    $("#vdcode").blur(function () {
+        //console.log($("#vdcode").val())
+        if ($("#vdcode").val() !== vcode) {
+            $(".vcodec").text("请输入正确的验证码");
+        } else {
+            $(".vcodec").text("");
+            signup()
+
+        }
+
+
+    })
+                    
+}           
+       
+function signup(){
+    $('.signup #signup-button').click(function () {
+            var username = $('.signup #username').val();
+            var password = $(".signup #pwd").val();
+            let telnumb = $(".signup #telphone").val();
+            var pp = "'" + username + "'" + "," + "'" + password + "'" + "," + "'" + telnumb + "'";
+            //判断checkbox                                 
+           /*  if ($("input[type='checkbox']").is(':checked') == false) {
+                $(".cc").text("请认真阅读后，勾选同意");
+            } else if ($("input[type='checkbox']").is(':checked') == false) {
+                $(".cc").text(""); */
+                $.ajax({
+                    type: "POST",
+                    url: "yc_php/yc_register.php",
+                    data: 'data' + pp,
+                    success: function (data) {
+                        //console.log(data)
+                        if (data == 1) {
+                            //console.log("开始跳转")
+                            alert("注册成功")
+                             window.location.href = "index1.php"; 
+                        } else if(data == 0) {
+                            alert('该手机号已被注册')
+                        }
+
+                    }
+
+                })
+            //}
+
+        })
+}
+        
+       

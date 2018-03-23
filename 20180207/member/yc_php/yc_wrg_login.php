@@ -12,8 +12,11 @@
   $sql = "SELECT * FROM dede_member WHERE sjh = $arr_co[0] and pwd = $arr_co[1]";
   $arr = func_db_query($db,$sql);
    if($arr!=null){
- 	 $str =  $arr[0]['uname'].',./templets/wrg.html';
- 	 $arr_col = explode(",",$str);
+            
+     $str = $arr[0]['uname'].',./templets/wrg.html';
+    
+     $arr_col = explode(",",$str);
+     array_push($arr_col,$arr[0]['mid']);
  	 echo json_encode($arr_col); 
  }else{
      echo '0';
