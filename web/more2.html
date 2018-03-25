@@ -765,7 +765,9 @@
 								</h4>
 							</div>
 					</div>
-					<div class="clearfix2"></div>
+					<div id="load"> 
+                        <i class="iconfont">&#xe608;</i>
+                    </div>
 			</div>	
 		</div>
 	</div>
@@ -809,74 +811,124 @@
 </body>
 <script>
 		
-		
-		window.onload = function () {
-				waterfull()
-		}
-		$(window).resize(function () {
-			    waterfull()
-		})
-		function waterfull() {
-			console.log("运行了")
-			var colLength = parseInt($('.content').width() / $('.item').width())
-			var itemArr = []
-			for (var i = 0; i < colLength; i++) {
-				itemArr[i] = 0
-			}
-			$('.item').each(function () {
-				var minValue = Math.min.apply(null, itemArr)
-				var minIndex = itemArr.indexOf(minValue)
-
-				$(this).css({
-					top: itemArr[minIndex],
-					left: $(this).outerWidth(true) * minIndex
-				})
-
-				itemArr[minIndex] += $(this).outerHeight(true)
-
-			})
-		}
+var curPage = 1
+var perPageCount = 20
+var colSumHeight = []
+var nodeWidth = $('.item').outerWidth(true)
+var colNum = parseInt($('#pic-ct').width()/nodeWidth)
+for(var i = 0; i < colNum.length; i++){
+	colSumHeight[i] = 0
+}
 
 
+var node1 =`<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/liudehua.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">刘德华</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+                    
+                    `
+    var node2 =`
+    <div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/wujing.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">吴京</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+    `                
 
+//初始化函数
+start()
 
-</script>
-
-<script>
-
-	lazyRender()
-		var clock
-		$(window).on('scroll', function () {
-			if (clock) {
-				clearTimeout(clock)
-			}
-			clock = setTimeout(function () {
-				lazyRender()
-			}, 100)
-
-		})
-
-		function lazyRender() {
-			$('.container .mo').each(function () {
-				 if (checkShow($(this)) ) {
-
-					$(this).find("img").attr('src', $(this).find("img").attr('data-src'))
-					$(this).find("a").text( $(this).find("img").attr('data-src2'))
-					
-				}
-			})
-		}
-
-		function checkShow($img) {
-			var scrollTop = $(window).scrollTop()
-			var windowHeight = $(window).height()
-			var offsetTop = $img.offset().top
-			if (offsetTop < scrollTop + windowHeight && offsetTop > scrollTop) {
-				return true
-			}
-			return false
-		}
-		
+function start(){
 	
+	$('#pic-ct').append(node1)
+	waterFallPlace(node1)
+	$('#pic-ct').append(node2)
+	waterFallPlace(node2)
+		
+}
+
+//绑定懒加载和gotop
+
+
+
+
+
+
+
+$(window).on('scroll',function(){
+	if(isShow($('#load'))){
+    	start();
+    }
+   
+ })
+
+
+function isShow($el){
+	  var scrollH = $(window).scrollTop(),
+	  	  winH = $(window).height(),
+	  	  top = $el.offset().top;
+
+	  	  if(top < winH + scrollH){
+	  	  	return true;
+	  	  }else{
+	  	  	return false;
+	  	  }
+	}
+
+
+// 瀑布流
+
+var colSumHeight = [],
+		nodeWidth = $('.item').outerWidth(true),
+		colNum = parseInt($('#pic-ct').width()/nodeWidth);
+
+for(var i=0; i<colNum; i++){
+	colSumHeight.push(0)
+}
+
+function waterFallPlace($nodes){
+	$nodes.each(function(){
+		var $cur = $(this);
+		//colSumHeight = [100, 250, 80, 200]
+
+		var idx = 0,
+			  minSumHeight = colSumHeight[0];
+
+		for(var i=0;i<colSumHeight.length; i++){
+			if(colSumHeight[i] < minSumHeight){
+				idx = i;
+				minSumHeight = colSumHeight[i];
+			}
+		}
+		$cur.css({
+			left: nodeWidth*idx,
+			top: minSumHeight,
+			opacity: 1
+		});
+		colSumHeight[idx] = $cur.outerHeight(true) + colSumHeight[idx];
+		$('#pic-ct').height(Math.max.apply(null,colSumHeight));
+	});
+
+}
+
+
+
 </script>
+
+
 </html>
