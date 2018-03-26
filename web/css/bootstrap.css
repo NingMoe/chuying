@@ -5713,6 +5713,7 @@ button.close {
   overflow: hidden;
 }
 .modal {
+  overflow: hidden;
   position: fixed;
   top: 0;
   right: 0;
@@ -5744,6 +5745,7 @@ button.close {
   overflow-y: auto;
 }
 .modal-dialog {
+  overflow: hidden;
   position: relative;
   width: auto;
   margin: 10px;
@@ -5778,12 +5780,16 @@ button.close {
   opacity: .5;
 }
 .modal-header {
+ 
   min-height: 16.42857143px;
   padding: 15px;
   border-bottom: 1px solid #e5e5e5;
+  background: #5fe6ec;
+  color: white;
 }
 .modal-header .close {
   margin-top: -2px;
+  color: white;
 }
 .modal-title {
   margin: 0;

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>更多明星</title>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Stylish Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Custom Theme files -->
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script> 
+<!-- //js -->	
+<!-- start-smoth-scrolling-->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>	
+<script type="text/javascript">
+		jQuery(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+			});
+		});
+</script>
+<!--//end-smoth-scrolling-->
+<!--pop-up-->
+<script src="js/menu_jquery.js"></script>
+<!--//pop-up-->
+</head>
+<style>
+ 	.clearfix:after{
+ 		content:".";display:block;height:0;clear:both;visibility:hidden
+ 	}
+	#pic-ct{
+		position: relative;
+	}
+	#pic-ct .item{
+		position: absolute;
+		width: 200px;
+		transition: all 0.8s;
+		margin: 0 10px; 
+
+	}
+	#pic-ct .item h4{
+		text-align: left;
+	}
+	#pic-ct .item h4 a{
+		color: #666;
+	}
+	#pic-ct .item .thumbnail {
+		border: 1px solid #DFDFDF;
+		background: #FFF;
+		padding: 12px;
+		border-radius: 0px;
+		box-shadow: 1px 1px 3px #888888;
+	}
+	#pic-ct .item .thumbnail .caption{
+		padding: 15px 0px 0px 0px!important;
+	}
+	#pic-ct .item .thumbnail h4{
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 12px;
+	}
+	.footer{
+		position: fixed;
+		bottom:0;
+		left:0;
+		width:100%;
+	}
+	
+
+</style>
+<body>
+	<!--header-->
+<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"> <img src="images/logo.png" alt=""/></a>
+			</div>
+			<div class="top-nav">
+				<span class="menu"><img src="images/menu.png" alt=""/></span>
+				<ul style="margin-left: 30%;">
+					<li><a href="index.html">首页</a></li>
+					<li><a class="active"  href="about.html">关于我们</a></li>					
+					<li><a href="codes.html">成功案例</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+				</ul>
+				<!-- script-for-menu -->
+				<script>					
+						$("span.menu").click(function(){
+							$(".top-nav ul").slideToggle("slow" , function(){
+							});
+						});
+				</script>
+				<!-- script-for-menu -->
+			</div>
+			<div class="clearfix"> </div>
+			<!-- search-scripts -->
+			<script src="js/classie.js"></script>
+			<script src="js/uisearch.js"></script>
+				<script>
+					new UISearch( document.getElementById( 'sb-search' ) );
+				</script>
+			<!-- //search-scripts -->
+		</div>
+</div>	
+	<!--//header-->
+	<!--banner-->
+<div class="banner1 about-bnr" style="text-align:center;max-height:500px">
+	<img src="../images/banner1.jpg" style="max-height:500px">
+</div>	
+	<!--about-team-->
+	<div class="about-team " >		
+		<div class="container" >
+			<h3 class="title" >更多明星展墙</h3>
+				<div class="row team-row content clearfix" id="pic-ct" >
+	
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/liudehua.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">刘德华</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/wujing.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">吴京</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/zhenzidan.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">甄子丹</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/huangbo.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">黄渤</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/gongli.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">巩俐</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/liuye1.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">刘烨</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item  ">
+						<div class="thumbnail team-thmnl">
+							<img src="images/chenglong.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">成龙</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+							<div class="thumbnail team-thmnl">
+								<img src="images/starpic/yangshuo.jpg"
+								
+								 
+								 alt="...">
+								<div class="caption">
+									<h4>
+										<a href="#" >杨烁</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/yaochen.jpg"
+							
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">姚晨</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhangbozhi.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">张柏芝</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item">
+						<div class="thumbnail team-thmnl">
+							<img src="images/zhangziyi.jpg"
+							
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">章子怡</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhangfengyi.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">张丰毅</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhangguoli.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">张国立</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhanghanyu.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">张涵予</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhaoyouting.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">赵又廷</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic/zhourunfa.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">周润发</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/chenbaoguo.jpg"
+												 
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陈宝国</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/chendaoming.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陈道明</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/chenhao.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陈好</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/chenkun.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陈坤</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/chenshu.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陈数</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/dengchao.jpg"
+													 
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">邓超</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/fanwei.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">范伟</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic2/gaoyuanyuan.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">高圆圆</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/geyou.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">葛优</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/guotao.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">郭涛</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/houyong.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">侯勇</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/huangxiaoming.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">黄晓明</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/hujun.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">胡军</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/jiangwen.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">姜文</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/liangchaowei.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">梁朝伟</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic3/liangjiahui.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">梁家辉</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/liming.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">黎明</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/linxue.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">林雪</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/liujin.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">刘劲</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/liyoubin.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">李幼斌</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/sunhonglei.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">孙红雷</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wangluodan.jpg"
+							
+							 data-src=""
+							 data-src2="王珞丹"
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">王珞丹</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wangxuebing.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">王学兵</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wangxuexi.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">王学圻</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wugang.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">吴刚</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wujunmei.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">邬君梅</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/wuyanzu.jpg"
+							
+							 data-src=""
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">吴彦祖</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/tangguoqiang.jpg"
+										
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">唐国强</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/taohong.jpg"
+							 data-src2=""
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">陶虹</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic4/tongdawei.jpg"
+											 
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">佟大为</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/xufan.jpg"
+							
+							 data-src=""
+							 data-src2="徐帆"
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">徐帆</a>
+								</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 team-grids item mo">
+						<div class="thumbnail team-thmnl">
+							<img src="images/starpic5/xuxiyuan.jpg"
+											 
+							 alt="...">
+							<div class="caption">
+								<h4>
+									<a href="#">徐熙媛</a>
+								</h4>
+							</div>
+					</div>
+					<div id="load">
+						<i class="iconfont">&#xe608;</i>
+					</div>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				</br>
+				
+			</div>	
+		</div>
+	</div>
+
+
+	<!--//about-team-->
+	
+	<!--footer-->
+	<div class="footer" >
+		<div class="container">
+			<div >
+				<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">博鳌亚洲品牌研究院</a></p>
+			</div>
+		
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+	<!--//footer-->
+	<!--smooth-scrolling-of-move-up-->
+<script type="text/javascript">
+	$(document).ready(function() {
+			/*
+			var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+			};
+			*/
+			
+			$().UItoTop({ easingType: 'easeOutQuart' });
+			
+		});
+	</script>	
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!--//smooth-scrolling-of-move-up-->
+	<!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.js"></script>
+</body>
+
+<script>
+		$(window).on('scroll', function () {
+				if (isShow($('#load'))) {
+
+					
+				}
+				
+			})
+
+
+		function isShow($el) {
+				var scrollH = $(window).scrollTop(),
+					winH = $(window).height(),
+					top = $el.offset().top;
+
+				if (top < winH + scrollH) {
+					return true;
+				} else {
+					return false;
+				}
+			}		
+
+
+		window.onload = function () {
+				waterfull()
+		}
+		$(window).resize(function () {
+			    waterfull()
+		})
+		function waterfull() {
+			console.log("运行了")
+			var colLength = parseInt($('.content').width() / $('.item').width())
+			var itemArr = []
+			for (var i = 0; i < colLength; i++) {
+				itemArr[i] = 0
+			}
+			$('.item').each(function () {
+				var minValue = Math.min.apply(null, itemArr)
+				var minIndex = itemArr.indexOf(minValue)
+
+				$(this).css({
+					top: itemArr[minIndex],
+					left: $(this).outerWidth(true) * minIndex
+				})
+
+				itemArr[minIndex] += $(this).outerHeight(true)
+
+			})
+		}
+		
+
+
+
+
+
+</script>
+
+</html>
