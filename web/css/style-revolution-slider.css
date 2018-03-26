@@ -1,0 +1,47 @@
+/* BEDIN REVOLUTION SLIDER */
+.revolution-slider {
+	z-index: 1;
+	position: relative;
+	border-bottom: solid 1px #eee;
+	overflow: hidden;
+	margin-bottom: 10px;
+	left:37%;
+}
+.revolution-slider1 {
+	z-index: 1;
+	position: relative;
+	border-bottom: solid 1px #eee;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.fullwidthbanner-container ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	height: 0;
+	overflow: hidden;
+}
+.tp-bannershadow {
+	display: none;
+}
+.tp-bullets.simplebullets.round .bullet {
+	width: 12px;
+	height: 12px;
+	border-radius: 50% !important;
+	background: #d8d8d8;
+}
+.tp-bullets.simplebullets.round .bullet:hover,
+.tp-bullets.simplebullets.round .bullet.selected {
+	background: #919191;
+}
+.tp-leftarrow.default,
+.tp-rightarrow.default{
+	opacity: 0.7;
+}
+.tp-leftarrow.default:hover,
+.tp-rightarrow.default:hover {
+	opacity: 1;
+}
+.revolution-slider .hidearrows {
+	opacity: 0;
+}

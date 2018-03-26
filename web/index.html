@@ -40,10 +40,11 @@
 			</div>
 			<div class="top-nav">
 				<span class="menu"><img src="images/menu.png" alt=""/></span>
-				<ul style="margin-left: 30%;">
+				<ul>
 					<li><a class="active" href="index.html">首页</a></li>
 					<li><a href="about.html">关于我们</a></li>					
 					<li><a href="codes.html">成功案例</a></li>
+					<li><a href="more.html">明星展墙</a></li>
 					<li><a href="contact.html">联系我们</a></li>
 				</ul>
 				<!-- script-for-menu -->
@@ -77,15 +78,9 @@
 					$("#slider3").responsiveSlides({
 					auto: true,
 					pager:true,
-					nav:true,
+					nav:false,
 					speed: 500,
-					namespace: "callbacks",
-					before: function () {
-					$('.events').append("<li>before event fired.</li>");
-					},
-					after: function () {
-						$('.events').append("<li>after event fired.</li>");
-					}
+					namespace: "callbacks"
 				});	
 			});
 		</script>
@@ -94,17 +89,17 @@
 			<ul class="rslides" id="slider3">
 				<li>
 					<div class="banner1">
-						<img src="../images/banner1.jpg">
+						<img src="../images/banner0.jpg">
 					</div>
 				</li>
 				<li>
 					<div class="banner1 banner2">
-						<img src="../images/banner2.jpg">
+						<img src="../images/banner1.jpg">
 					</div>
 				</li>
 				<li>
 					<div class="banner1 banner3">
-						<img src="../images/banner3.png">
+						<img src="../images/banner2.jpg">
 					</div>
 				</li>
 			</ul>
@@ -144,7 +139,7 @@
 	<div class="banner-bottom">
 		<div class="container">
 			<div class="col-md-4 banner-bottom-grids">
-				<h2>定向援助</h2>
+				<h2>定向星援</h2>
 			</div>
 			<div class="col-md-4 banner-bottom-grids">
 				<h4>服务于汉文化圈</h4>
@@ -180,7 +175,61 @@
 			</div>
 		<div class="clearfix"> </div>
 	</div>
-	<!--//work-->
+	<!--work-->
+	<!--star-->
+<div class="banner">
+		<!-- banner-text Slider starts Here -->
+	
+		<!--//End-slider-script -->
+		<div  id="top" class="callbacks_container" style="text-align:center;margin:3% 0">
+			<ul class="rslides" id="slider123">
+				<li>
+					<div class="banner">
+						<img class="img_tz" src="/images/chenglong.jpg">
+						<img class="img_tz" src="/images/gongli.jpg">
+						<img class="img_tz" src="/images/gongli.jpg">
+						<img class="img_tz" src="/images/wujing.jpg">
+						<img class="img_tz" src="/images/liudehua.jpg">
+					</div>
+				</li>
+				<li>
+					<div class="banner">
+						<img class="img_tz" src="/images/gongli.jpg">
+						<img class="img_tz" src="/images/wujing.jpg">
+						<img class="img_tz" src="/images/liudehua.jpg">
+						<img class="img_tz" src="/images/chenglong.jpg">
+						<img class="img_tz" src="/images/gongli.jpg">
+					</div>
+				</li>
+				<li>
+					<div class="banner">
+						<img class="img_tz" src="/images/wujing.jpg">
+						<img class="img_tz" src="/images/zhangziyi.jpg">
+						<img class="img_tz" src="/images/gongli.jpg">
+						<img class="img_tz" src="/images/liudehua.jpg">
+						<img class="img_tz" src="/images/chenglong.jpg">
+					</div>
+				</li>
+			</ul>
+			<div class="clearfix"> </div>
+		</div>
+	</div>	
+		<script>
+			// You can also use "$(window).load(function() {"
+				$(function () {
+					$("#slider123").responsiveSlides({
+					auto: true,
+					pager:false,
+					nav:true,
+					speed: 500,
+					namespace: "callbacks"
+				});	
+			});
+			$('.img_tz').click(function(){
+				window.location.href = "more.html"
+			})
+		</script>
+	<!--star-->
 	<!--services-->
 	<div class="services">
 		<div class="container">
@@ -255,24 +304,10 @@
 	<!--smooth-scrolling-of-move-up-->
 	<script type="text/javascript">
 		$(document).ready(function() {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
-			
 			$().UItoTop({ easingType: 'easeOutQuart' });
-			
 		});
 	</script>
 	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
-	<!--//smooth-scrolling-of-move-up-->
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
