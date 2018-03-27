@@ -84,7 +84,7 @@
         display: none;
 	}
 	.modal-dialog {  
-    margin: 200px auto;  
+    	margin: 200px auto;  
 	}  
 </style>
 <body>
@@ -879,13 +879,14 @@
     <script src="js/bootstrap.js"></script>
 </body>
 <script>
-
+		setTimeout(() => {
+			waterfull()
+			
+		}, 5500);
 		$("img").click(function(){
 			 waterfull()
 		})
-	  	
-		
-        window.onload = function () {
+	  	 window.onload = function () {
                 waterfull()
 				setTimeout(waterfull(), 5000);
             }
@@ -941,6 +942,7 @@
                                                
                         $(this).find("img").attr('src', $(this).find("img").attr('data-src'))
                         $(this).find("a").text($(this).find("img").attr('data-src2'))
+						waterfull()
 
                     }
                 })
