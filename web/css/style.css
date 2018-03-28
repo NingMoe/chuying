@@ -6,10 +6,43 @@ body{
 /*
 	明星图片跳转样式
 */
+.div_star{
+	border: 2px solid #DFDFDF;
+	background: #FFF;
+	padding: 14px;
+	border-radius: 0px;
+	box-shadow: 1px 1px 3px #888888;
+	display:inline-block;
+	cursor: pointer;
+}
+.div_star:hover{
+	box-shadow: 1px 1px 3px #5fe6ec;
+    border:2px solid #5fe6ec;
+}
 .img_tz{
 	cursor:pointer;
-	margin: 0 12px
 }
+@media screen and (max-width: 1196px){
+	.img_non4{
+		display:none;
+	}
+}
+@media screen and (max-width: 959px){
+	.img_non3{
+		display:none;
+	}
+}
+@media screen and (max-width: 722px){
+	.img_non2{
+		display:none;
+	}
+}
+@media screen and (max-width: 485px){
+	.img_non1{
+		display:none;
+	}
+}
+/*********************/
 @font-face {
       font-family: 'WorkSans-Regular';
       src: url(../fonts/WorkSans-Regular.ttf) format('truetype');
@@ -28,7 +61,7 @@ body a{
 }
 h1,h2,h3,h4,h5,h6{
 	margin:0;			   
-}
+}.work-grids
 p{
 	margin:0;
 }
@@ -336,7 +369,7 @@ span.menu {
 }
 @media only screen and (min-width: 481px) and (max-width: 991px) {
 	.welcome .welcome-info img {
-   	 width: 75%;
+   	 width: 90%;
 }
 }
 /*----*/
@@ -498,7 +531,7 @@ h1.hdng{
 	text-align:center;
 }
 .welcome img{
-	width:100%; 
+	width:90%;
 }
 .welcome-info {
     margin: 3em 0;
@@ -510,26 +543,29 @@ h1.hdng{
 .services {
     background:url('../images/bottm.jpg') no-repeat 0 0;
     background-size: cover;
-	padding: 8em 0 5em;
+	padding: 0 0 5em;
+}
+.slides{
+	position:relative;
 }
 .services-grids {
  	opacity:0.5;
-    width: 50%;
+    width: 100%;
     margin: 0 auto;
     text-align: center;
-    padding: 5em 0;
+    padding: 6em 0;
 }
 .services span.glyphicon {
     font-size: 3em;
 }
 .services h4 {
     font-size: 2.5em;
-    margin: 0.6em 0;
+    margin: 1.6em 0;
     font-family: 'Slabo27px-Regular';
     color:#5fe6ec;
 }
 .services p {
-    font-size: 1em;
+    font-size: 1.5em;
     color: #5fe6aa;
     line-height: 1.6em;
     width: 50%;
@@ -568,7 +604,7 @@ h1.hdng{
 }
 .work-grids ul li {
     display: block;
-    margin: 0.2em 0 0;
+    margin: 0.3em 0 0;
 }
 .work-grids ul li a{
     font-size: 1em;
@@ -1492,10 +1528,10 @@ img.img-responsive.zoom-img {
     padding: 5.5em 3em;
 }*/
 .services {
-    padding: 6em 0 4em
+    padding: 0 0 4em
 }
 .services-grids {
-    width: 35%;
+    width: 100%;
     padding: 3em 0;
 }
 .services span.glyphicon {
@@ -1651,13 +1687,13 @@ h1.hdng {
     padding: 3em 5em;
 }*/
 .services {
-    padding: 5em 0 2em;
+    padding: 0 0 2em;
 }
 .services h4 {
     font-size: 2em;
 }
 .services-grids {
-    width: 45%;
+    width: 100%;
 }
 .about-text-left, .about-text-right {
     padding: 0;
@@ -1750,7 +1786,7 @@ p.cnt-p {
 @media(max-width:857px){
 	/*中国制造2025部分样式*/
    .work{
-    	width:80%;
+    	width:90%;
     	margin:0 auto;
     }
     .work1{
@@ -1796,7 +1832,7 @@ p.cnt-p {
     min-height: 300px;
 }
 .work-grids.work-img img{
-    min-height: 257px;
+    min-height: 160px;
 }
 .work-grids h3 {
     font-size: 2.3em;
@@ -1865,7 +1901,7 @@ p.cnt-p {
     color: #fff;
 }
 .banner1 {
-    min-height: 285px;
+    min-height: 205px;
 }
 .banner5 {
     min-height: 200px;
@@ -1910,10 +1946,10 @@ h1.hdng {
 .work-grids {
     float: none;
     width: 100%;
-	padding: 2em 3em;
+	padding: 2em 0;
 }
 .work-grids.work-img {
-    min-height: 300px;
+    min-height: 160px;
 }
 /*.work-grids.work-grids-left {
     padding: 1em 3em 3em;
@@ -1934,6 +1970,7 @@ h1.hdng {
 .services h4 {
     font-size: 1.8em;
     margin: 0.5em 0;
+    padding-bottom:0.8em
 }
 .services p {
     width: 89%;
@@ -2071,7 +2108,7 @@ h2.hdng-two {
     padding: 2em;
 }
 .services {
-    padding: 3em 0 1em;
+    padding: 0 0 1em;
 }
 .services span.glyphicon {
     border: 4px double;
@@ -2080,7 +2117,7 @@ h2.hdng-two {
     font-size: 1.6em;
 }
 .services-grids {
-    width: 63%;
+    width: 100%;
 }
 .footer p {
     font-size: 0.9em;

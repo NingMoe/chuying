@@ -1,0 +1,476 @@
+	
+					
+					 {name:"刘德华",src="images/liudehua.jpg"},{name:"吴京",src:"images/wujing.jpg"},{name:"甄子丹",src:"images/zhenzidan.jpg"},{name:"黄渤",src:"images/huangbo.jpg"}
+    				{name:"巩俐",src:"images/gongli.jpg"},{name:"张柏芝",src:"images/starpic/zhangbozhi.jpg"},					
+	
+					{name:"刘烨",src:"images/liuye1.jpg"},{name:"成龙",src:"images/chenglong.jpg"},
+								
+					{name:"杨烁",src:"images/starpic/yangshuo.jpg"},{name:"姚晨",src:"images/starpic/yaochen.jpg"},		
+					{name:"章子怡",src:"images/zhangziyi.jpg"},	{name:"张丰毅",src:"images/starpic/zhangfengyi.jpg"}	
+					{name:"张国立",src:"images/starpic/zhangguoli.jpg"},			
+						
+							
+		
+							
+						
+							
+							
+							
+								
+			
+					
+						
+							
+							
+							
+								
+									
+	
+						
+							
+
+							
+						
+							
+							
+	
+						
+							
+							,src:"images/starpic/zhanghanyu.jpg"}
+							{name:"张涵予"
+	
+							
+							,src:"images/starpic/zhaoyouting.jpg"}
+							{name:"赵又廷"
+							
+							
+								
+		
+							,src:"images/starpic/zhourunfa.jpg"}
+							{name:"周润发"
+							
+							
+		
+						
+							
+							,src:"images/starpic2/chenbaoguo.jpg"}
+							{name:"陈宝国"
+		
+							,src:"images/starpic2/chendaoming.jpg"}
+							{name:"陈道明"
+		
+							
+							,src:"images/starpic2/chenhao.jpg"}
+							{name:"陈好"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic2/chenkun.jpg"}
+							{name:"陈坤"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic2/chenshu.jpg"}
+							{name:"陈数"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic2/dengchao.jpg"}
+							{name:"邓超"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic2/fanwei.jpg"}
+							{name:"范伟"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic2/gaoyuanyuan.jpg"}
+							{name:"高圆圆"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/geyou.jpg"}
+							{name:"葛优"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/guotao.jpg"}
+							{name:"郭涛"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/houyong.jpg"}
+							{name:"侯勇"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/huangxiaoming.jpg"}
+							{name:"黄晓明"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/hujun.jpg"}
+							{name:"胡军"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/jiangwen.jpg"}
+							{name:"姜文"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/liangchaowei.jpg"}
+							{name:"梁朝伟"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic3/liangjiahui.jpg"}
+							{name:"梁家辉"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/liming.jpg"}
+							{name:"黎明"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/linxue.jpg"}
+							{name:"林雪"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/liujin.jpg"}
+							{name:"刘劲"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/liyoubin.jpg"}
+							{name:"李幼斌"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/sunhonglei.jpg"}
+							{name:"孙红雷"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wangluodan.jpg"}
+							{name:"王珞丹"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wangxuebing.jpg"}
+							{name:"王学兵"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wangxuexi.jpg"}
+							{name:"王学圻"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wugang.jpg"}
+							{name:"吴刚"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wujunmei.jpg"}
+							{name:"邬君梅"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/wuyanzu.jpg"}
+							{name:"吴彦祖"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/tangguoqiang.jpg"}
+							{name:"唐国强"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic4/taohong.jpg"}
+							{name:"陶虹"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+							
+							
+							,src:"images/starpic4/tongdawei.jpg"}
+							{name:"佟大为"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							,src:"images/starpic5/xufan.jpg"}
+							{name:"徐帆"
+							
+							
+								
+									
+								
+							
+						
+					
+					
+					
+						
+							
+							,src:"images/starpic5/xuxiyuan.jpg"}
+							{name:"徐熙媛"
+							
+							
+								
+									
+								
+							
+					

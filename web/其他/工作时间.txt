@@ -1,0 +1,74 @@
+<div class=" tb col-md-12  col-lg-12 welcome-grids">
+								
+									<table>
+										<tr>
+											<th>周一至周五</th>
+											<th>周六至周日</th>
+											<th>国家法定节假日</th>
+										</tr>
+										<tr>
+											<td>08:30-20:00</td>
+											<td>09:00-18:00</td>
+											<td>10:00-17:00</td>
+										</tr>
+									</table>
+								
+								
+								</div>
+
+
+
+
+
+                                <div class="col-md-6 welcome-grids">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>Student-ID</th>
+								<th>First Name</th>
+								<th>Last Name</th>
+								<th>Grade</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>001</td>
+								<td>Rammohan </td>
+								<td>Reddy</td>
+								<td>A+</td>
+							</tr>
+					
+					
+						</tbody>
+					</table>
+				</div>
+                <table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Student-ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Grade</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>001</td>
+					<td>Rammohan </td>
+					<td>Reddy</td>
+					<td>A+</td>
+				</tr>
+				<tr>
+					<td>002</td>
+					<td>Smita</td>
+					<td>Pallod</td>
+					<td>A</td>
+				</tr>
+				<tr>
+					<td>003</td>
+					<td>Rabindranath</td>
+					<td>Sen</td>
+					<td>A+</td>
+				</tr>
+			</tbody>
+		</table>

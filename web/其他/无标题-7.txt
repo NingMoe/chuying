@@ -1,0 +1,33 @@
+	<div class="work">
+		<div class="col-md-8 work-grids work-img" style="padding:0;">
+			<img src="../images/zc.jpg" style="width:100%;">
+		</div>
+	<!--	<div class="col-md-4 work-grids">
+			<h3>以人民的名义</h3>
+			<p>党的十九大报告明确提出--</p>
+			<ul>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">加快建设制造强国</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">加快发展先进制造业</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">要推进中国制造向中国创造转变</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">中国速度向中国质量转变</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">制造大国向制造强国转变</a></li>
+			</ul>
+		</div>-->
+		<div class="clearfix"> </div>
+	</div>
+	<div class="work">		
+		<div class="col-md-4 work-grids work-grids-left">
+			<h3>中国制造2025</h3>
+			<p>从国家层面确定了我国建设制造强国的总体战略</p>
+			<ul>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">消要以创新驱动发展为主题</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">以树立企业品牌影响力为主线</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">以推进中小型制造业为主攻方向</a></li>
+				<li><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><a href="#">实现制造业有大变强的历史跨越</a></li>
+			</ul>
+		</div>
+		<div class="col-md-8 work-grids work-img work-img-btm" style="padding:0;">
+				<img src="../images/img4.jpg" style="width:100%;">			
+		</div>
+		<div class="clearfix"> </div>
+	</div>

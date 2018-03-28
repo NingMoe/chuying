@@ -31,20 +31,6 @@
 <!--//pop-up-->
 </head>
 <style>
-	@font-face {
-	  font-family: 'iconfont';  /* project id 432950 */
-	  src: url('https://at.alicdn.com/t/font_432950_ow544s0iu6qiwwmi.eot');
-	  src: url('https://at.alicdn.com/t/font_432950_ow544s0iu6qiwwmi.eot?#iefix') format('embedded-opentype'),
-	  url('https://at.alicdn.com/t/font_432950_ow544s0iu6qiwwmi.woff') format('woff'),
-	  url('https://at.alicdn.com/t/font_432950_ow544s0iu6qiwwmi.ttf') format('truetype'),
-	  url('https://at.alicdn.com/t/font_432950_ow544s0iu6qiwwmi.svg#iconfont') format('svg');
-	}
-	.iconfont{
-    	font-family:"iconfont" !important;
-   		font-size:50px;font-style:normal;
-    	-webkit-font-smoothing: antialiased;
-    	-webkit-text-stroke-width: 0.2px;
-    	-moz-osx-font-smoothing: grayscale;}
  	.clearfix:after{
  		content:".";display:block;height:0;clear:both;visibility:hidden
  	}
@@ -52,24 +38,18 @@
 		position: relative;
 	}
 	#pic-ct .item{
-        cursor: pointer;
 		position: absolute;
 		width: 200px;
 		transition: all 0.8s;
 		margin: 0 10px; 
 
-    }
-    #pic-ct >.item >.team-thmnl:hover{
-       box-shadow: 1px 1px 3px #5fe6ec;
-       border:5px solid #5fe6ec;
-       
-      
-    }
+	}
+	#pic-ct .item h4{
+		text-align: left;
+	}
 	#pic-ct .item h4 a{
 		color: #666;
-    }
-    
-    
+	}
 	#pic-ct .item .thumbnail {
 		border: 1px solid #DFDFDF;
 		background: #FFF;
@@ -91,83 +71,43 @@
 		width:100%;
 	}
 	
-    .hide{
-        display: none;
-	}
-	.modal-dialog {  
-    	margin: 200px auto;  
-	}  
-	#load {
-		display: none;
-		color: #DFDFDF;
-		 position: absolute;
-		 animation: load 5s infinite linear;
-		 left: 50%;
-		 bottom:100px;
-   	}
-	@keyframes load{
-  		0%{
-		transform:rotate(0deg);
-		}
-		100%{
-		transform:rotate(360deg);
-		}
-	}
-	
 
 </style>
 <body>
+	<!--header-->
 <div class="header">
-	<div class="container">
-		<div class="logo">
-			<a href="index.html">
-				<img src="images/logo.png"
-				 alt="" />
-			</a>
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"> <img src="images/logo.png" alt=""/></a>
+			</div>
+			<div class="top-nav">
+				<span class="menu"><img src="images/menu.png" alt=""/></span>
+				<ul style="margin-left: 30%;">
+					<li><a href="index.html">首页</a></li>
+					<li><a class="active"  href="about.html">关于我们</a></li>					
+					<li><a href="codes.html">成功案例</a></li>
+					<li><a href="contact.html">联系我们</a></li>
+				</ul>
+				<!-- script-for-menu -->
+				<script>					
+						$("span.menu").click(function(){
+							$(".top-nav ul").slideToggle("slow" , function(){
+							});
+						});
+				</script>
+				<!-- script-for-menu -->
+			</div>
+			<div class="clearfix"> </div>
+			<!-- search-scripts -->
+			<script src="js/classie.js"></script>
+			<script src="js/uisearch.js"></script>
+				<script>
+					new UISearch( document.getElementById( 'sb-search' ) );
+				</script>
+			<!-- //search-scripts -->
 		</div>
-		<div class="top-nav">
-			<span class="menu">
-				<img src="images/menu.png"
-				 alt="" />
-			</span>
-			<ul>
-				<li>
-					<a
-					 href="index.html">首页</a>
-				</li>
-				<li>
-					<a href="about.html">关于我们</a>
-				</li>
-				<li>
-					<a href="codes.html">成功案例</a>
-				</li>
-				<li>
-					<a  class="active" href="codes.html">明星展墙</a>
-				</li>
-				<li>
-					<a href="contact.html">联系我们</a>
-				</li>
-			</ul>
-			<!-- script-for-menu -->
-			<script>					
-				$("span.menu").click(function () {
-					$(".top-nav ul").slideToggle("slow", function () {
-					});
-				});
-			</script>
-			<!-- script-for-menu -->
-		</div>
-		<div class="clearfix"> </div>
-		<!-- search-scripts -->
-		<script src="js/classie.js"></script>
-		<script src="js/uisearch.js"></script>
-		<script>
-			new UISearch(document.getElementById('sb-search'));
-		</script>
-		<!-- //search-scripts -->
-	</div>
-</div>
-<!--//header-->
+</div>	
+	<!--//header-->
 	<!--banner-->
 <div class="banner1 about-bnr" style="text-align:center;max-height:500px">
 	<img src="../images/banner1.jpg" style="max-height:500px">
@@ -175,14 +115,14 @@
 	<!--about-team-->
 	<div class="about-team " >		
 		<div class="container" >
-			<h3 class="title" style="margin: 60px auto;" >更多明星展墙</h3>
+			<h3 class="title" >更多明星展墙</h3>
 				<div class="row team-row content clearfix" id="pic-ct" >
 	
 					<div class="col-md-3 team-grids item">
 						<div class="thumbnail team-thmnl">
 							<img src="images/liudehua.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">刘德华</a>
@@ -194,7 +134,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/wujing.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">吴京</a>
@@ -207,7 +147,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/zhenzidan.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">甄子丹</a>
@@ -219,7 +159,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/huangbo.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">黄渤</a>
@@ -231,7 +171,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/gongli.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">巩俐</a>
@@ -243,7 +183,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/liuye1.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">刘烨</a>
@@ -255,7 +195,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/chenglong.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">成龙</a>
@@ -268,7 +208,7 @@
 								<img src="images/starpic/yangshuo.jpg"
 								
 								 
-								data-toggle="modal" data-target="#myModal"  alt="...">
+								 alt="...">
 								<div class="caption">
 									<h4>
 										<a href="#" >杨烁</a>
@@ -276,12 +216,12 @@
 								</div>
 							</div>
 						</div>
-					<div class="col-md-3 team-grids item mo start">
+					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic/yaochen.jpg"
 							
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">姚晨</a>
@@ -293,7 +233,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic/zhangbozhi.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">张柏芝</a>
@@ -305,7 +245,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/zhangziyi.jpg"
 							
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">章子怡</a>
@@ -319,7 +259,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">张丰毅</a>
@@ -333,7 +273,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">张国立</a>
@@ -347,7 +287,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">张涵予</a>
@@ -361,7 +301,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">赵又廷</a>
@@ -375,7 +315,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">周润发</a>
@@ -387,7 +327,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic2/chenbaoguo.jpg"
 												 
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陈宝国</a>
@@ -401,7 +341,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陈道明</a>
@@ -415,7 +355,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陈好</a>
@@ -429,7 +369,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陈坤</a>
@@ -443,7 +383,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陈数</a>
@@ -455,7 +395,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic2/dengchao.jpg"
 													 
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">邓超</a>
@@ -469,7 +409,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">范伟</a>
@@ -483,7 +423,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">高圆圆</a>
@@ -497,7 +437,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">葛优</a>
@@ -511,7 +451,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">郭涛</a>
@@ -525,7 +465,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">侯勇</a>
@@ -539,7 +479,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">黄晓明</a>
@@ -553,7 +493,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">胡军</a>
@@ -567,7 +507,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">姜文</a>
@@ -581,7 +521,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">梁朝伟</a>
@@ -595,7 +535,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">梁家辉</a>
@@ -609,7 +549,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">黎明</a>
@@ -623,7 +563,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">林雪</a>
@@ -637,7 +577,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">刘劲</a>
@@ -651,7 +591,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">李幼斌</a>
@@ -665,7 +605,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">孙红雷</a>
@@ -679,7 +619,7 @@
 							
 							 data-src=""
 							 data-src2="王珞丹"
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">王珞丹</a>
@@ -693,7 +633,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">王学兵</a>
@@ -707,7 +647,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">王学圻</a>
@@ -721,7 +661,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">吴刚</a>
@@ -735,7 +675,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">邬君梅</a>
@@ -749,7 +689,7 @@
 							
 							 data-src=""
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">吴彦祖</a>
@@ -761,7 +701,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic4/tangguoqiang.jpg"
 										
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">唐国强</a>
@@ -773,7 +713,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic4/taohong.jpg"
 							 data-src2=""
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">陶虹</a>
@@ -785,7 +725,7 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic4/tongdawei.jpg"
 											 
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">佟大为</a>
@@ -797,8 +737,9 @@
 						<div class="thumbnail team-thmnl">
 							<img src="images/starpic5/xufan.jpg"
 							
-							 
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							 data-src=""
+							 data-src2="徐帆"
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">徐帆</a>
@@ -806,17 +747,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-3 team-grids item mo end">
+					<div class="col-md-3 team-grids item mo">
 						<div class="thumbnail team-thmnl">
-							<img src="images/starpic5/xuxiyuan.jpg"											 
-							data-toggle="modal" data-target="#myModal"  alt="...">
+							<img src="images/starpic5/xuxiyuan.jpg"
+											 
+							 alt="...">
 							<div class="caption">
 								<h4>
 									<a href="#">徐熙媛</a>
 								</h4>
 							</div>
 					</div>
-					
 				</br>
 				</br>
 				</br>
@@ -829,56 +770,16 @@
 		</div>
 	</div>
 
+
 	<!--//about-team-->
 	
-	<!-- 模态框（Modal） -->
-	<div class="modal fade "
-	 id="myModal"
-	 tabindex="-1"
-	 role="dialog"
-	 aria-labelledby="myModalLabel"
-	 aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button"
-					 class="close"
-					 data-dismiss="modal"
-					 aria-hidden="true">&times;</button>
-					<h4 class="modal-title"
-					 id="myModalLabel">联系我们</h4>
-				</div>
-				<div class="modal-body">
-					<img style="width:150px;margin-right:10px;"
-					 src="images/ewm.jpg">
-	
-	
-					<img style="width:150px;"
-					 src="images/ewm.jpg">
-	
-				</div>
-				<div class="modal-footer">
-					<button type="button"
-					 class="btn btn-default"
-					 data-dismiss="modal">关闭</button>
-	
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal -->
-	</div>
-
 	<!--footer-->
 	<div class="footer" >
 		<div class="container">
-			<div id="load">
-				<i class="iconfont">&#xe608;</i>
-			</div>
 			<div >
 				<p>Copyright &copy; 2015.Company name All rights reserved.<a target="_blank" href="http://h2design.taobao.com/">博鳌亚洲品牌研究院</a></p>
 			</div>
-			
+		
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -906,8 +807,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/bootstrap.js"></script>
 </body>
-
 <script>
+		
 		
 		window.onload = function () {
 				waterfull()
@@ -935,44 +836,6 @@
 
 			})
 		}
-
-
-	var i = 0;
-		$(window).on('scroll', function () {
-				 console.log(i)
-				if(i==0){
-					if (isShow($(".start"))) {
-						$("#load").css('display', 'block');
-						
-						i++;
-					}
-				}
-				
-				if (isShow($(".end"))) {
-				$("#load").css('display', 'none');
-				
-
-				}
-		})
-
-		 
-		
-		 
-				
-			
-
-
-		 function isShow($el) {
-				var scrollH = $(window).scrollTop(),
-					winH = $(window).height(),
-					top = $el.offset().top;
-
-				if (top < winH + scrollH) {
-					return true;
-				} else {
-					return false;
-				}
-			}
 
 
 
